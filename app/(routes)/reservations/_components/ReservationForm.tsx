@@ -1,5 +1,6 @@
 "use client"
 
+import { useAddReservationMutation } from "@/app/store/api/reservationsApi"
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
 import {
@@ -16,6 +17,7 @@ import {
 } from "@/components/ui/select"
 import { Separator } from "@/components/ui/separator"
 import type { ReservationFormData } from "@/constans/types"
+import { useToast } from "@/hooks/use-toast"
 import axios from "axios"
 import { format } from "date-fns"
 import { Calendar as CalendarIcon } from "lucide-react"
@@ -23,8 +25,6 @@ import { useState } from "react"
 import { Controller, FormProvider, useForm } from "react-hook-form"
 import type { SubmitHandler } from "react-hook-form"
 import ContactForm from "./ContactForm"
-import { useAddReservationMutation } from "@/app/store/api/reservationsApi"
-import { useToast } from "@/hooks/use-toast"
 
 const ReservationForm = () => {
   const [date, setDate] = useState<string>("")
@@ -84,10 +84,9 @@ const ReservationForm = () => {
       })
       toast({
         title: "Reservation Confirmed",
-        description: "Your table is booked for Friday, December 8, 2023, at 7:00 PM.",
-      });
-      
-
+        description:
+          "Your table is booked for Friday, December 8, 2023, at 7:00 PM.",
+      })
     } catch (error) {
       console.error("Error submitting form:", error)
     }
@@ -175,7 +174,7 @@ const ReservationForm = () => {
                         <SelectTrigger className="flex justify-between items-center bg-transparent border-none outline-none ring-0 focus:ring-0 focus:ring-offset-0 gap-x-2 text-[15px] w-full p-0 ">
                           <span>{selectedTime || "Select time"}</span>
                         </SelectTrigger>
-                        <SelectContent className=" h-56 overflow-y-auto border border-[#D2B48C] rounded-md shadow-md w-full">
+                        <SelectContent className=" h-56 overflow-y-auto border border-[#D2B48C] rounded-none shadow-md w-full">
                           <SelectGroup>
                             <SelectItem value="7 PM">
                               <div className="flex justify-between w-64">
@@ -215,8 +214,15 @@ const ReservationForm = () => {
                         </span>
                       </Button>
                     </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0 ">
+                    <PopoverContent className="w-auto p-0 rounded-none">
+                      
                       <Calendar
+                      className="p-6  "
+                      classNames={{
+                        caption: "flex justify-start pt-1 relative items-center",
+                        nav_button_previous: 'hidden',
+                        nav_button_next: 'absolute right-1 text-[#BE935A] opacity-100'
+                      }}
                         mode="single"
                         selected={date}
                         onSelect={(date) => {

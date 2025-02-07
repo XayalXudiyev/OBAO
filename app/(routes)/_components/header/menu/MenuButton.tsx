@@ -9,7 +9,7 @@ const MenuButton = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="cursor-pointer bg-black p-3 flex items-center justify-center my-4 select-none">
+    <div className="cursor-pointer bg-black p-3 flex items-center justify-center  select-none">
       <SlMenu
         className="text-[#D2B48C] text-xl md:text-2xl lg:text-3xl"
         onClick={() => setIsOpen(!isOpen)}

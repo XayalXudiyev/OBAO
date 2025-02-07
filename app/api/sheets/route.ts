@@ -87,7 +87,7 @@ export async function GET() {
     })
 
     const sheets = google.sheets({ auth, version: "v4" })
-    const range = "Menu!A1:I100" 
+    const range = "Menu!A1:I100"
 
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId: process.env.GOOGLE_SHEET_ID,
@@ -95,7 +95,7 @@ export async function GET() {
     })
 
     return NextResponse.json({
-      data: response.data.values, 
+      data: response.data.values,
       message: "Data fetched successfully",
     })
   } catch (error) {

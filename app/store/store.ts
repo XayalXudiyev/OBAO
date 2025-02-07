@@ -7,7 +7,6 @@ export const store = configureStore({
     reservations: ReservationSlice.reducer,
     [reservationsApi.reducerPath]: reservationsApi.reducer,
   },
-
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({}).concat([reservationsApi.middleware]),
 })

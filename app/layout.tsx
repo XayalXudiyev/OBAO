@@ -1,11 +1,16 @@
 import localFont from "next/font/local"
-
+import { cookies } from 'next/headers'; // ✅ Next.js cookies API
 import "./globals.css"
-import ClientProvider from "./ClientProvider"
 import { Toaster } from "@/components/ui/toaster"
-
+import ClientProvider from "./ClientProvider"
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 interface RootLayoutProps {
   children: React.ReactNode
+}
+
+interface Locale {
+  locale?: string | undefined
 }
 // Avenir Fonts
 const avenir = localFont({
@@ -44,9 +49,18 @@ const avenirRoman = localFont({
   weight: "100 900",
 })
 
-export default function RootLayout({ children }: RootLayoutProps) {
+
+export default async function RootLayout({ children }: RootLayoutProps) {
+
+  // ✅ Next.js-in `cookies()` API-si ilə dili götürürük
+  const cookieStore = await cookies();
+  const locale = cookieStore.get('obao-locale')?.value || 'en'; // Cookie varsa, götür; yoxdursa, default 'en'
+
+  // Mesajların alınması
+  const messages = await getMessages(locale as Locale);
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body
         className={`
         ${avenir.variable} 
@@ -58,10 +72,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
         antialiased`}
       >
         <ClientProvider>
-          {children}
-          <Toaster />
+          <NextIntlClientProvider messages={messages}>
+            {children}
+            <Toaster />
+          </NextIntlClientProvider>
         </ClientProvider>
       </body>
     </html>
   )
 }
+

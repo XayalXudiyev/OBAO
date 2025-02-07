@@ -38,28 +38,31 @@ const carouselImages = [
 const CarouselComponent = () => {
   return (
     <>
-      <Carousel
-        opts={{ loop: true }}
-        plugins={[
-          Autoplay({
-            delay: 3000,
-          }),
-        ]}
-      >
-        <CarouselContent className="w-full  ml-[1px] lg:ml-2">
-          {carouselImages.map((image) => (
-            <CarouselItem key={image.id} className="basis-auto pl-0 ">
-              <Image
-                src={image.image}
-                alt={image.alt}
-                width={432}
-                height={432}
-                className="w-"
-              />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel>
+      <div className=" mx-auto flex items-center justify-center">
+        <Carousel
+          opts={{ loop: true }}
+          
+          plugins={[
+            Autoplay({
+              delay: 3000,
+            }),
+          ]}
+        >
+          <CarouselContent className="w-full  ml-[1px] lg:ml-2">
+            {carouselImages.map((image) => (
+              <CarouselItem key={image.id} className="basis-auto pl-0 ">
+                <Image
+                  src={image.image}
+                  alt={image.alt}
+                  width={432}
+                  height={432}
+                  className="w-"
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </div>
     </>
   )
 }

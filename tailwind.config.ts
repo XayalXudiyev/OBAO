@@ -10,6 +10,21 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        menuOpen: "menuSlideIn 0.15s ease-in-out forwards",
+        menuClose: "menuSlideOut 0.15s ease-in-out 0.5s forwards"
+      }
+    ,
+      keyframes: {
+        menuSlideIn: {
+          "0%": { transform: "translateY(100%)" },
+          "100%": { transform: "translateY(0)" }
+        },
+        menuSlideOut: {
+          "0%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(100%)", }
+        }
+      },
       fontFamily: {
         avenir1: ["var(--font-avenir)", ...defaultTheme.fontFamily.sans],
         avenirBook2: [
