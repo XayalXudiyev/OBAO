@@ -1,5 +1,5 @@
-import CateringForm from "@/app/(routes)/catering/_components/CateringForm"
-import CateringMeal from "@/app/(routes)/catering/_components/CateringMeal"
+import CateringForm from "@/app/[locale]/(routes)/catering/_components/CateringForm"
+import CateringMeal from "@/app/[locale]/(routes)/catering/_components/CateringMeal"
 import Image from "next/image"
 import React from "react"
 

@@ -1,10 +1,8 @@
 import React from "react"
-// import Language from "./Language"
 import Logo from "./Logo"
-// import Menu from "./menu/MenuButton"
 import ReservationButton from "./menu/ReservationButton"
-import MyMenu from "./menu/MyMenu"
-import LocaleSwitcher from "../localSwitcher/LocaleSwitcher"
+import LocaleSwitcher from "../localeSwitcher/LocaleSwitcher"
+import MenuButton from "./menu/MenuButton"
 
 const Header = () => {
   return (
@@ -12,11 +10,9 @@ const Header = () => {
       <div className="flex items-center justify-between  px-5 sm:px-10 md:px-16 mx-auto ">
         <Logo />
         <div className="flex items-center  md:gap-4 lg:gap-6 text-white  ">
-          {/* <Language /> */}
-          <LocaleSwitcher/>
+          <LocaleSwitcher />
           <ReservationButton />
-          {/* <Menu /> */}
-          <MyMenu/>
+          <MenuButton />
         </div>
       </div>
     </header>

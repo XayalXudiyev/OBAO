@@ -12,7 +12,7 @@ import { Textarea } from "@/components/ui/textarea"
 import type { FormData } from "@/constans/types"
 import React from "react"
 import { useFormContext } from "react-hook-form"
-import { Separator } from "../../../../components/ui/separator"
+import { Separator } from "../../../../../components/ui/separator"
 
 const ContactForm = () => {
   return (

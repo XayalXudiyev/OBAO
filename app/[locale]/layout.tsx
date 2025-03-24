@@ -3,8 +3,11 @@ import { cookies } from 'next/headers'; // ✅ Next.js cookies API
 import "./globals.css"
 import { Toaster } from "@/components/ui/toaster"
 import ClientProvider from "./ClientProvider"
-import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
+import { notFound } from 'next/navigation';
+import { routing } from '@/i18n/routing';
+import NotFound from "./not-found";
 interface RootLayoutProps {
   children: React.ReactNode
 }
@@ -50,15 +53,19 @@ const avenirRoman = localFont({
 })
 
 
-export default async function RootLayout({ children }: RootLayoutProps) {
+export default async function RootLayout({
+  children,
+  params,
+}: Readonly<{
+  children: React.ReactNode
+  params: Promise<{ locale: string }>
+}>) {
+  const { locale } = await params
+  const messages = await getMessages()
 
-  // ✅ Next.js-in `cookies()` API-si ilə dili götürürük
-  const cookieStore = await cookies();
-  const locale = cookieStore.get('obao-locale')?.value || 'en'; // Cookie varsa, götür; yoxdursa, default 'en'
-
-  // Mesajların alınması
-  const messages = await getMessages(locale as Locale);
-
+  if (!routing.locales.includes(locale as any)) {
+    NotFound()
+  }
   return (
     <html lang={locale}>
       <body
