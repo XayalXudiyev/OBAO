@@ -12,18 +12,43 @@ export default {
     extend: {
       animation: {
         menuOpen: "menuSlideIn 0.15s ease-in-out forwards",
-        menuClose: "menuSlideOut 0.15s ease-in-out 0.5s forwards"
-      }
-    ,
+        menuClose: "menuSlideOut 0.15s ease-in-out 0.5s forwards",
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
       keyframes: {
         menuSlideIn: {
-          "0%": { transform: "translateY(100%)" },
-          "100%": { transform: "translateY(0)" }
+          "0%": {
+            transform: "translateY(100%)",
+          },
+          "100%": {
+            transform: "translateY(0)",
+          },
         },
         menuSlideOut: {
-          "0%": { transform: "translateY(0)" },
-          "100%": { transform: "translateY(100%)", }
-        }
+          "0%": {
+            transform: "translateY(0)",
+          },
+          "100%": {
+            transform: "translateY(100%)",
+          },
+        },
+        "accordion-down": {
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
+        },
+        "accordion-up": {
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
+          },
+        },
       },
       fontFamily: {
         avenir1: ["var(--font-avenir)", ...defaultTheme.fontFamily.sans],
@@ -49,6 +74,7 @@ export default {
         ],
       },
       colors: {
+        main: "#D2B48C",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -105,11 +131,11 @@ export default {
         },
       },
       scale: {
-        150: "1.5",
-        175: "1.75",
-        200: "2",
-        250: "2.5",
-        300: "3",
+        "150": "1.5",
+        "175": "1.75",
+        "200": "2",
+        "250": "2.5",
+        "300": "3",
       },
     },
   },

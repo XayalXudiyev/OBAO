@@ -12,7 +12,6 @@ import Autoplay from "embla-carousel-autoplay"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 
-
 const OfferMealComponent = ({
   isImageLeft,
   selectedCategory,

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { useTranslations } from "next-intl";
+import { useTranslations } from "next-intl"
 import Link from "next/link"
 import React from "react"
 
@@ -12,7 +12,5 @@ const ReservationButton = () => {
     </>
   )
 }
-
-
 
 export default ReservationButton

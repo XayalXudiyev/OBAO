@@ -1,8 +1,10 @@
-import AboutUsComponent from "../_components/home/AboutUs"
-import CarouselComponent from "../_components/home/Carousel"
-import HeroComponent from "../_components/home/Hero"
-import OurMenuComponent from "../_components/home/OurMenu"
-import RestaurantsSection from "../_components/home/Restaurants"
+import AboutUsComponent from "../_components/AboutUs"
+import CarouselComponent from "../_components/Carousel"
+import HeroComponent from "../_components/Hero"
+import OurMenuComponent from "../_components/OurMenu"
+import OurServices from "../_components/OurServices"
+import RestaurantsSection from "../_components/Restaurants"
+
 import { useTranslations } from "next-intl"
 const Home = () => {
   const t = useTranslations("home")
@@ -11,6 +13,7 @@ const Home = () => {
       <HeroComponent />
       <AboutUsComponent />
       <CarouselComponent />
+      <OurServices />
       <OurMenuComponent />
       <RestaurantsSection />
     </div>

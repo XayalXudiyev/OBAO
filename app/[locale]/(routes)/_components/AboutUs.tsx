@@ -1,20 +1,20 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import React, { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from "framer-motion"
+import Image from "next/image"
+import React, { useEffect } from "react"
+import { useInView } from "react-intersection-observer"
 
 const AboutUsComponent = () => {
-  const controlsLeft = useAnimation();
-  const controlsRight = useAnimation();
-  const controlsTop = useAnimation();
+  const controlsLeft = useAnimation()
+  const controlsRight = useAnimation()
+  const controlsTop = useAnimation()
 
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.6, 
-    rootMargin: "-100px 0px", 
-  });
+    threshold: 0.6,
+    rootMargin: "-100px 0px",
+  })
 
   useEffect(() => {
     if (inView) {
@@ -22,25 +22,25 @@ const AboutUsComponent = () => {
         x: 0,
         opacity: 1,
         transition: { duration: 1, delay: 0.3 },
-      });
+      })
       controlsRight.start({
         x: 0,
         opacity: 1,
         transition: { duration: 1, delay: 0.4 },
-      });
+      })
       controlsTop.start({
         y: 0,
         opacity: 1,
         transition: { duration: 1, delay: 0.2 },
-      });
+      })
     }
-  }, [inView, controlsLeft, controlsRight, controlsTop]);
+  }, [inView, controlsLeft, controlsRight, controlsTop])
 
   return (
     <div
       ref={ref}
       id="about-us"
-      className="bg-[#D2B48C] h-[25.7rem] mx-auto relative flex justify-center items-center"
+      className="bg-[#D2B48C] h-[25.7rem] mx-auto relative flex justify-center items-center text-[#1c1c1c]"
     >
       <motion.div
         initial={{ y: 100, opacity: 0 }}
@@ -54,8 +54,8 @@ const AboutUsComponent = () => {
           <p className="text-xl leading-7 md:text-2xl font-avenirRoman3">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in
             tellus pharetra, faucibus enim sit amet, ullamcorper est. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit.
+            ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
+            sit amet, consectetur adipiscing elit.
           </p>
         </div>
       </motion.div>
@@ -89,7 +89,7 @@ const AboutUsComponent = () => {
         </motion.div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AboutUsComponent;
+export default AboutUsComponent

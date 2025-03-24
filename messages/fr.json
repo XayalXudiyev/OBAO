@@ -1,7 +1,7 @@
 {
   "home": {
-    "YourPerfectChoice":"Votre choix parfait pour un événement",
-    "WeAreBlanspace":"Nous sommes Blankspace - Un lieu d'événements basé à Bruxelles!",
+    "YourPerfectChoice": "Votre choix parfait pour un événement",
+    "WeAreBlanspace": "Nous sommes Blankspace - Un lieu d'événements basé à Bruxelles!",
     "OurConceptTitle": "Notre Concept",
     "OurConceptText": "Le nom dit tout : blankspace Comme une feuille de papier vierge, un espace neutre où vous pouvez       déterminer la couleur et le style vous-même. À première vue, l'espace semble vide. Mis à part le comptoir du bar placé devant la fenêtre, qui sert également de comptoir d'accueil, et quelques cadres blancs sur les murs ainsi que la décoration originale des plantes au plafond. L'espace vide de blankspace est donc idéal pour déterminer comment vous allez utiliser l'espace, que ce soit pour une salle de réunion à Bruxelles, une salle de conférence ou tout autre événement dédié. Les murs blancs rendent l'espace multifonctionnel ; il peut être projeté, écrit numériquement ou collé, et un mur coulissant peut être utilisé pour diviser l'espace.",
     "HostAnEventTitle": "Organisez Tout Événement Que Vous Pouvez Imaginer",
@@ -19,7 +19,6 @@
   },
 
   "events": {
-    
     "eventButton": "Je souhaite un devis",
     "teambuilding": "Renforcement d'équipe",
     "tb-text1": "Blankspace offre d'innombrables possibilités de team-building, des batailles culinaires engageantes comme la « Battle des chefs belges et américains » de l'ambassade des États-Unis aux activités créatives et collaboratives.",
@@ -54,32 +53,32 @@
     "bw-text4": "Laissez-nous créer un espace aussi unique et mémorable que votre grand jour."
   },
 
-  "spaces":{
-    "adaptableSpaces":"Des Espaces Modulables pour Vos Besoins",
-    "adaptableSpacesText":"Notre espace se compose de plusieurs salles adjacentes, offrant une flexibilité pour accueillir des événements de toutes tailles. Que vous choisissiez de louer une seule salle ou l’ensemble du lieu, la location est adaptée au nombre d’invités et à vos besoins spécifiques.",
-    "eventButton":"Je souhaite un devis",
-    "exclusivityPersonalizedExperience":"Exclusivité pour une Expérience Personnalisée",
-    "exclusivityPersonalizedExperienceText":"Pour garantir une expérience exclusive, nous organisons un seul événement à la fois. Peu importe la superficie que vous louez, l’ensemble du lieu sera entièrement privatisé pour votre usage. C’est au cœur de notre vision : Blankspace devient votre espace, offrant un cadre personnalisé et intime pour votre événement.",
-    "barSpace":"BarSpace",
-    "barSpaceText1":"En entrant dans Blankspace, vous serez accueilli par le BarSpace, un espace dynamique et polyvalent, parfait pour démarrer tout événement. Cet espace modulable est idéal pour un check-in fluide, une pause-café, un petit-déjeuner ou un déjeuner buffet. BarSpace peut accueillir confortablement jusqu’à 40 invités.",
-    "barSpaceText2":"Équipé d’une technologie audiovisuelle de pointe, BarSpace peut accueillir des réunions de direction, des cocktails élégants, des déjeuners et dîners en format debout, des lancements de produits, et même des conférences en disposition théâtre. Grâce à sa flexibilité et son design moderne, il constitue l’espace idéal pour des événements professionnels et sociaux.",
-    "barSpaceText3":"Laissez BarSpace donner le ton à votre événement mémorable !",
-    "gardenSpace":"GardenSpace",
-    "gardenSpaceText1":"Niché derrière notre charmante maison de ville, le GardenSpace est un jardin urbain paisible qui offre une bouffée d’air frais en plein cœur de la ville. Entouré de verdure, il constitue le cadre extérieur idéal pour divers événements, alliant sérénité et fonctionnalité.",
-    "gardenSpaceText2":"Que ce soit pour une session en plein air pendant une réunion, un bar ouvert ou un barbecue en été, ou encore un barbecue d’hiver chaleureux, GardenSpace peut accueillir confortablement jusqu’à 50 invités. Son ambiance conviviale en fait un lieu idéal pour savourer des boissons, partager un repas ou même organiser des réunions en extérieur dans un cadre inspirant.",
-    "gardenSpaceText3":"Qu’il pleuve ou qu’il fasse beau, GardenSpace s’adapte aux conditions météorologiques belges, garantissant un événement fluide tout en permettant à vos invités de profiter du charme de l’extérieur. Célébrez, connectez-vous et collaborez dans un environnement rafraîchissant.",
-    "tableSpace":"TableSpace",
-    "tableSpaceText1":"Passez les charmantes portes coulissantes en bois et découvrez notre TableSpace lumineux et polyvalent – un cadre unique pour votre prochain événement. Doté de nos célèbres tables suspendues ajustables, cet espace allie style et fonctionnalité pour toutes les occasions.",
-    "tableSpaceText2":"Que vous organisiez une réunion productive, un atelier interactif ou un déjeuner ou dîner assis pour jusqu’à 30 invités, TableSpace est conçu pour impressionner. Équipé de Samsung Frame TV et d’un système audio Sonos de haute qualité, votre événement bénéficiera des meilleures technologies et d’une atmosphère accueillante.",
-    "tableSpaceText3":"Faites de votre prochain événement un moment aussi mémorable que l’espace lui-même !",
-    "studioSpace":"StudioSpace",
-    "studioSpaceText1":"Dissimulé juste derrière le GardenSpace, derrière de grandes portes vitrées coulissantes, se trouve notre StudioSpace créatif – un espace moderne et inspirant pour des événements qui nécessitent une touche spéciale. Ce lieu intime et modulable est conçu pour stimuler la créativité, idéal pour des brainstormings, des dîners en plein air et bien plus encore.",
-    "studioSpaceText2":"Équipé d’un Samsung Frame TV et d’un système audio Sonos immersif, StudioSpace est parfait pour les interviews, les enregistrements de podcasts, ou encore les petits ateliers en groupe. Pouvant accueillir jusqu’à 20 invités, c’est l’endroit idéal pour concrétiser des idées audacieuses ou partager des histoires avec élégance.",
-    "studioSpaceText3":"Que vous prépariez votre prochain grand pitch, organisiez un dîner intime ou enregistriez un épisode de podcast marquant, StudioSpace apportera une touche de créativité et de sophistication à votre événement. Rendons-le inoubliable !",
-    "flexibleSpace":"Un Espace Flexible pour Chaque Événement",
-    "flexibleSpaceText":"Notre espace est conçu pour accueillir jusqu'à 120 invités dans différentes configurations de sièges, notamment en théâtre, en tables rondes, en salle de classe et en configuration de conférence. Le lieu dispose d'une grande surface unique de 250 mètres carrés, offrant un vaste espace pour la créativité et la personnalisation afin de répondre aux besoins de votre événement.",
-    "equipped":"Équipé pour une Expérience Sans Faille",
-    "equippedText":"De plus, Blankspace Place du Luxembourg comprend un coin restauration dédié, entièrement équipé d'appareils modernes pour garantir une expérience de traiteur fluide. Pour votre confort, le lieu est doté d’équipements audiovisuels de pointe, notamment des projecteurs, des écrans, des microphones, le Wi-Fi, des enceintes et bien plus encore. Quel que soit votre événement, Blankspace Place du Luxembourg est prêt à devenir votre espace, en vous offrant un environnement personnalisé et entièrement équipé pour une expérience mémorable.",
+  "spaces": {
+    "adaptableSpaces": "Des Espaces Modulables pour Vos Besoins",
+    "adaptableSpacesText": "Notre espace se compose de plusieurs salles adjacentes, offrant une flexibilité pour accueillir des événements de toutes tailles. Que vous choisissiez de louer une seule salle ou l’ensemble du lieu, la location est adaptée au nombre d’invités et à vos besoins spécifiques.",
+    "eventButton": "Je souhaite un devis",
+    "exclusivityPersonalizedExperience": "Exclusivité pour une Expérience Personnalisée",
+    "exclusivityPersonalizedExperienceText": "Pour garantir une expérience exclusive, nous organisons un seul événement à la fois. Peu importe la superficie que vous louez, l’ensemble du lieu sera entièrement privatisé pour votre usage. C’est au cœur de notre vision : Blankspace devient votre espace, offrant un cadre personnalisé et intime pour votre événement.",
+    "barSpace": "BarSpace",
+    "barSpaceText1": "En entrant dans Blankspace, vous serez accueilli par le BarSpace, un espace dynamique et polyvalent, parfait pour démarrer tout événement. Cet espace modulable est idéal pour un check-in fluide, une pause-café, un petit-déjeuner ou un déjeuner buffet. BarSpace peut accueillir confortablement jusqu’à 40 invités.",
+    "barSpaceText2": "Équipé d’une technologie audiovisuelle de pointe, BarSpace peut accueillir des réunions de direction, des cocktails élégants, des déjeuners et dîners en format debout, des lancements de produits, et même des conférences en disposition théâtre. Grâce à sa flexibilité et son design moderne, il constitue l’espace idéal pour des événements professionnels et sociaux.",
+    "barSpaceText3": "Laissez BarSpace donner le ton à votre événement mémorable !",
+    "gardenSpace": "GardenSpace",
+    "gardenSpaceText1": "Niché derrière notre charmante maison de ville, le GardenSpace est un jardin urbain paisible qui offre une bouffée d’air frais en plein cœur de la ville. Entouré de verdure, il constitue le cadre extérieur idéal pour divers événements, alliant sérénité et fonctionnalité.",
+    "gardenSpaceText2": "Que ce soit pour une session en plein air pendant une réunion, un bar ouvert ou un barbecue en été, ou encore un barbecue d’hiver chaleureux, GardenSpace peut accueillir confortablement jusqu’à 50 invités. Son ambiance conviviale en fait un lieu idéal pour savourer des boissons, partager un repas ou même organiser des réunions en extérieur dans un cadre inspirant.",
+    "gardenSpaceText3": "Qu’il pleuve ou qu’il fasse beau, GardenSpace s’adapte aux conditions météorologiques belges, garantissant un événement fluide tout en permettant à vos invités de profiter du charme de l’extérieur. Célébrez, connectez-vous et collaborez dans un environnement rafraîchissant.",
+    "tableSpace": "TableSpace",
+    "tableSpaceText1": "Passez les charmantes portes coulissantes en bois et découvrez notre TableSpace lumineux et polyvalent – un cadre unique pour votre prochain événement. Doté de nos célèbres tables suspendues ajustables, cet espace allie style et fonctionnalité pour toutes les occasions.",
+    "tableSpaceText2": "Que vous organisiez une réunion productive, un atelier interactif ou un déjeuner ou dîner assis pour jusqu’à 30 invités, TableSpace est conçu pour impressionner. Équipé de Samsung Frame TV et d’un système audio Sonos de haute qualité, votre événement bénéficiera des meilleures technologies et d’une atmosphère accueillante.",
+    "tableSpaceText3": "Faites de votre prochain événement un moment aussi mémorable que l’espace lui-même !",
+    "studioSpace": "StudioSpace",
+    "studioSpaceText1": "Dissimulé juste derrière le GardenSpace, derrière de grandes portes vitrées coulissantes, se trouve notre StudioSpace créatif – un espace moderne et inspirant pour des événements qui nécessitent une touche spéciale. Ce lieu intime et modulable est conçu pour stimuler la créativité, idéal pour des brainstormings, des dîners en plein air et bien plus encore.",
+    "studioSpaceText2": "Équipé d’un Samsung Frame TV et d’un système audio Sonos immersif, StudioSpace est parfait pour les interviews, les enregistrements de podcasts, ou encore les petits ateliers en groupe. Pouvant accueillir jusqu’à 20 invités, c’est l’endroit idéal pour concrétiser des idées audacieuses ou partager des histoires avec élégance.",
+    "studioSpaceText3": "Que vous prépariez votre prochain grand pitch, organisiez un dîner intime ou enregistriez un épisode de podcast marquant, StudioSpace apportera une touche de créativité et de sophistication à votre événement. Rendons-le inoubliable !",
+    "flexibleSpace": "Un Espace Flexible pour Chaque Événement",
+    "flexibleSpaceText": "Notre espace est conçu pour accueillir jusqu'à 120 invités dans différentes configurations de sièges, notamment en théâtre, en tables rondes, en salle de classe et en configuration de conférence. Le lieu dispose d'une grande surface unique de 250 mètres carrés, offrant un vaste espace pour la créativité et la personnalisation afin de répondre aux besoins de votre événement.",
+    "equipped": "Équipé pour une Expérience Sans Faille",
+    "equippedText": "De plus, Blankspace Place du Luxembourg comprend un coin restauration dédié, entièrement équipé d'appareils modernes pour garantir une expérience de traiteur fluide. Pour votre confort, le lieu est doté d’équipements audiovisuels de pointe, notamment des projecteurs, des écrans, des microphones, le Wi-Fi, des enceintes et bien plus encore. Quel que soit votre événement, Blankspace Place du Luxembourg est prêt à devenir votre espace, en vous offrant un environnement personnalisé et entièrement équipé pour une expérience mémorable.",
     "whyChooseUs": "Pourquoi Nous Choisir ?",
     "whyChooseUsText1": "Organiser un événement peut être un processus complexe et chronophage. De la sélection du lieu idéal à la coordination des plannings, en passant par la gestion de la technologie, du catering et de l’engagement des participants, de nombreux détails doivent être pris en compte.",
     "whyChooseUsText2": "Notre équipe de professionnels expérimentés apporte une expertise précieuse dans une grande variété d’événements, garantissant qu’aucun détail ne soit négligé.",
@@ -88,7 +87,7 @@
     "OurExpertiseText2": "Ateliers : Nous sommes spécialisés dans la conception d’ateliers interactifs et productifs qui encouragent la participation, le partage des connaissances et le développement des compétences, adaptés à vos objectifs d’apprentissage.",
     "OurExpertiseText3": "Conférences : Des discours d’ouverture de leaders d’industrie aux séminaires multi-thématiques, nous prenons en charge tous les aspects de la planification des conférences, y compris la coordination des intervenants, l’élaboration des programmes et la gestion des participants.",
     "OurExpertiseText4": "Événements Sur-Mesure : Lancement de produit, événement de networking, dîner de gala ou toute autre occasion spéciale ? Nous concevons des expériences uniques et mémorables alignées sur votre marque et vos objectifs.",
- 
+
     "OurComprehensiveServicesInclude": "Nos Services Complets Incluent",
     "OurComprehensiveServicesIncludeText1": "Planification & Stratégie Événementielle : Collaboration étroite avec vous pour comprendre votre vision et vos objectifs.",
     "OurComprehensiveServicesIncludeText2": "Sélection & Gestion du Lieu : Trouver l’emplacement idéal adapté à la taille, au style et au budget de votre événement.",
@@ -98,7 +97,7 @@
     "OurComprehensiveServicesIncludeText6": "Évaluation Post-Événement : Collecte des retours et fourniture d’informations pour une amélioration continue."
   },
 
-  "catering":{
+  "catering": {
     "culinaryPerfection": "PERFECTION CULINAIRE",
     "blankCatering": "Blank Catering",
     "blankCateringText1": "Découvrez blankcatering - votre destination pour des petits-déjeuners exceptionnels, des déjeuners sandwiches et des pauses café et thé rafraîchissantes.",
@@ -124,7 +123,7 @@
     "SustainableMoss": "En collaboration avec Greenmood, notre atelier de création de mousse végétale offre une expérience unique et pratique pour créer des espaces verts durables et sans entretien. Découvrez comment la mousse préservée favorise un design écoresponsable tout en apportant une touche naturelle et apaisante aux intérieurs—idéal pour ceux qui apprécient à la fois l’esthétique et la durabilité."
   },
 
-  "contactUs":{
+  "contactUs": {
     "SendUsYourRequest": "ENVOYEZ-NOUS VOTRE DEMANDE !",
     "Phone": "Téléphone",
     "Email": "E-mail",
@@ -150,28 +149,28 @@
     "Parking": "Dans la rue, dans le quartier, Interparking Arts-Loi à distance de marche",
     "PublicTransportation": "Transports en commun",
     "PublicTransportationText": "Métro (Lignes 1 & 5) et trains interurbains à la gare de Bruxelles-Schuman"
-    },
-
-  "FAQ":{
-    "FrequentlyAskedQuestions": "Questions Fréquemment Posées",
-    "Question1":"Blankspace est-il facilement accessible par les transports en commun, et propose-t-il des installations de stationnement ?",
-    "Question2":"Comment Blankspace gère-t-il le contrôle de la foule pour éviter la surpopulation lors des événements ?",
-    "Question3":"Quelles commodités et services sont inclus dans le prix de la location du lieu ?",
-    "Question4":"Blankspace propose-t-il un service de restauration interne ou pouvons-nous faire appel à nos propres traiteurs ?",
-    "Question5":"Comment Blankspace garantit-il la propreté et l'entretien avant et pendant les événements ?",
-    "Question6":"Quel est l'état du mobilier et de l'équipement chez Blankspace ?",
-    "Q1Answer1":"- Oui, Blankspace est facilement accessible via plusieurs options de transport en commun. Des lignes de bus telles que les lignes 56, 60, 63, 64, 59 et 79 desservent les arrêts à proximité, tandis que les lignes de métro 1 et 5 assurent une connexion facile via les stations Schuman et Maelbeek. De plus, la station Schuman offre des connexions ferroviaires, ce qui facilite l'accès pour les invités venant de différents endroits.",
-    "Q1Answer2":"Pour ceux qui viennent en voiture, un stationnement est disponible dans la rue et dans les environs, avec un Interparking Arts-Loi à distance de marche pour plus de commodité.",
-    "Q2Answer1":"- Nous surveillons attentivement la capacité de notre lieu et proposons différentes options de disposition pour garantir une expérience confortable pour tous les invités. Notre équipe événementielle (events@blankspace.brussels) aide à planifier les meilleures dispositions des sièges et de l'espace pour éviter la surpopulation.",
-    "Q3Answer1":"- La location de notre lieu comprend un équipement audiovisuel de haute qualité, une décoration moderne et des arrangements de sièges polyvalents pour assurer une expérience événementielle fluide. Les invités ont accès à divers meubles intérieurs et extérieurs, y compris des chaises, des tables et des chaises pour enfants sur demande. Le lieu est également équipé de téléviseurs Samsung Smart, d'un projecteur, de haut-parleurs Sonos, d'un tableau à feuilles mobiles et d'équipements de karaoké pour les divertissements et les présentations.",
-    "Q3Answer2":"Pour les besoins en restauration, nous proposons une sélection complète de verrerie, de vaisselle et de couverts, y compris des verres à vin, des tasses à café, des couverts en acier inoxydable et des assiettes en porcelaine. Des meubles et équipements supplémentaires peuvent être arrangés sur demande pour répondre aux besoins spécifiques de l'événement.",
-    "Q4Answer1":"- Nous proposons des services de restauration haut de gamme en interne avec un large éventail d'options de menus. Cependant, nous autorisons également les traiteurs externes si vous avez des préférences spécifiques, sous réserve de nos directives de restauration.",
-    "Q5Answer1":"- Notre lieu est professionnellement nettoyé avant chaque événement, et nous avons du personnel sur place pour garantir que la propreté est maintenue pendant l'événement. Nous effectuons également un entretien régulier pour garder nos installations modernes et à jour.",
-    "Q6Answer1":"- Chez Blankspace, nous sommes fiers d'offrir des meubles et un équipement modernes et bien entretenus pour tous les événements. Nous avons effectué une rénovation complète en 2024, et tous nos meubles, couverts, équipements audiovisuels et autres essentiels d'événements ont été achetés neufs en 2024. Cela garantit que tout est dans un état impeccable, élégant et conforme aux dernières normes en matière de confort et de fonctionnalité.",
-    "Q6Answer2":"Nos invités peuvent s'attendre à des meubles frais, propres et contemporains, donnant à chaque événement une atmosphère élégante et professionnelle."
   },
 
-  "testimonials":{    
+  "FAQ": {
+    "FrequentlyAskedQuestions": "Questions Fréquemment Posées",
+    "Question1": "Blankspace est-il facilement accessible par les transports en commun, et propose-t-il des installations de stationnement ?",
+    "Question2": "Comment Blankspace gère-t-il le contrôle de la foule pour éviter la surpopulation lors des événements ?",
+    "Question3": "Quelles commodités et services sont inclus dans le prix de la location du lieu ?",
+    "Question4": "Blankspace propose-t-il un service de restauration interne ou pouvons-nous faire appel à nos propres traiteurs ?",
+    "Question5": "Comment Blankspace garantit-il la propreté et l'entretien avant et pendant les événements ?",
+    "Question6": "Quel est l'état du mobilier et de l'équipement chez Blankspace ?",
+    "Q1Answer1": "- Oui, Blankspace est facilement accessible via plusieurs options de transport en commun. Des lignes de bus telles que les lignes 56, 60, 63, 64, 59 et 79 desservent les arrêts à proximité, tandis que les lignes de métro 1 et 5 assurent une connexion facile via les stations Schuman et Maelbeek. De plus, la station Schuman offre des connexions ferroviaires, ce qui facilite l'accès pour les invités venant de différents endroits.",
+    "Q1Answer2": "Pour ceux qui viennent en voiture, un stationnement est disponible dans la rue et dans les environs, avec un Interparking Arts-Loi à distance de marche pour plus de commodité.",
+    "Q2Answer1": "- Nous surveillons attentivement la capacité de notre lieu et proposons différentes options de disposition pour garantir une expérience confortable pour tous les invités. Notre équipe événementielle (events@blankspace.brussels) aide à planifier les meilleures dispositions des sièges et de l'espace pour éviter la surpopulation.",
+    "Q3Answer1": "- La location de notre lieu comprend un équipement audiovisuel de haute qualité, une décoration moderne et des arrangements de sièges polyvalents pour assurer une expérience événementielle fluide. Les invités ont accès à divers meubles intérieurs et extérieurs, y compris des chaises, des tables et des chaises pour enfants sur demande. Le lieu est également équipé de téléviseurs Samsung Smart, d'un projecteur, de haut-parleurs Sonos, d'un tableau à feuilles mobiles et d'équipements de karaoké pour les divertissements et les présentations.",
+    "Q3Answer2": "Pour les besoins en restauration, nous proposons une sélection complète de verrerie, de vaisselle et de couverts, y compris des verres à vin, des tasses à café, des couverts en acier inoxydable et des assiettes en porcelaine. Des meubles et équipements supplémentaires peuvent être arrangés sur demande pour répondre aux besoins spécifiques de l'événement.",
+    "Q4Answer1": "- Nous proposons des services de restauration haut de gamme en interne avec un large éventail d'options de menus. Cependant, nous autorisons également les traiteurs externes si vous avez des préférences spécifiques, sous réserve de nos directives de restauration.",
+    "Q5Answer1": "- Notre lieu est professionnellement nettoyé avant chaque événement, et nous avons du personnel sur place pour garantir que la propreté est maintenue pendant l'événement. Nous effectuons également un entretien régulier pour garder nos installations modernes et à jour.",
+    "Q6Answer1": "- Chez Blankspace, nous sommes fiers d'offrir des meubles et un équipement modernes et bien entretenus pour tous les événements. Nous avons effectué une rénovation complète en 2024, et tous nos meubles, couverts, équipements audiovisuels et autres essentiels d'événements ont été achetés neufs en 2024. Cela garantit que tout est dans un état impeccable, élégant et conforme aux dernières normes en matière de confort et de fonctionnalité.",
+    "Q6Answer2": "Nos invités peuvent s'attendre à des meubles frais, propres et contemporains, donnant à chaque événement une atmosphère élégante et professionnelle."
+  },
+
+  "testimonials": {
     "EuroCommerce": "L'équipe EUROCOMMERCE a loué Blankspace pour une réunion de brainstorming stratégique.",
     "Ellis": "Les activités de team building Ellis ont été organisées chez Blankspace. Nous avons été choisis comme leur lieu de conférence et d'événements ! Amusant et plein de joie !",
     "KevinMurphyK": "Nous avons loué Blankspace pour un événement d'environ 40 personnes, et je dois dire que tout a été méticuleusement organisé. De l'installation technique à la restauration et à la propreté, Blankspace a dépassé nos attentes sous tous les aspects. Toute l'équipe était incroyablement amicale et accommodante, et aucune demande n'était trop exigeante. Je recommande vivement Blankspace et nous utiliserons certainement leur magnifique lieu pour nos événements futurs.",
@@ -193,11 +192,11 @@
     "WhatOutClientsSay": "Wat Onze Klanten Zeggen",
     "WhatOutClientsSayText1": "De naam zegt het al: blankspace. Zoals een blanco vel papier, een neutrale ruimte waar je zelf de kleur en stijl kunt bepalen.",
     "WhatOutClientsSayText2": "Op het eerste gezicht lijkt de ruimte leeg. Behalve de bar aan het raam, die ook dient als welkomstbalie, en enkele witte lijsten aan de muren met originele plantendecoratie aan het plafond.",
-    "more":"Meer",
-    "less":"Minder"
-    },
+    "more": "Meer",
+    "less": "Minder"
+  },
 
-  "navbar":{
+  "navbar": {
     "events": "Événements",
     "corporateMeetings": "Réunions d'entreprise",
     "coctailReceptions": "Réceptions cocktail",
@@ -213,14 +212,14 @@
     "contactUs": "Contactez-nous",
     "aboutUs": "À propos de nous",
     "cookiePreferences": "Préférences des cookies",
-    "blog":"Blog",
-    "termsAndConditions":"Conditions générales",
-    "gdprPolicy":"Politique GDPR",
-    "csrPolicy":"Politique CSR"
+    "blog": "Blog",
+    "termsAndConditions": "Conditions générales",
+    "gdprPolicy": "Politique GDPR",
+    "csrPolicy": "Politique CSR"
   },
 
-  "notFound":{
+  "notFound": {
     "title": "Page Non Trouvée",
     "description": "Oups ! Il semble que vous ayez trouvé une page inexistante !"
-  }  
+  }
 }
