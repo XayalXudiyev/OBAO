@@ -1,6 +1,6 @@
 "use client"
 
-import ReservationForm from "@/app/(routes)/reservations/_components/ReservationForm"
+import ReservationForm from "@/app/[locale]/(routes)/reservations/_components/ReservationForm"
 import Image from "next/image"
 
 const ReservationsPage = () => {

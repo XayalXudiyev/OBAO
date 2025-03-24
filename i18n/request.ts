@@ -1,18 +1,15 @@
-import { cookies } from 'next/headers';
-import { loadMessages } from '@/utils/loadMessages';
+import { getRequestConfig } from "next-intl/server"
+import { routing } from "./routing"
 
-export default async function getRequestConfig() {
-  // cookies API-dən locale-ni alırıq
-  const cookieStore = await cookies(); // await əlavə edirik
+export default getRequestConfig(async ({ requestLocale }) => {
+	let locale = await requestLocale
 
-  const locale = cookieStore.get('obao-locale')?.value || 'en'; // locale cookie-sini alırıq, yoxsa default olaraq 'en'
+	if (!locale || !routing.locales.includes(locale as any)) {
+		locale = routing.defaultLocale
+	}
 
-  // Mesajları yükləyirik
-  const messages = await loadMessages(locale);
-
-  return {
-    locale,
-    messages,
-  };
-}
-
+	return {
+		locale,
+		messages: (await import(`../messages/${locale}.json`)).default,
+	}
+})
