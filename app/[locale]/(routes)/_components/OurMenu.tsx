@@ -50,5 +50,4 @@ const OurMenuComponent = () => {
   )
 }
 
-
 export default OurMenuComponent

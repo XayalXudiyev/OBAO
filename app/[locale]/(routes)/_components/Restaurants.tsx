@@ -1,7 +1,6 @@
 // import RestaurantComponent from "@/app/(routes)/_components/home/RestaurantComponent"
 import RestaurantTopComponent from "./RestourantTop"
 
-
 const RestaurantsSection = () => {
   return (
     <div
@@ -14,8 +13,8 @@ const RestaurantsSection = () => {
       {/* {[1, 2].map((_, index) => (
         <RestaurantComponent key={index} isImageLeft={index % 2 === 0} />
       ))} */}
-      <RestaurantTopComponent isLeft={true}/>
-      <RestaurantTopComponent isLeft={false}/>
+      <RestaurantTopComponent isLeft={true} />
+      <RestaurantTopComponent isLeft={false} />
     </div>
   )
 }

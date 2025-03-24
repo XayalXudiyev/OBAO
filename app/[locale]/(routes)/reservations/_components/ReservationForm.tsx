@@ -215,14 +215,15 @@ const ReservationForm = () => {
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0 rounded-none">
-                      
                       <Calendar
-                      className="p-6  "
-                      classNames={{
-                        caption: "flex justify-start pt-1 relative items-center",
-                        nav_button_previous: 'hidden',
-                        nav_button_next: 'absolute right-1 text-[#BE935A] opacity-100'
-                      }}
+                        className="p-6  "
+                        classNames={{
+                          caption:
+                            "flex justify-start pt-1 relative items-center",
+                          nav_button_previous: "hidden",
+                          nav_button_next:
+                            "absolute right-1 text-[#BE935A] opacity-100",
+                        }}
                         mode="single"
                         selected={date}
                         onSelect={(date) => {

@@ -6,10 +6,10 @@ import { categories } from "@/constans"
 import { cn } from "@/lib/utils"
 // import Image from "next/image"
 import React, { useState } from "react"
-import TopMealComponent from "./_compnents/TopMealComponent"
-import MidMealComponent from "./_compnents/MidMealComponent"
 import BottomMealComponent from "./_compnents/BottomMealComponent"
 import DiscoverFlavors from "./_compnents/DiscoverFlavors"
+import MidMealComponent from "./_compnents/MidMealComponent"
+import TopMealComponent from "./_compnents/TopMealComponent"
 
 const FoodMenuPage = () => {
   const [clicked, setClicked] = useState<number>(1)
@@ -17,7 +17,6 @@ const FoodMenuPage = () => {
   const handleClick = (id: number) => {
     setClicked(id)
   }
-
 
   return (
     <div className="relative flex bg-[#1C1C1C]">
@@ -32,22 +31,6 @@ const FoodMenuPage = () => {
           className="w-full py-10 px-1 md:px-48 md:py-28"
         /> */}
         <DiscoverFlavors />
-
-
-        <div className="border-[1px] border-y-[#634927] border-x-0 w-full flex items-center justify-start  md:justify-center overflow-auto gap-3 pl-2 md:pl-0 md:gap-10">
-          {categories.map((category) => (
-            <Button
-              key={category.id}
-              onClick={() => handleClick(category.id)}
-              className={cn(
-                "rounded-none md:text-lg bg-[#FB4444] hover:bg-[#FB4444] my-3 font-avenirHeavy5 max-h-9 ",
-                clicked === category.id ? "bg-[#FB4444]" : "bg-transparent",
-              )}
-            >
-              {category.title}
-            </Button>
-          ))}
-        </div>
 
         <div className="w-full">
           <h2 className="text-3xl md:text-4xl font-bold font-avenirMedium4 text-center mt-5 md:mt-20 md:mb-10">

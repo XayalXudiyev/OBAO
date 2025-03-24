@@ -1,13 +1,13 @@
 import localFont from "next/font/local"
-import { cookies } from 'next/headers'; // ✅ Next.js cookies API
+import { cookies } from "next/headers" // ✅ Next.js cookies API
 import "./globals.css"
 import { Toaster } from "@/components/ui/toaster"
+import { routing } from "@/i18n/routing"
+import { NextIntlClientProvider } from "next-intl"
+import { getMessages } from "next-intl/server"
+import { notFound } from "next/navigation"
 import ClientProvider from "./ClientProvider"
-import { getMessages } from 'next-intl/server';
-import { NextIntlClientProvider } from 'next-intl';
-import { notFound } from 'next/navigation';
-import { routing } from '@/i18n/routing';
-import NotFound from "./not-found";
+import NotFound from "./not-found"
 interface RootLayoutProps {
   children: React.ReactNode
 }
@@ -52,7 +52,6 @@ const avenirRoman = localFont({
   weight: "100 900",
 })
 
-
 export default async function RootLayout({
   children,
   params,
@@ -88,4 +87,3 @@ export default async function RootLayout({
     </html>
   )
 }
-

@@ -15,23 +15,28 @@ interface CarouselComponentProps {
 const carouselImages = [
   {
     id: 1,
-    image: "/slider/slider1.jpg",
-    alt: "slider1",
+    image: "/about-us/1.webp",
+    alt: "about-us1",
   },
   {
     id: 2,
-    image: "/slider/slider2.jpg",
-    alt: "slider2",
+    image: "/about-us/2.webp",
+    alt: "about-us2",
   },
   {
     id: 3,
-    image: "/slider/slider3.jpg",
-    alt: "slider3",
+    image: "/about-us/3.webp",
+    alt: "about-us3",
   },
   {
     id: 4,
-    image: "/slider/slider2.jpg",
-    alt: "slider4",
+    image: "/about-us/4.webp",
+    alt: "about-us4",
+  },
+  {
+    id: 5,
+    image: "/about-us/5.webp",
+    alt: "about-us5",
   },
 ]
 
@@ -41,7 +46,6 @@ const CarouselComponent = () => {
       <div className=" mx-auto flex items-center justify-center">
         <Carousel
           opts={{ loop: true }}
-          
           plugins={[
             Autoplay({
               delay: 3000,

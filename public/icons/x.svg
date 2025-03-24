@@ -1,0 +1,5 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="60" height="60" transform="matrix(-1 0 0 -1 60 60)" fill="#090101"/>
+<path d="M40 40L20.201 20.201" stroke="#D2B48C" stroke-width="2" stroke-linecap="square"/>
+<path d="M40 20L20.201 39.799" stroke="#D2B48C" stroke-width="2" stroke-linecap="square"/>
+</svg>
