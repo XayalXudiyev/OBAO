@@ -52,10 +52,7 @@ const AboutUsComponent = () => {
             ABOUT US
           </div>
           <p className="text-xl leading-7 md:text-2xl font-avenirRoman3">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in
-            tellus pharetra, faucibus enim sit amet, ullamcorper est. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit.
+            Welcome to O'BAO, where Japanese and Chinese-inspired fusion cuisine meets modern creativity in the heart of Brussels. Our passionate head chef combines traditional techniques with innovative twists, crafting dishes that celebrate the vibrant flavors of East Asia. Committed to sustainability, we source fresh ingredients from local suppliers and embrace zero-waste practices to minimize our environmental impact.
           </p>
         </div>
       </motion.div>

@@ -1,11 +1,12 @@
+"use client"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
-import Image from "next/image"
-import React from "react"
+} from "@/components/ui/accordion";
+import Image from "next/image";
+import React, { useState } from "react";
 
 const OurServices = () => {
   const services = [
@@ -23,7 +24,7 @@ const OurServices = () => {
       image: "/services/catering.webp",
       icon: "/services/cateringIcon.svg",
       description:
-        "Bring the flavors of O'BAO to your event with our external catering services! We offer a variety of sustainable, vegetarian, and vegan-friendly options, crafted with fresh, locally sourced ingredients. Whether it’s a business meeting, private party, or special celebration, our fusion cuisine will delight your guests while respecting the environment. Let us make your event unforgettable with our commitment to quality and sustainability.",
+        "Bring the flavors of O'BAO to your event with our external catering services! We offer a variety of sustainable, vegetarian, and vegan-friendly options, crafted with fresh, locally sourced ingredients.",
     },
     {
       id: 3,
@@ -31,7 +32,7 @@ const OurServices = () => {
       image: "/services/private.webp",
       icon: "/services/privateIcon.svg",
       description:
-        "Looking for the perfect setting for your private group dining? We’ve partnered with Blankspace Schuman, an exceptional event venue conveniently located just around the corner from our restaurant and the EU Commission building. Whether it’s a business gathering, celebration, or special event, Blankspace Schuman provides the ideal atmosphere to pair with our delicious fusion cuisine. We invite you to explore Blankspace Schuman and create an unforgettable dining experience.",
+        "Looking for the perfect setting for your private group dining? We’ve partnered with Blankspace Schuman, an exceptional event venue conveniently located just around the corner from our restaurant.",
     },
     {
       id: 4,
@@ -39,20 +40,24 @@ const OurServices = () => {
       image: "/services/workshops.webp",
       icon: "/services/workshopsIcon.svg",
       description:
-        "We offer sushi rolling and mastering workshops for groups of 10 or more! Perfect for team-building events, celebrations, or simply a unique experience with friends, our workshops teach you the art of sushi making under the guidance of our skilled chefs. Join us for a hands-on culinary journey and create delicious memories together!",
+        "We offer sushi rolling and mastering workshops for groups of 10 or more! Perfect for team-building events, celebrations, or simply a unique experience with friends.",
     },
-  ]
+  ];
+
+  // Seçilen hizmetin görselini tutmak için state
+  const [selectedImage, setSelectedImage] = useState(services[0].image); // Varsayılan olarak ilk hizmetin görseli
 
   return (
-    <div className="py-10">
+    <div className="pb-10 pt-24 select-none">
       <h1 className="text-[#FB4444] text-3xl md:text-4xl font-bold font-avenirMedium4 text-center mb-8">
         OUR SERVICES
       </h1>
 
       <div className="flex flex-col md:flex-row justify-center items-center gap-6 px-[72px]">
+        {/* Dinamik Görsel */}
         <div className="w-full md:w-1/2 h-[500px]">
           <Image
-            src="/about-us/1.webp"
+            src={selectedImage} // State'e bağlı olarak değişen görsel
             alt="Service"
             width={500}
             height={500}
@@ -60,6 +65,7 @@ const OurServices = () => {
           />
         </div>
 
+        {/* Akordeon */}
         <div className="w-full md:w-1/2">
           <Accordion type="single" collapsible className="w-full">
             {services.map((service) => (
@@ -68,19 +74,21 @@ const OurServices = () => {
                 value={service.id.toString()}
                 className="border-b border-gray-300"
               >
-                <AccordionTrigger className="flex items-center justify-start gap-5 py-4 text-white hover:no-underline">
-                  {/* İkon */}
+                <AccordionTrigger
+                  className="flex items-center justify-start gap-5 py-7 text-white hover:no-underline"
+                  onClick={() => setSelectedImage(service.image)} // Tıklandığında görseli güncelle
+                >
                   <Image
                     src={service.icon}
                     alt={`${service.title} icon`}
-                    width={24}
-                    height={24}
+                    width={35}
+                    height={35}
                   />
                   <span className="text-2xl font-medium pl-1">
                     {service.title}
                   </span>
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-300 ">
+                <AccordionContent className="text-gray-300">
                   <p>{service.description}</p>
                 </AccordionContent>
               </AccordionItem>
@@ -89,7 +97,7 @@ const OurServices = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default OurServices
+export default OurServices;
