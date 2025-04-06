@@ -45,7 +45,19 @@ export const categories: Category[] = [
   },
 ]
 
+export const sintPieters = [
+  { day: "Monday", hours: "Closed (except on public holidays)" },
+  { day: "Tuesday to Thursday", hours: "12:00PM - 15:00PM and 18:00PM - 22:00PM" },
+  { day: "Friday", hours: "12:00PM -15:00PM and 18:00PM - 22:30PM" },
+  { day: "Saturday", hours: "14:00PM - 22:30PM" },
+  { day: "Sunday", hours: "14:00PM - 22:00PM" },
+]
 
+export const schuman = [
+  { day: "Monday to Friday", hours: "12:00PM - 15:30PM and 18:00PM - 22:00PM" },
+  { day: "Saturday", hours: "14:00PM - 21:30PM" },
+  { day: "Sunday", hours: "Closed" },
+]
 
 export const menu: MenuItem[] = [
   {
@@ -380,4 +392,37 @@ export const menu: MenuItem[] = [
     ]
 
   }
+]
+
+export const cateringMeal = [
+  {
+    title: "SEASONAL SALADS",
+    image: "/catering/caters/salad.webp",
+    description: "Crisp, colorful, and refreshing—our salads showcase the best of each season with Japanese-inspired dressings and textures."
+  },
+  {
+    title: "SASHIMI",
+    image: "/catering/caters/sashimi.webp",
+    description: "Pure, elegant cuts of the freshest fish, served with precision and care."
+  },
+  {
+    title: "SUSHI",
+    image: "/catering/caters/sushi.webp",
+    description: "Handcrafted rolls and nigiri that blend tradition with creativity in every bite."
+  },
+  {
+    title: "VEGAN SUSHI & BOWLS",
+    image: "/catering/caters/vegan.webp",
+    description: "Plant-based, flavor-packed, and beautifully balanced—crafted to satisfy with zero compromise on taste."
+  },
+  {
+    title: "VEGETARIAN SALADS, SUSHI & BOWLS",
+    image: "/catering/caters/vegetarian.webp",
+    description: "A vibrant mix of fresh vegetables, grains, and Japanese flavors designed for clean eating and full satisfaction."
+  },
+  {
+    title: "DONBURI",
+    image: "/catering/caters/donburi.webp",
+    description: "Hearty, flavorful, and satisfying—our donburi bowls are a true taste of Japan."
+  },
 ]
