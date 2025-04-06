@@ -48,7 +48,7 @@ const FoodMenuPage = () => {
           </h2>
 
           {menu.map((item, index) => {
-            const itemChunks = chunkArray(item.items, 3)
+            const itemChunks = chunkArray(item.items, 4)
             const isOdd = (index + 1) % 2 !== 0
             return (
               <div
@@ -68,7 +68,7 @@ const FoodMenuPage = () => {
                     </div>
                     <div className="w-1/2">
                       <Carousel className="w-full h-full">
-                        <h2 className="text-xl font-bold mb-4">{item.title}</h2>
+                        <h2 className="text-4xl font-avenirBook2 ml-3 mb-4">{item.title}</h2>
                         <CarouselContent>
                           {itemChunks.map((chunk, chunkIndex) => (
                             <CarouselItem key={chunkIndex}>
@@ -76,16 +76,16 @@ const FoodMenuPage = () => {
                                 {chunk.map((foodItem: any, idx: number) => (
                                   <div
                                     key={idx}
-                                    className="flex flex-col text-sm justify-center"
+                                    className="flex flex-col  justify-center "
                                   >
-                                    <div className="flex justify-between">
-                                      <h3 className="flex items-center">
-                                        <DotIcon className="size-8 text-red-500" />
+                                    <div className="flex text-xl justify-between ">
+                                      <h3 className="flex items-center font-avenirBook2 ">
+                                        <DotIcon className="size-11 p-0 m-0 text-red-500 -ml-1 -mr-2.5" />
                                         {foodItem.name}
                                       </h3>
-                                      <p>{foodItem.price}</p>
+                                      <p>€ {foodItem.price}</p>
                                     </div>
-                                    <p className="text-gray-500 ml-8">
+                                    <p className="text-gray-500 ml-3.5 text-base font-avenir1">
                                       {foodItem.description || foodItem.content}
                                     </p>
                                   </div>
@@ -103,7 +103,7 @@ const FoodMenuPage = () => {
                   <>
                     <div className="w-1/2">
                       <Carousel className="w-full h-full">
-                        <h2 className="text-xl font-bold mb-4">{item.title}</h2>
+                        <h2 className="text-4xl font-avenirBook2 ml-3 mb-4">{item.title}</h2>
                         <CarouselContent>
                           {itemChunks.map((chunk, chunkIndex) => (
                             <CarouselItem key={chunkIndex}>
@@ -111,16 +111,16 @@ const FoodMenuPage = () => {
                                 {chunk.map((foodItem: any, idx: number) => (
                                   <div
                                     key={idx}
-                                    className="flex flex-col text-sm justify-center"
+                                    className="flex flex-col  justify-center "
                                   >
-                                    <div className="flex justify-between">
-                                      <h3 className="flex items-center">
-                                        <DotIcon className="size-8 text-red-500" />
+                                    <div className="flex text-xl justify-between ">
+                                      <h3 className="flex items-center font-avenirBook2 ">
+                                        <DotIcon className="size-11 p-0 m-0 text-red-500 -ml-1 -mr-2.5" />
                                         {foodItem.name}
                                       </h3>
-                                      <p>{foodItem.price}</p>
+                                      <p>€ {foodItem.price}</p>
                                     </div>
-                                    <p className="text-gray-500 ml-8">
+                                    <p className="text-gray-500 ml-3.5 text-base font-avenir1">
                                       {foodItem.description || foodItem.content}
                                     </p>
                                   </div>

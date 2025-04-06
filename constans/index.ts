@@ -55,8 +55,8 @@ export const menu: MenuItem[] = [
       {
         id: 1,
         name: "Miso soup",
-        price: "5",
-        content: "Scampia, Moules, Crab"
+        price: "17",
+        content: ""
       },
       {
         id: 2,
@@ -67,6 +67,102 @@ export const menu: MenuItem[] = [
     ]
   },
 
+  {
+    title: "ENTREES",
+    image: "/menu/ENTREES.webp",
+    items: [
+      {
+        id: 1,
+        name: "Takoyaki (5pcs) ",
+        price: "9",
+        content: "Boulettes de Poulpe avec Bonite Séchée"
+      },
+      {
+        id: 2,
+        name: "Poulet Yakitori (3pcs)",
+        price: "9.20",
+        content: "Brochettes de poulet a la sauce Japonaise "
+      },
+      {
+        id: 3,
+        name: "Gyuniku",
+        price: "12.80",
+        content: "Boeuf grillé a la Sauce Japonaise"
+      },
+      {
+        id: 4,
+        name: "Dynamite Crevettes (5pcs)",
+        price: "10.50",
+        content: "Crevette frits a la sauce Japonaise"
+      },
+      {
+        id: 5,
+        name: "Karaage (5pcs)",
+        price: "8.50",
+        content: "Beignet de poulet avec sauce aigre-douce"
+      },
+      {
+        id: 6,
+        name: "Gyoza Ebi (5pcs)",
+        price: "9.60",
+        content: "Raviolis Japonaise aux Crevettes "
+      },
+      {
+        id: 7,
+        name: "Gyoza Poulet (5pcs)",
+        price: "9.00",
+        content: "Raviolis Japonaise au Poulet "
+      },
+      {
+        id: 8,
+        name: "Gyoza Végétarien (5pcs)",
+        price: "8.50",
+        content: "Raviolis Japonaise Vegetarien "
+      },
+      {
+        id: 9,
+        name: "Edamame Spicy ",
+        price: "7.20",
+        content: "Haricots Verte  avec sauce épicée"
+      },
+      {
+        id: 10,
+        name: "Ebi Tempura (4pcs)",
+        price: "8.50",
+        content: ""
+      },
+      {
+        id: 11,
+        name: "Nems au Poulet (3pcs)",
+        price: "7.20",
+        content: ""
+      },
+      {
+        id: 12,
+        name: "Mini Loempia (8pcs)",
+        price: "6.00",
+        content: "Rouleaux de printemps aux légumes "
+      },
+      {
+        id: 13,
+        name: "Wakamé",
+        price: "7.00",
+        content: "Algue Japonaise"
+      },
+      {
+        id: 14,
+        name: "Loempia aux fruits de mer (6pcs) ",
+        price: "8.00",
+        content: ""
+      },
+      {
+        id: 15,
+        name: "Ika Fried (5pcs) ",
+        price: "7.00",
+        content: "Calamar Frits"
+      },
+    ]
+  },
   {
     title: "MAKI 6 PCS",
     image: "/menu/MAKI.webp",
@@ -115,6 +211,56 @@ export const menu: MenuItem[] = [
       }
     ]
   },
+
+  {
+    title: "URAMAKI 8 PCS",
+    image: "/menu/MAKI.webp",
+    items: [
+      {
+        id: 1,
+        name: "California",
+        price: "9.20",
+        description: "Crab, Concombre, Avocat, Masago "
+      },
+      {
+        id: 2,
+        name: "Crispy Ebi Tempura",
+        price: "9.80",
+        description: "Tempura Scampis, Avocat, Oignon Frits"
+      },
+      {
+        id: 3,
+        name: "Crispy Chicken",
+        price: "9.50",
+        description: "Tempura Poulet, Concombre, Oignon Frits"
+      },
+      {
+        id: 4,
+        name: "Philadelphia Roll",
+        price: "9.20",
+        description: "Saumon, Avocat, Concombre, Fromages"
+      },
+      {
+        id: 5,
+        name: "California Saumon",
+        price: "9.50",
+        description: "Saumon, Avocat, Concombre, Masago"
+      },
+      {
+        id: 6,
+        name: "Thon Spicy ",
+        price: "9.80",
+        description: "Thon tartare, Avocat, Concombre, Chili Pepper "
+      },
+      {
+        id: 7,
+        name: "Vegetarien",
+        price: "9.00",
+        description: "Radis Jaune, Omelette Japonaise, Avocat, concombre"
+      }
+    ]
+  },
+
 
 
   {
