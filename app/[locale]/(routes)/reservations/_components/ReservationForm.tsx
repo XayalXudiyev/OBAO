@@ -92,15 +92,15 @@ const ReservationForm = () => {
     }
   }
   return (
-    <div className="md:w-/3 border-2  border-[#D2B48C] mt-10 md:mt-20 px-4 md:px-10 p-10">
-      <h3 className="text-xl md:py-3 font-bold text-center font-avenirHeavy5">
+    <div className=" border-2  border-[#D2B48C]  lg:min-w-[500px] py-14 px-14">
+      <h3 className="text-2xl font-bold  text-center font-avenirHeavy5">
         Find a table
       </h3>
 
-      <div className="flex flex-col gap-4 ">
+      <div className="flex flex-col gap-4">
         <FormProvider {...{ control, handleSubmit, setValue }}>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex flex-col gap-4 md:w-80">
+            <div className="flex flex-col space-y-7   my-6  w-full">
               {/* adult */}
               <div className="flex flex-col gap-1">
                 <div className="flex items-center justify-between gap-2">
