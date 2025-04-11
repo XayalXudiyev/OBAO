@@ -38,7 +38,9 @@ const FoodMenuPage = () => {
   return (
     <div className="relative flex bg-[#1C1C1C]">
       <div className="absolute top-0 left-0 w-full h-full bg-[url('/cropped.png')] bg-center bg-[length:120%_auto] bg-repeat-y opacity-10 z-10" />
-
+      <span className="absolute top-[6.5rem] left-[72px] opacity-80 text-white text-base font-avenirMedium4">
+        Menu
+      </span>
       <div className="z-20 text-white flex flex-col justify-center items-center w-full relative">
         <DiscoverFlavors />
         <div className="border-[1px] border-y-[#634927] border-x-0 w-full flex items-center justify-start  md:justify-center overflow-auto gap-3 pl-2 md:pl-0 md:gap-10">

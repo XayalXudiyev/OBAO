@@ -20,8 +20,8 @@ const ContactForm = () => {
       <Dialog>
         <DialogTrigger asChild>
           <Button
-            size="sm"
-            className="bg-[#D2B48C] px-5 font-avenirMedium4 text-black rounded-none mt-10 hover:bg-[#D2B48C]/80"
+            size="lg"
+            className="bg-[#D2B48C] px-10 text-base font-avenirMedium4 text-black rounded-none mt-10 hover:bg-[#D2B48C]/80"
           >
             Reserve Now
           </Button>

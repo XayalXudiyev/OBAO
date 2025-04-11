@@ -12,7 +12,7 @@ const CateringPage = () => {
   const isTablet = useMediaQuery({ query: "(max-width: 1024px)" })
 
   return (
-    <div className="h-full bg-white">
+    <div className="h-full bg-white relative">
       <Image
         src="/catering/cateringCover.webp"
         alt="Catering"
@@ -20,6 +20,9 @@ const CateringPage = () => {
         width={10000}
         height={10000}
       />
+      <span className="absolute top-[1.5rem] left-[72px] opacity-80 text-white text-base font-avenirMedium4">
+        Catering
+      </span>
       <div className="flex flex-col items-center px-5 py-10 space-y-5 text-center md:py-16 md:px-0"> </div>
 
       <div className="w-full bg-[#D2B48C] pb-7 md:py-16 flex pr-[72px] ">
