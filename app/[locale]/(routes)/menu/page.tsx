@@ -3,10 +3,10 @@
 import { Button } from "@/components/ui/button"
 import { categories, menu } from "@/constans"
 import { cn } from "@/lib/utils"
-import React, { useState } from "react"
-import DiscoverFlavors from "./_compnents/DiscoverFlavors"
 import { motion } from "framer-motion"
+import React, { useState } from "react"
 import { useMediaQuery } from "react-responsive"
+import DiscoverFlavors from "./_compnents/DiscoverFlavors"
 
 import {
   Carousel,
@@ -31,7 +31,6 @@ const FoodMenuPage = () => {
     }
     return result
   }
-
 
   const isMobile = useMediaQuery({ query: "(max-width: 640px)" })
   const isTablet = useMediaQuery({ query: "(max-width: 1024px)" })
@@ -72,10 +71,19 @@ const FoodMenuPage = () => {
                 key={index}
               >
                 {!isOdd ? (
-                  <div className="flex gap-10 my-8" >
-                    <motion.div className="w-1/2 flex"
-                      initial={isMobile || isTablet ? { y: 250, opacity: 0 } : { x: -300, opacity: 0 }}
-                      whileInView={isMobile || isTablet ? { y: 0, opacity: 1 } : { x: 0, opacity: 1 }}
+                  <div className="flex gap-10 my-8">
+                    <motion.div
+                      className="w-1/2 flex"
+                      initial={
+                        isMobile || isTablet
+                          ? { y: 250, opacity: 0 }
+                          : { x: -300, opacity: 0 }
+                      }
+                      whileInView={
+                        isMobile || isTablet
+                          ? { y: 0, opacity: 1 }
+                          : { x: 0, opacity: 1 }
+                      }
                       transition={{ duration: 0.8 }}
                       viewport={{ once: true }}
                     >
@@ -87,15 +95,25 @@ const FoodMenuPage = () => {
                         className="object-cover"
                       />
                     </motion.div>
-                    <motion.div className="w-6/12 pl-5"
-                      initial={isMobile || isTablet ? { y: 250, opacity: 0 } : { x: 300, opacity: 0 }}
-                      whileInView={isMobile || isTablet ? { y: 0, opacity: 1 } : { x: 0, opacity: 1 }}
+                    <motion.div
+                      className="w-6/12 pl-5"
+                      initial={
+                        isMobile || isTablet
+                          ? { y: 250, opacity: 0 }
+                          : { x: 300, opacity: 0 }
+                      }
+                      whileInView={
+                        isMobile || isTablet
+                          ? { y: 0, opacity: 1 }
+                          : { x: 0, opacity: 1 }
+                      }
                       transition={{ duration: 0.8 }}
                       viewport={{ once: true }}
                     >
                       <Carousel className="w-full h-full  relative">
-
-                        <h2 className="text-[34px] font-avenirBook2 ml-3 mb-4">{item.title}</h2>
+                        <h2 className="text-[34px] font-avenirBook2 ml-3 mb-4">
+                          {item.title}
+                        </h2>
                         <div className="bg-[#FB4444] top-2.5 md:h-6 w-16 absolute -right-[72px]" />
 
                         <CarouselContent>
@@ -106,7 +124,9 @@ const FoodMenuPage = () => {
                                   <div key={idx} className="mb-5 ">
                                     <div className="flex text-xl justify-between">
                                       <h3 className="flex items-center font-avenirBook2  ">
-                                        <span className="text-red-500  ml-4 mr-2">•</span>
+                                        <span className="text-red-500  ml-4 mr-2">
+                                          •
+                                        </span>
                                         {foodItem.name}
                                       </h3>
                                       <p>€ {foodItem.price}</p>
@@ -123,22 +143,32 @@ const FoodMenuPage = () => {
                         <div className="">
                           <CarouselPrevious className="bg-transparent border-none text-[#BE935A] hover:bg-transparent hover:text-[#BE935A] hover:border-none [&_svg]:w-16 [&_svg]:h-16 " />
                           <CarouselNext className="absolute -right-16 bg-transparent border-none text-[#BE935A] hover:bg-transparent hover:text-[#BE935A] hover:border-none [&_svg]:w-16 [&_svg]:h-16" />
-
                         </div>
                       </Carousel>
                     </motion.div>
                   </div>
                 ) : (
                   <div className="flex gap-10">
-                    <motion.div className="w-6/12 pr-5"
-                      initial={isMobile || isTablet ? { y: 250, opacity: 0 } : { x: -300, opacity: 0 }}
-                      whileInView={isMobile || isTablet ? { y: 0, opacity: 1 } : { x: 0, opacity: 1 }}
+                    <motion.div
+                      className="w-6/12 pr-5"
+                      initial={
+                        isMobile || isTablet
+                          ? { y: 250, opacity: 0 }
+                          : { x: -300, opacity: 0 }
+                      }
+                      whileInView={
+                        isMobile || isTablet
+                          ? { y: 0, opacity: 1 }
+                          : { x: 0, opacity: 1 }
+                      }
                       transition={{ duration: 0.8 }}
                       viewport={{ once: true }}
                     >
                       <Carousel className="w-full h-full  relative">
                         <div className="bg-[#FB4444] top-2.5 md:h-6 w-16 absolute -left-[72px]" />
-                        <h2 className="text-[34px] font-avenirBook2 ml-3 mb-4">{item.title}</h2>
+                        <h2 className="text-[34px] font-avenirBook2 ml-3 mb-4">
+                          {item.title}
+                        </h2>
                         <CarouselContent>
                           {itemChunks.map((chunk, chunkIndex) => (
                             <CarouselItem key={chunkIndex}>
@@ -147,7 +177,9 @@ const FoodMenuPage = () => {
                                   <div key={idx} className="mb-5 ">
                                     <div className="flex text-xl justify-between">
                                       <h3 className="flex items-center font-avenirBook2  ">
-                                        <span className="text-red-500  ml-4 mr-2">•</span>
+                                        <span className="text-red-500  ml-4 mr-2">
+                                          •
+                                        </span>
                                         {foodItem.name}
                                       </h3>
                                       <p>€ {foodItem.price}</p>
@@ -164,13 +196,21 @@ const FoodMenuPage = () => {
                         <div className="">
                           <CarouselPrevious className="bg-transparent border-none text-red-500 hover:bg-transparent hover:text-red-500 hover:border-none [&_svg]:w-16 [&_svg]:h-16 " />
                           <CarouselNext className="absolute -right-16 bg-transparent border-none text-red-500 hover:bg-transparent hover:text-red-500 hover:border-none [&_svg]:w-16 [&_svg]:h-16" />
-
                         </div>
                       </Carousel>
                     </motion.div>
-                    <motion.div className="w-1/2 flex"
-                      initial={isMobile || isTablet ? { y: 250, opacity: 0 } : { x: 300, opacity: 0 }}
-                      whileInView={isMobile || isTablet ? { y: 0, opacity: 1 } : { x: 0, opacity: 1 }}
+                    <motion.div
+                      className="w-1/2 flex"
+                      initial={
+                        isMobile || isTablet
+                          ? { y: 250, opacity: 0 }
+                          : { x: 300, opacity: 0 }
+                      }
+                      whileInView={
+                        isMobile || isTablet
+                          ? { y: 0, opacity: 1 }
+                          : { x: 0, opacity: 1 }
+                      }
                       transition={{ duration: 0.8 }}
                       viewport={{ once: true }}
                     >

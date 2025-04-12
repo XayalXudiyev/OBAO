@@ -1,10 +1,9 @@
 "use client"
-import Image from "next/image"
 import { schuman, sintPieters } from "@/constans"
-import { useMediaQuery } from "react-responsive"
 import { motion } from "framer-motion"
+import Image from "next/image"
+import { useMediaQuery } from "react-responsive"
 const RestaurantsSection = () => {
-
   const isMobile = useMediaQuery({ query: "(max-width: 640px)" })
   const isTablet = useMediaQuery({ query: "(max-width: 1024px)" })
 
@@ -17,14 +16,18 @@ const RestaurantsSection = () => {
         RESTAURANTS
       </h1>
 
-
-
       {/* Sint-Schuman */}
 
       <div className="flex w-full  my-12">
         <motion.div
-          initial={isMobile || isTablet ? { y: 250, opacity: 0 } : { x: -300, opacity: 0 }}
-          whileInView={isMobile || isTablet ? { y: 0, opacity: 1 } : { x: 0, opacity: 1 }}
+          initial={
+            isMobile || isTablet
+              ? { y: 250, opacity: 0 }
+              : { x: -300, opacity: 0 }
+          }
+          whileInView={
+            isMobile || isTablet ? { y: 0, opacity: 1 } : { x: 0, opacity: 1 }
+          }
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="w-3/5  h-auto"
@@ -38,9 +41,16 @@ const RestaurantsSection = () => {
           />
         </motion.div>
 
-        <motion.div className=" h-full text-center text-white w-2/5 "
-          initial={isMobile || isTablet ? { y: 250, opacity: 0 } : { x: 300, opacity: 0 }}
-          whileInView={isMobile || isTablet ? { y: 0, opacity: 1 } : { x: 0, opacity: 1 }}
+        <motion.div
+          className=" h-full text-center text-white w-2/5 "
+          initial={
+            isMobile || isTablet
+              ? { y: 250, opacity: 0 }
+              : { x: 300, opacity: 0 }
+          }
+          whileInView={
+            isMobile || isTablet ? { y: 0, opacity: 1 } : { x: 0, opacity: 1 }
+          }
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
@@ -68,17 +78,19 @@ const RestaurantsSection = () => {
         </motion.div>
       </div>
 
-
-
-
       {/* Sint-Pieters-Leeuw */}
 
       <div className="flex w-full  mt-12 mb-20">
-
-
-        <motion.div className=" h-full text-center text-white w-2/5 "
-          initial={isMobile || isTablet ? { y: 250, opacity: 0 } : { x: -300, opacity: 0 }}
-          whileInView={isMobile || isTablet ? { y: 0, opacity: 1 } : { x: 0, opacity: 1 }}
+        <motion.div
+          className=" h-full text-center text-white w-2/5 "
+          initial={
+            isMobile || isTablet
+              ? { y: 250, opacity: 0 }
+              : { x: -300, opacity: 0 }
+          }
+          whileInView={
+            isMobile || isTablet ? { y: 0, opacity: 1 } : { x: 0, opacity: 1 }
+          }
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
@@ -86,7 +98,9 @@ const RestaurantsSection = () => {
 
           <div className="mb-4">
             <h3 className="text-lg mb-1">ADDRESS</h3>
-            <p className="text-sm">Bergensesteenweg 106b, 1600 Sint-Pieters-Leeuw</p>
+            <p className="text-sm">
+              Bergensesteenweg 106b, 1600 Sint-Pieters-Leeuw
+            </p>
           </div>
 
           <div className="mb-4">
@@ -104,9 +118,16 @@ const RestaurantsSection = () => {
             <p className="text-sm">Contact number: 0494 53 90 41</p>
           </div>
         </motion.div>
-        <motion.div className="w-full md:w-2/3 h-auto"
-          initial={isMobile || isTablet ? { y: 250, opacity: 0 } : { x: 300, opacity: 0 }}
-          whileInView={isMobile || isTablet ? { y: 0, opacity: 1 } : { x: 0, opacity: 1 }}
+        <motion.div
+          className="w-full md:w-2/3 h-auto"
+          initial={
+            isMobile || isTablet
+              ? { y: 250, opacity: 0 }
+              : { x: 300, opacity: 0 }
+          }
+          whileInView={
+            isMobile || isTablet ? { y: 0, opacity: 1 } : { x: 0, opacity: 1 }
+          }
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
@@ -119,7 +140,7 @@ const RestaurantsSection = () => {
           />
         </motion.div>
       </div>
-    </div >
+    </div>
   )
 }
 

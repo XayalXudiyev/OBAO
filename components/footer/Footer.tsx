@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import React from "react"
 
 const Footer = () => {
@@ -10,8 +11,20 @@ const Footer = () => {
           <p>O’BAO</p>
         </div>
         <div className="flex gap-7 text-xl">
-          <Image src="/icons/fb.svg" alt="facebook" width={9} height={9} />
-          <Image src="/icons/ig.svg" alt="instagram" width={19} height={19} />
+          <Link
+            href="https://www.facebook.com/obaoschuman"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Image src="/icons/fb.svg" alt="facebook" width={9} height={9} />
+          </Link>
+          <Link
+            href="https://www.instagram.com/obaoschuman/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Image src="/icons/ig.svg" alt="instagram" width={19} height={19} />
+          </Link>
         </div>
       </div>
     </footer>

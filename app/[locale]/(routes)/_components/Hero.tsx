@@ -17,18 +17,23 @@ const HeroComponent = () => {
       </span>
 
       <div className="absolute top-[4.1rem] left-[72px] flex flex-col gap-4">
-        <span className="text-white text-[44px] font-avenirMedium4">Asian Fusion Flavors</span>
-        <span className="text-white text-[26px] w-[380px] font-avenirMedium3 leading-8">Experience the perfect harmony of tradition and innovation in every bite.</span>
+        <span className="text-white text-[44px] font-avenirMedium4">
+          Asian Fusion Flavors
+        </span>
+        <span className="text-white text-[26px] w-[380px] font-avenirBook2 leading-8">
+          Experience the perfect harmony of tradition and innovation in every
+          bite.
+        </span>
       </div>
       <Image
-        src="/heroRight.svg"
+        src="/miniPhotos/heroRight.svg"
         alt="hero"
         width={47}
         height={47}
         className="absolute top-[5rem] right-0"
       />
       <Image
-        src="/heroLeft.svg"
+        src="/miniPhotos/heroLeft.svg"
         alt="hero"
         width={51}
         height={51}
