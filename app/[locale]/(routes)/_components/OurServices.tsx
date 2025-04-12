@@ -4,48 +4,47 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-import Image from "next/image";
-import React, { useState } from "react";
+} from "@/components/ui/accordion"
+import { AnimatePresence, motion } from "framer-motion"
+import Image from "next/image"
+import React, { useState } from "react"
 
 const OurServices = () => {
   const services = [
     {
       id: 1,
       title: "Restaurants",
-      image: "/services/restaurant.webp",
-      icon: "/services/restaurantIcon.svg",
+      image: "/services/Restaurants.jpg",
+      icon: "/services/icons/restaurantIcon.svg",
       description:
         "We currently have two restaurants, proudly welcoming both locals and tourists with warmth and great flavors! Our first and flagship restaurant is located in Sint-Pieters-Leeuw while second, newly opened in Schuman.",
     },
     {
       id: 2,
       title: "Catering",
-      image: "/services/catering.webp",
-      icon: "/services/cateringIcon.svg",
+      image: "/services/Catering.jpg",
+      icon: "/services/icons/cateringIcon.svg",
       description:
         "Bring the flavors of O'BAO to your event with our external catering services! We offer a variety of sustainable, vegetarian, and vegan-friendly options, crafted with fresh, locally sourced ingredients.",
     },
     {
       id: 3,
       title: "Private Group Dining Experience",
-      image: "/services/private.webp",
-      icon: "/services/privateIcon.svg",
+      image: "/services/Private & Group Dining.jpeg",
+      icon: "/services/icons/privateIcon.svg",
       description:
         "Looking for the perfect setting for your private group dining? We’ve partnered with Blankspace Schuman, an exceptional event venue conveniently located just around the corner from our restaurant.",
     },
     {
       id: 4,
       title: "Workshops",
-      image: "/services/workshops.webp",
-      icon: "/services/workshopsIcon.svg",
+      image: "/services/Workshops.JPG",
+      icon: "/services/icons/workshopsIcon.svg",
       description:
         "We offer sushi rolling and mastering workshops for groups of 10 or more! Perfect for team-building events, celebrations, or simply a unique experience with friends.",
     },
-  ];
-
-  // Seçilen hizmetin görselini tutmak için state
-  const [selectedImage, setSelectedImage] = useState(services[0].image); // Varsayılan olarak ilk hizmetin görseli
+  ]
+  const [selectedImage, setSelectedImage] = useState(services[0].image)
 
   return (
     <div className="pb-10 pt-24 select-none">
@@ -54,18 +53,28 @@ const OurServices = () => {
       </h1>
 
       <div className="flex flex-col md:flex-row justify-center items-center gap-6 px-[72px]">
-        {/* Dinamik Görsel */}
-        <div className="w-full md:w-1/2 h-[500px]">
-          <Image
-            src={selectedImage} // State'e bağlı olarak değişen görsel
-            alt="Service"
-            width={500}
-            height={500}
-            className="w-full h-full object-cover rounded-lg"
-          />
+        <div className="w-full md:w-1/2 h-[500px] relative">
+          <AnimatePresence>
+            <motion.div
+              key={selectedImage}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8 }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={selectedImage}
+                alt="Service"
+                width={500}
+                height={500}
+                className="w-full h-full object-cover rounded-lg"
+              />
+            </motion.div>
+          </AnimatePresence>
         </div>
 
-        {/* Akordeon */}
+        {/* Accordion */}
         <div className="w-full md:w-1/2">
           <Accordion type="single" collapsible className="w-full">
             {services.map((service) => (
@@ -76,7 +85,7 @@ const OurServices = () => {
               >
                 <AccordionTrigger
                   className="flex items-center justify-start gap-5 py-7 text-white hover:no-underline"
-                  onClick={() => setSelectedImage(service.image)} // Tıklandığında görseli güncelle
+                  onClick={() => setSelectedImage(service.image)}
                 >
                   <Image
                     src={service.icon}
@@ -97,7 +106,7 @@ const OurServices = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default OurServices;
+export default OurServices

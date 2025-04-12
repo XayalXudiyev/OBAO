@@ -14,56 +14,56 @@ const DiscoverFlavors = () => {
           <Image
             width={40}
             height={40}
-            src="/Icons.svg"
+            src="/menu/discoverFlavors/Icons.svg"
             alt="Icons"
             className=" absolute left-0 bottom-0 h-10 w-10 "
           />
           <Image
             width={40}
             height={40}
-            src="/Icons (1).svg"
+            src="/menu/discoverFlavors/Icons (1).svg"
             alt="Icons"
             className=" absolute left-[54px] top-[163px] h-10 w-10 "
           />
           <Image
             width={40}
             height={40}
-            src="/Icons (2).svg"
+            src="/menu/discoverFlavors/Icons (2).svg"
             alt="Icons"
             className=" absolute left-[150px] top-[60px] h-10 w-10 "
           />
           <Image
             width={40}
             height={40}
-            src="/Icons (3).svg"
+            src="/menu/discoverFlavors/Icons (3).svg"
             alt="Icons"
             className=" absolute left-[350px] top-0 h-10 w-10 "
           />
           <Image
             width={40}
             height={40}
-            src="/Icons (4).svg"
+            src="/menu/discoverFlavors/Icons (4).svg"
             alt="Icons"
             className=" absolute right-[350px] top-0 h-10 w-10 "
           />
           <Image
             width={40}
             height={40}
-            src="/Icons (5).svg"
+            src="/menu/discoverFlavors/Icons (5).svg"
             alt="Icons"
             className=" absolute right-[150px] top-[60px] h-10 w-10 "
           />
           <Image
             width={40}
             height={40}
-            src="/Icons (6).svg"
+            src="/menu/discoverFlavors/Icons (6).svg"
             alt="Icons"
             className=" absolute right-[54px] top-[163px] h-10 w-10 "
           />
           <Image
             width={40}
             height={40}
-            src="/Icons (7).svg"
+            src="/menu/discoverFlavors/Icons (7).svg"
             alt="Icons"
             className=" absolute right-0 bottom-0 h-10 w-10 "
           />

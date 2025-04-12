@@ -1,17 +1,17 @@
 import type { Category, RouteProps } from "./types"
 
 interface MenuItem {
-  title: string;
-  image: string;
-  items: FoodItem[];
+  title: string
+  image: string
+  items: FoodItem[]
 }
 
 interface FoodItem {
-  id: number;
-  name: string;
-  price: string;
-  content?: string;
-  description?: string;
+  id: number
+  name: string
+  price: string
+  content?: string
+  description?: string
 }
 
 export const routes: RouteProps[] = [
@@ -47,7 +47,10 @@ export const categories: Category[] = [
 
 export const sintPieters = [
   { day: "Monday", hours: "Closed (except on public holidays)" },
-  { day: "Tuesday to Thursday", hours: "12:00PM - 15:00PM and 18:00PM - 22:00PM" },
+  {
+    day: "Tuesday to Thursday",
+    hours: "12:00PM - 15:00PM and 18:00PM - 22:00PM",
+  },
   { day: "Friday", hours: "12:00PM -15:00PM and 18:00PM - 22:30PM" },
   { day: "Saturday", hours: "14:00PM - 22:30PM" },
   { day: "Sunday", hours: "14:00PM - 22:00PM" },
@@ -68,15 +71,15 @@ export const menu: MenuItem[] = [
         id: 1,
         name: "Miso soup",
         price: "17",
-        content: ""
+        content: "",
       },
       {
         id: 2,
         name: "Miso Soup avec Fruit de Mer",
         price: "17",
-        content: "Scampia, Moules, Crab"
-      }
-    ]
+        content: "Scampia, Moules, Crab",
+      },
+    ],
   },
 
   {
@@ -87,93 +90,93 @@ export const menu: MenuItem[] = [
         id: 1,
         name: "Takoyaki (5pcs) ",
         price: "9",
-        content: "Boulettes de Poulpe avec Bonite Séchée"
+        content: "Boulettes de Poulpe avec Bonite Séchée",
       },
       {
         id: 2,
         name: "Poulet Yakitori (3pcs)",
         price: "9.20",
-        content: "Brochettes de poulet a la sauce Japonaise "
+        content: "Brochettes de poulet a la sauce Japonaise ",
       },
       {
         id: 3,
         name: "Gyuniku",
         price: "12.80",
-        content: "Boeuf grillé a la Sauce Japonaise"
+        content: "Boeuf grillé a la Sauce Japonaise",
       },
       {
         id: 4,
         name: "Dynamite Crevettes (5pcs)",
         price: "10.50",
-        content: "Crevette frits a la sauce Japonaise"
+        content: "Crevette frits a la sauce Japonaise",
       },
       {
         id: 5,
         name: "Karaage (5pcs)",
         price: "8.50",
-        content: "Beignet de poulet avec sauce aigre-douce"
+        content: "Beignet de poulet avec sauce aigre-douce",
       },
       {
         id: 6,
         name: "Gyoza Ebi (5pcs)",
         price: "9.60",
-        content: "Raviolis Japonaise aux Crevettes "
+        content: "Raviolis Japonaise aux Crevettes ",
       },
       {
         id: 7,
         name: "Gyoza Poulet (5pcs)",
         price: "9.00",
-        content: "Raviolis Japonaise au Poulet "
+        content: "Raviolis Japonaise au Poulet ",
       },
       {
         id: 8,
         name: "Gyoza Végétarien (5pcs)",
         price: "8.50",
-        content: "Raviolis Japonaise Vegetarien "
+        content: "Raviolis Japonaise Vegetarien ",
       },
       {
         id: 9,
         name: "Edamame Spicy ",
         price: "7.20",
-        content: "Haricots Verte  avec sauce épicée"
+        content: "Haricots Verte  avec sauce épicée",
       },
       {
         id: 10,
         name: "Ebi Tempura (4pcs)",
         price: "8.50",
-        content: ""
+        content: "",
       },
       {
         id: 11,
         name: "Nems au Poulet (3pcs)",
         price: "7.20",
-        content: ""
+        content: "",
       },
       {
         id: 12,
         name: "Mini Loempia (8pcs)",
         price: "6.00",
-        content: "Rouleaux de printemps aux légumes "
+        content: "Rouleaux de printemps aux légumes ",
       },
       {
         id: 13,
         name: "Wakamé",
         price: "7.00",
-        content: "Algue Japonaise"
+        content: "Algue Japonaise",
       },
       {
         id: 14,
         name: "Loempia aux fruits de mer (6pcs) ",
         price: "8.00",
-        content: ""
+        content: "",
       },
       {
         id: 15,
         name: "Ika Fried (5pcs) ",
         price: "7.00",
-        content: "Calamar Frits"
+        content: "Calamar Frits",
       },
-    ]
+    ],
   },
   {
     title: "MAKI 6 PCS",
@@ -183,45 +186,47 @@ export const menu: MenuItem[] = [
         id: 1,
         name: "Maki Saumon",
         price: "6.20",
-        description: ""
+        description: "",
       },
       {
         id: 2,
         name: "Maki Thon Spicy Concombre (8pcs)",
         price: "9.80",
-        description: "Thon tartare, Concombre"
+        description: "Thon tartare, Concombre",
       },
       {
         id: 3,
         name: "Maki Concombre ",
         price: "5",
-        description: ""
+        description: "",
       },
       {
         id: 4,
         name: "Maki Avocat",
         price: "5",
-        description: ""
+        description: "",
       },
       {
         id: 5,
         name: "Futo Maki Végan (8pcs) ",
         price: "10.50",
-        description: "Japonaise Tofu Marine, Wakame, Concombre, Avocat, Radis Jaune"
+        description:
+          "Japonaise Tofu Marine, Wakame, Concombre, Avocat, Radis Jaune",
       },
       {
         id: 6,
         name: "Maki Saumon Avocat (8pcs)",
         price: "9.20",
-        description: ""
+        description: "",
       },
       {
         id: 7,
         name: "O'BAO Futo Maki (8pcs)",
         price: "12.00",
-        description: "Crab, Omelette Japonaise, Wakame, Masago, Concombre, Avocat, Radis Jaune, Mayo "
-      }
-    ]
+        description:
+          "Crab, Omelette Japonaise, Wakame, Masago, Concombre, Avocat, Radis Jaune, Mayo ",
+      },
+    ],
   },
 
   {
@@ -232,48 +237,46 @@ export const menu: MenuItem[] = [
         id: 1,
         name: "California",
         price: "9.20",
-        description: "Crab, Concombre, Avocat, Masago "
+        description: "Crab, Concombre, Avocat, Masago ",
       },
       {
         id: 2,
         name: "Crispy Ebi Tempura",
         price: "9.80",
-        description: "Tempura Scampis, Avocat, Oignon Frits"
+        description: "Tempura Scampis, Avocat, Oignon Frits",
       },
       {
         id: 3,
         name: "Crispy Chicken",
         price: "9.50",
-        description: "Tempura Poulet, Concombre, Oignon Frits"
+        description: "Tempura Poulet, Concombre, Oignon Frits",
       },
       {
         id: 4,
         name: "Philadelphia Roll",
         price: "9.20",
-        description: "Saumon, Avocat, Concombre, Fromages"
+        description: "Saumon, Avocat, Concombre, Fromages",
       },
       {
         id: 5,
         name: "California Saumon",
         price: "9.50",
-        description: "Saumon, Avocat, Concombre, Masago"
+        description: "Saumon, Avocat, Concombre, Masago",
       },
       {
         id: 6,
         name: "Thon Spicy ",
         price: "9.80",
-        description: "Thon tartare, Avocat, Concombre, Chili Pepper "
+        description: "Thon tartare, Avocat, Concombre, Chili Pepper ",
       },
       {
         id: 7,
         name: "Vegetarien",
         price: "9.00",
-        description: "Radis Jaune, Omelette Japonaise, Avocat, concombre"
-      }
-    ]
+        description: "Radis Jaune, Omelette Japonaise, Avocat, concombre",
+      },
+    ],
   },
-
-
 
   {
     title: "SASHIMI",
@@ -309,7 +312,7 @@ export const menu: MenuItem[] = [
         price: "21.50",
         description: "4pcs Saumon - 4pcs Thon - 4pcs Coquille Saint Jacques ",
       },
-    ]
+    ],
   },
 
   {
@@ -320,39 +323,45 @@ export const menu: MenuItem[] = [
         id: 1,
         name: "Chicken",
         price: "16.50",
-        description: "Tempura Poulet, Salade, Carotte, Concombre, Tomate, Avocat, Mangue, Radis, Sauce Japonaise, Maïs",
+        description:
+          "Tempura Poulet, Salade, Carotte, Concombre, Tomate, Avocat, Mangue, Radis, Sauce Japonaise, Maïs",
       },
       {
         id: 2,
         name: "Ebi Tempura",
         price: "17.50",
-        description: "Tempura Scampis, Salade, Carotte, Concombre, Tomate, Avocat, Mangue, Radis, Sauce Japonaise, Maïs",
+        description:
+          "Tempura Scampis, Salade, Carotte, Concombre, Tomate, Avocat, Mangue, Radis, Sauce Japonaise, Maïs",
       },
       {
         id: 3,
         name: "Sashimi",
         price: "18.00",
-        description: "Thon, Saumon, Salade, Carotte, Concombre, Tomate, Avocat, Mangue, Radis, Sauce Wasabi - citrus, Maïs",
+        description:
+          "Thon, Saumon, Salade, Carotte, Concombre, Tomate, Avocat, Mangue, Radis, Sauce Wasabi - citrus, Maïs",
       },
       {
         id: 4,
         name: "Wakame",
         price: "16.00",
-        description: "Algue Japonaise, Salade, Carrote, Concombre, Tomate, Avocat, Radis, Mangue, Sauce Japonaise, Maïs",
+        description:
+          "Algue Japonaise, Salade, Carrote, Concombre, Tomate, Avocat, Radis, Mangue, Sauce Japonaise, Maïs",
       },
       {
         id: 5,
         name: "California",
         price: "16.00",
-        description: "Crab, Masago, Salade, Carotte, Concombre, Tomate, Avocat, Mangue, Radis, Sauce Japonaise, Maïs",
+        description:
+          "Crab, Masago, Salade, Carotte, Concombre, Tomate, Avocat, Mangue, Radis, Sauce Japonaise, Maïs",
       },
       {
         id: 6,
         name: "Saumon Fume",
         price: "19.00",
-        description: "Saumon Fume, Salade, Carotte, Concombre, Tomate, Avocat, Mangue, Radis, Sauce Japonaise, Maïs",
+        description:
+          "Saumon Fume, Salade, Carotte, Concombre, Tomate, Avocat, Mangue, Radis, Sauce Japonaise, Maïs",
       },
-    ]
+    ],
   },
 
   {
@@ -363,13 +372,15 @@ export const menu: MenuItem[] = [
         id: 1,
         name: "Yakitori Poulet",
         price: "17.00",
-        description: "Morceau de Poulet Grille á la Sauce Japonaise avec Legumes",
+        description:
+          "Morceau de Poulet Grille á la Sauce Japonaise avec Legumes",
       },
       {
         id: 2,
         name: "Gyuniku",
         price: "19.00",
-        description: "Morceau de Boeuf Grille á la Sauce Japonaise avec Legumes",
+        description:
+          "Morceau de Boeuf Grille á la Sauce Japonaise avec Legumes",
       },
       {
         id: 3,
@@ -388,41 +399,46 @@ export const menu: MenuItem[] = [
         name: "Canard Laque",
         price: "19.00",
         description: "Canard Laque á la Sauce Hoisin Piquant",
-      }
-    ]
-
-  }
+      },
+    ],
+  },
 ]
 
 export const cateringMeal = [
   {
     title: "SEASONAL SALADS",
     image: "/catering/caters/salad.webp",
-    description: "Crisp, colorful, and refreshing—our salads showcase the best of each season with Japanese-inspired dressings and textures."
+    description:
+      "Crisp, colorful, and refreshing—our salads showcase the best of each season with Japanese-inspired dressings and textures.",
   },
   {
     title: "SASHIMI",
     image: "/catering/caters/sashimi.webp",
-    description: "Pure, elegant cuts of the freshest fish, served with precision and care."
+    description:
+      "Pure, elegant cuts of the freshest fish, served with precision and care.",
   },
   {
     title: "SUSHI",
     image: "/catering/caters/sushi.webp",
-    description: "Handcrafted rolls and nigiri that blend tradition with creativity in every bite."
+    description:
+      "Handcrafted rolls and nigiri that blend tradition with creativity in every bite.",
   },
   {
     title: "VEGAN SUSHI & BOWLS",
     image: "/catering/caters/vegan.webp",
-    description: "Plant-based, flavor-packed, and beautifully balanced—crafted to satisfy with zero compromise on taste."
+    description:
+      "Plant-based, flavor-packed, and beautifully balanced—crafted to satisfy with zero compromise on taste.",
   },
   {
     title: "VEGETARIAN SALADS, SUSHI & BOWLS",
     image: "/catering/caters/vegetarian.webp",
-    description: "A vibrant mix of fresh vegetables, grains, and Japanese flavors designed for clean eating and full satisfaction."
+    description:
+      "A vibrant mix of fresh vegetables, grains, and Japanese flavors designed for clean eating and full satisfaction.",
   },
   {
     title: "DONBURI",
     image: "/catering/caters/donburi.webp",
-    description: "Hearty, flavorful, and satisfying—our donburi bowls are a true taste of Japan."
+    description:
+      "Hearty, flavorful, and satisfying—our donburi bowls are a true taste of Japan.",
   },
 ]

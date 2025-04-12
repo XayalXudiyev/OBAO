@@ -8,7 +8,7 @@ const ReservationsPage = () => {
     <div className="relative flex bg-[#1C1C1C] text-white h-screen items-center justify-center">
       <div className="absolute top-0 left-0  w-full h-full bg-[url('/cropped.png')] bg-center bg-[length:120%_auto]  bg-repeat-y opacity-10 z-10" />
       <Image
-        src="/reservationleft.svg"
+        src="/miniPhotos/reservationleft.svg"
         alt="hero"
         width={1000}
         height={1000}
@@ -23,9 +23,14 @@ const ReservationsPage = () => {
             BOOK A <span className="text-[#FB4444]">TABLE</span>
           </h1>
           <p className="my-10 leading-8 text-[26px]">
-            Enjoy an unforgettable dining experience at O'BAO, where flavors <br /> come alive in every bite. Whether you're planning a cozy dinner for <br /> two, a family gathering, or a special celebration, we’re here to make it <br /> memorable.          </p>
+            Enjoy an unforgettable dining experience at O'BAO, where flavors{" "}
+            <br /> come alive in every bite. Whether you're planning a cozy
+            dinner for <br /> two, a family gathering, or a special celebration,
+            we’re here to make it <br /> memorable.{" "}
+          </p>
           <p className="leading-8 text-[26px]">
-            Reserve your table in just a few clicks and secure your spot for an <br /> exceptional  culinary journey.
+            Reserve your table in just a few clicks and secure your spot for an{" "}
+            <br /> exceptional culinary journey.
           </p>
         </div>
 

@@ -9,7 +9,7 @@ const Logo = () => {
   const router = useRouter()
   return (
     <Button
-      className="flex items-center gap-1 lg:gap-5  p-0 m-0 bg-transparent hover:bg-transparent border-none cursor-pointer "
+      className="flex items-center gap-1 lg:gap-3  p-0 m-0 bg-transparent hover:bg-transparent border-none cursor-pointer "
       onClick={() => router.push("/")}
       type="button"
     >
@@ -17,11 +17,11 @@ const Logo = () => {
         O’BAO
       </span>
       <Image
-        src="/logo.svg"
+        src="/logo.webp"
         alt="logo"
-        width={1}
-        height={1}
-        className="w-[40px] lg:w-[50px] ml-1 sm:w-12"
+        width={10000}
+        height={10000}
+        className="w-20"
       />
     </Button>
   )
