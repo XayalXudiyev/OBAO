@@ -1,9 +1,11 @@
 "use client"
 import { Button } from "@/components/ui/button"
+import { useTranslations } from "next-intl"
 import Image from "next/image"
 import React from "react"
 
 const OurMenuComponent = () => {
+  const t = useTranslations("home")
   return (
     <div className="h-[25.7rem] w-full mx-auto relative flex flex-col justify-center items-center">
       <div>
@@ -24,11 +26,10 @@ const OurMenuComponent = () => {
       </div>
       <div className="text-center w-4/5 space-y-10 md:mt-24">
         <h1 className="text-[#FB4444] text-3xl md:text-4xl font-bold font-avenirMedium4 text-center">
-          OUR MENU
+          {t("OurMenu")}
         </h1>
         <p className="text-white text-xl md:text-2xl leading-7 font-avenirRoman3">
-          Savor the authentic flavors of Japan, from mouthwatering street bites
-          to refreshing drinks, crafted with care.
+          {t("OurMenuText")}
         </p>
         <div className="flex gap-4 justify-center gap-x-8">
           <Button
@@ -42,7 +43,7 @@ const OurMenuComponent = () => {
               )
             }
           >
-            View Our Menu
+            {t("ViewOurMenu")}
           </Button>
         </div>
       </div>

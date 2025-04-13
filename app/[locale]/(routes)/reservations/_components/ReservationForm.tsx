@@ -18,15 +18,17 @@ import {
 import { Separator } from "@/components/ui/separator"
 import type { ReservationFormData } from "@/constans/types"
 import { useToast } from "@/hooks/use-toast"
-import axios from "axios"
 import { format } from "date-fns"
 import { Calendar as CalendarIcon } from "lucide-react"
+import { useTranslations } from "next-intl"
+import Image from "next/image"
 import { useState } from "react"
 import { Controller, FormProvider, useForm } from "react-hook-form"
 import type { SubmitHandler } from "react-hook-form"
 import ContactForm from "./ContactForm"
 
 const ReservationForm = () => {
+  const t = useTranslations("reservations")
   const [date, setDate] = useState<string>("")
   const [selectedTime, setSelectedTime] = useState<string>("")
   const [adultCount, setAdultCount] = useState<number>(0)
@@ -83,28 +85,49 @@ const ReservationForm = () => {
         sheetName: "Reservations",
       })
       toast({
-        title: "Reservation Confirmed",
-        description:
-          "Your table is booked for Friday, December 8, 2023, at 7:00 PM.",
+        description: (
+          <div className="flex items-center justify-between rounded-none bg-[#DBC3A3] pr-[2px] ">
+            <div className="flex items-center ml-3 gap-2  py-2">
+              <Image
+                src="/icons/success.svg"
+                alt="check"
+                width={15}
+                height={15}
+              />
+              <span className="text-black">{t("ReservationSuccess")}</span>
+            </div>
+            <button
+              onClick={() => toast.dismiss()}
+              className="text-black font-bold mr-3 ml-32 pl-5"
+            >
+              ✕
+            </button>
+          </div>
+        ),
+        className:
+          "fixed bottom-4 left-1/2 transform -translate-x-1/2 w-auto max-w-md border p-0 rounded-none m-0 border-[#A68A5E] shadow-md",
+        duration: 3000,
       })
     } catch (error) {
       console.error("Error submitting form:", error)
     }
   }
   return (
-    <div className=" border-2  border-[#D2B48C]  lg:min-w-[500px] py-14 px-14">
+    <div className=" border-2  border-[#D2B48C]   py-14 px-14">
       <h3 className="text-2xl font-bold  text-center font-avenirHeavy5">
-        Find a table
+        {t("FindATable")}
       </h3>
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 min-w-[350px]">
         <FormProvider {...{ control, handleSubmit, setValue }}>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="flex flex-col space-y-7   my-6  w-full">
               {/* adult */}
               <div className="flex flex-col gap-1">
                 <div className="flex items-center justify-between gap-2">
-                  <span>{adultCount} adult </span>
+                  <span>
+                    {adultCount} {t("Adult")}{" "}
+                  </span>
                   <div className="flex items-center gap-5 text-3xl">
                     <Button
                       type="button"
@@ -132,7 +155,9 @@ const ReservationForm = () => {
               {/* child */}
               <div className="flex flex-col gap-1">
                 <div className="flex items-center justify-between gap-2">
-                  <span>{childCount} child</span>
+                  <span>
+                    {childCount} {t("Child")}
+                  </span>
                   <div className="flex items-center gap-5 text-3xl">
                     <Button
                       type="button"
@@ -172,7 +197,7 @@ const ReservationForm = () => {
                         }}
                       >
                         <SelectTrigger className="flex justify-between items-center bg-transparent border-none outline-none ring-0 focus:ring-0 focus:ring-offset-0 gap-x-2 text-[15px] w-full p-0 ">
-                          <span>{selectedTime || "Select time"}</span>
+                          <span>{selectedTime || t("SelectTime")}</span>
                         </SelectTrigger>
                         <SelectContent className=" h-56 overflow-y-auto border border-[#D2B48C] rounded-none shadow-md w-full">
                           <SelectGroup>
@@ -185,7 +210,7 @@ const ReservationForm = () => {
                             <SelectItem value="7:30 AM" disabled>
                               <div className="flex justify-between w-64">
                                 <span>7:30 AM </span>
-                                <span>Not available</span>
+                                <span>{t("NotAvailable")}</span>
                               </div>
                             </SelectItem>
                           </SelectGroup>
@@ -207,7 +232,7 @@ const ReservationForm = () => {
                         className="flex justify-between w-full p-0 text-base text-white bg-transparent border-none hover:bg-transparent hover:text-white"
                       >
                         <span>
-                          {date ? format(date, "d MMM yyy") : "Select date"}
+                          {date ? format(date, "d MMM yyy") : t("SelectDate")}
                         </span>
                         <span>
                           <CalendarIcon />

@@ -1,7 +1,9 @@
 import { motion } from "framer-motion"
+import { useTranslations } from "next-intl"
 import Image from "next/image"
 
 const DiscoverFlavors = () => {
+  const t = useTranslations("foodMenu")
   return (
     <div className=" bg-transparent mt-40">
       <motion.div
@@ -69,7 +71,8 @@ const DiscoverFlavors = () => {
           />
         </div>
         <h3 className=" font-semibold text-[42px] pt-32 px-60">
-          DISCOVER OUR <span className=" text-[#FB4444]">FLAVORS</span>
+          {t("DiscoverOur")}{" "}
+          <span className=" text-[#FB4444]">{t("Flavors")}</span>
         </h3>
       </motion.div>
 
@@ -80,10 +83,8 @@ const DiscoverFlavors = () => {
         transition={{ duration: 1 }}
       >
         <p className=" w-[764px] text-[20px] text-center font-semibold font-avenirHeavy5 tracking-[0.15%] leading-6">
-          Explore a variety of traditional Japanese street food, crafted with
-          authentic ingredients and bold flavors. Whether you crave savory
-          dishes or light snacks, our menu has something to satisfy every
-          palate. Indulge in the taste of Japan, right at your table.
+          {" "}
+          {t("FlavorsText")}
         </p>
       </motion.div>
     </div>

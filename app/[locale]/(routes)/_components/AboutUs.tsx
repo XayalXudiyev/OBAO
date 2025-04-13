@@ -1,11 +1,13 @@
 "use client"
 
 import { motion, useAnimation } from "framer-motion"
+import { useTranslations } from "next-intl"
 import Image from "next/image"
 import React, { useEffect } from "react"
 import { useInView } from "react-intersection-observer"
 
 const AboutUsComponent = () => {
+  const t = useTranslations("home")
   const controlsLeft = useAnimation()
   const controlsRight = useAnimation()
   const controlsTop = useAnimation()
@@ -49,16 +51,10 @@ const AboutUsComponent = () => {
       >
         <div className="head w-4/5 space-y-10 text-center">
           <div className="text-3xl font-bold md:text-4xl font-avenirMedium4">
-            ABOUT US
+            {t("AboutUs")}
           </div>
           <p className="text-xl leading-7 md:text-2xl font-avenirRoman3">
-            Welcome to O'BAO, where Japanese and Chinese-inspired fusion cuisine
-            meets modern creativity in the heart of Brussels. Our passionate
-            head chef combines traditional techniques with innovative twists,
-            crafting dishes that celebrate the vibrant flavors of East Asia.
-            Committed to sustainability, we source fresh ingredients from local
-            suppliers and embrace zero-waste practices to minimize our
-            environmental impact.
+            {t("AboutUsText")}
           </p>
         </div>
       </motion.div>

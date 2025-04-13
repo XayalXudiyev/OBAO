@@ -5,9 +5,7 @@ import OurMenuComponent from "../_components/OurMenu"
 import OurServices from "../_components/OurServices"
 import RestaurantsSection from "../_components/Restaurants"
 
-import { useTranslations } from "next-intl"
 const Home = () => {
-  const t = useTranslations("home")
   return (
     <div className="w-full text-white mt-[90px]">
       <HeroComponent />

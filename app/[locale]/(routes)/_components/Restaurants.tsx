@@ -1,19 +1,36 @@
 "use client"
-import { schuman, sintPieters } from "@/constans"
 import { motion } from "framer-motion"
+import { useTranslations } from "next-intl"
 import Image from "next/image"
 import { useMediaQuery } from "react-responsive"
 const RestaurantsSection = () => {
+  const t = useTranslations("home")
   const isMobile = useMediaQuery({ query: "(max-width: 640px)" })
   const isTablet = useMediaQuery({ query: "(max-width: 1024px)" })
 
+  const schuman = [
+    { day: t("SchumanOpeningHoursText1") },
+    { day: t("SchumanOpeningHoursText2") },
+    { day: t("SchumanOpeningHoursText3") },
+  ]
+
+  const sintPieters = [
+    { day: t("LeeuwOpeningHoursText1") },
+    {
+      day: t("LeeuwOpeningHoursText2"),
+      hours: t("LeeuwOpeningHoursText3"),
+    },
+    { day: t("LeeuwOpeningHoursText3") },
+    { day: t("LeeuwOpeningHoursText4") },
+    { day: t("LeeuwOpeningHoursText5") },
+  ]
   return (
     <div
       id="restaurants"
       className="  w-full mx-auto relative flex flex-col justify-center items-center px-[72px]"
     >
       <h1 className="text-[#FB4444] text-4xl font-bold font-avenirMedium4 text-center">
-        RESTAURANTS
+        {t("Restaurants")}
       </h1>
 
       {/* Sint-Schuman */}
@@ -57,12 +74,12 @@ const RestaurantsSection = () => {
           <h1 className="text-3xl  mb-5">O’BAO Schuman</h1>
 
           <div className="mb-4">
-            <h3 className="text-lg mb-1">ADDRESS</h3>
-            <p className="text-sm">Rue Stevin 110, B-1000 Brussels</p>
+            <h3 className="text-lg mb-1">{t("Address")}</h3>
+            <p className="text-sm">{t("SchumanAddressText")}</p>
           </div>
 
           <div className="mb-4">
-            <h3 className="text-lg mb-1">OPENING HOURS</h3>
+            <h3 className="text-lg mb-1">{t("OpeningHours")}</h3>
             {schuman.map((item, index) => (
               <p key={index} className="text-sm mb-1">
                 {item.day} - {item.hours}
@@ -71,9 +88,9 @@ const RestaurantsSection = () => {
           </div>
 
           <div className="">
-            <h3 className="text-lg mb-1">CONTACT</h3>
+            <h3 className="text-lg mb-1">{t("Contact")}</h3>
             <p className="text-sm mb-1">events@obao-catering.be</p>
-            <p className="text-sm">Contact number: 0470 46 75 57</p>
+            <p className="text-sm">{t("ContactNumber")}: 0470 46 75 57</p>
           </div>
         </motion.div>
       </div>
@@ -97,14 +114,12 @@ const RestaurantsSection = () => {
           <h1 className="text-3xl  mb-5">O’BAO Sint-Pieters-Leeuw</h1>
 
           <div className="mb-4">
-            <h3 className="text-lg mb-1">ADDRESS</h3>
-            <p className="text-sm">
-              Bergensesteenweg 106b, 1600 Sint-Pieters-Leeuw
-            </p>
+            <h3 className="text-lg mb-1">{t("Address")}</h3>
+            <p className="text-sm">{t("LeeuwAddressText")}</p>
           </div>
 
           <div className="mb-4">
-            <h3 className="text-lg mb-1">OPENING HOURS</h3>
+            <h3 className="text-lg mb-1">{t("OpeningHours")}</h3>
             {sintPieters.map((item, index) => (
               <p key={index} className="text-sm mb-1">
                 {item.day} - {item.hours}
@@ -113,9 +128,9 @@ const RestaurantsSection = () => {
           </div>
 
           <div className="">
-            <h3 className="text-lg mb-1">CONTACT</h3>
+            <h3 className="text-lg mb-1">{t("Contact")}</h3>
             <p className="text-sm mb-1">events@obao-catering.be</p>
-            <p className="text-sm">Contact number: 0494 53 90 41</p>
+            <p className="text-sm">{t("ContactNumber")}: 0494 53 90 41</p>
           </div>
         </motion.div>
         <motion.div

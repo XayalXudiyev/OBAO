@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
 import React, { useState } from "react"
 import { useMediaQuery } from "react-responsive"
-import DiscoverFlavors from "./_compnents/DiscoverFlavors"
+import DiscoverFlavors from "./_components/DiscoverFlavors"
 
 import {
   Carousel,
@@ -15,9 +15,11 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import { useTranslations } from "next-intl"
 import Image from "next/image"
 
 const FoodMenuPage = () => {
+  const t = useTranslations("foodMenu")
   const [clicked, setClicked] = useState<number>(1)
 
   const handleClick = (id: number) => {
@@ -38,7 +40,7 @@ const FoodMenuPage = () => {
     <div className="relative flex bg-[#1C1C1C]">
       <div className="absolute top-0 left-0 w-full h-full bg-[url('/cropped.png')] bg-center bg-[length:120%_auto] bg-repeat-y opacity-10 z-10" />
       <span className="absolute top-[6.5rem] left-[72px] opacity-80 text-white text-base font-avenirMedium4">
-        Menu
+        {t("Menu")}
       </span>
       <div className="z-20 text-white flex flex-col justify-center items-center w-full relative">
         <DiscoverFlavors />
@@ -59,7 +61,7 @@ const FoodMenuPage = () => {
 
         <div className="w-full">
           <h2 className="text-3xl md:text-4xl font-bold font-avenirMedium4 text-center mt-5 md:mt-20 md:mb-10">
-            OUR OFFERINGS
+            {t("OurOfferings")}
           </h2>
 
           {menu.map((item, index) => {
@@ -193,7 +195,7 @@ const FoodMenuPage = () => {
                             </CarouselItem>
                           ))}
                         </CarouselContent>
-                        <div className="">
+                        <div>
                           <CarouselPrevious className="bg-transparent border-none text-red-500 hover:bg-transparent hover:text-red-500 hover:border-none [&_svg]:w-16 [&_svg]:h-16 " />
                           <CarouselNext className="absolute -right-16 bg-transparent border-none text-red-500 hover:bg-transparent hover:text-red-500 hover:border-none [&_svg]:w-16 [&_svg]:h-16" />
                         </div>
