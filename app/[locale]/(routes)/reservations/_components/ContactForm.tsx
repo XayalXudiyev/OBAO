@@ -10,11 +10,12 @@ import {
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import type { FormData } from "@/constans/types"
+import { useTranslations } from "next-intl"
 import React from "react"
 import { useFormContext } from "react-hook-form"
 import { Separator } from "../../../../../components/ui/separator"
-
 const ContactForm = () => {
+  const t = useTranslations("reservations")
   return (
     <div className="flex justify-center w-full">
       <Dialog>
@@ -23,7 +24,7 @@ const ContactForm = () => {
             size="lg"
             className="bg-[#D2B48C] px-10 text-base font-avenirMedium4 text-black rounded-none mt-10 hover:bg-[#D2B48C]/80"
           >
-            Reserve Now
+            {t("ReserveNow")}
           </Button>
         </DialogTrigger>
 
@@ -84,7 +85,7 @@ const ContactForm = () => {
                   size="sm"
                   className="bg-[#D2B48C] z-20 px-5 font-avenirMedium4 text-black rounded-none  hover:bg-[#D2B48C]/80"
                 >
-                  Reserve Now
+                  {t("ReserveNow")}
                 </Button>
               </div>
 

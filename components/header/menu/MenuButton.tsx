@@ -1,13 +1,20 @@
 "use client"
-import { routes } from "@/constans"
+import type { RouteProps } from "@/constans/types"
 import { AnimatePresence, motion } from "framer-motion"
+import { useTranslations } from "next-intl"
 import Image from "next/image"
 import Link from "next/link"
 import React, { useState } from "react"
-
 const MenuButton = () => {
+  const t = useTranslations("navigation")
   const [isOpen, setIsOpen] = useState(false)
-
+  const routes: RouteProps[] = [
+    { id: 0, href: "/", title: t("Home") },
+    { id: 1, href: "/menu", title: t("Menu") },
+    { id: 2, href: "/#about-us", title: t("AboutUs") },
+    { id: 3, href: "/#restaurants", title: t("Restaurants") },
+    { id: 4, href: "/catering", title: t("Catering") },
+  ]
   return (
     <div
       className="cursor-pointer flex items-center h-[60px] w-[60px] justify-center select-none"
@@ -27,7 +34,7 @@ const MenuButton = () => {
             <div className="flex flex-col items-center justify-center min-h-screen text-white">
               <div className="w-full min-h-screen bg-[#1C1C1C] opacity-90 flex flex-col items-center justify-center">
                 <h2 className="text-base text-center tracking-widest mb-20">
-                  NAVIGATION
+                  {t("Navigation")}
                 </h2>
                 {routes.map((route) => (
                   <Link

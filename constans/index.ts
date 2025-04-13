@@ -14,14 +14,6 @@ interface FoodItem {
   description?: string
 }
 
-export const routes: RouteProps[] = [
-  { id: 0, href: "/", title: "Home" },
-  { id: 1, href: "/menu", title: "Menu" },
-  { id: 2, href: "/#about-us", title: "About Us" },
-  { id: 3, href: "/#restaurants", title: "Restaurants" },
-  { id: 4, href: "/catering", title: "Catering" },
-]
-
 export const categories: Category[] = [
   {
     id: 1,
@@ -43,23 +35,6 @@ export const categories: Category[] = [
     id: 5,
     title: "Non gluten",
   },
-]
-
-export const sintPieters = [
-  { day: "Monday", hours: "Closed (except on public holidays)" },
-  {
-    day: "Tuesday to Thursday",
-    hours: "12:00PM - 15:00PM and 18:00PM - 22:00PM",
-  },
-  { day: "Friday", hours: "12:00PM -15:00PM and 18:00PM - 22:30PM" },
-  { day: "Saturday", hours: "14:00PM - 22:30PM" },
-  { day: "Sunday", hours: "14:00PM - 22:00PM" },
-]
-
-export const schuman = [
-  { day: "Monday to Friday", hours: "12:00PM - 15:30PM and 18:00PM - 22:00PM" },
-  { day: "Saturday", hours: "14:00PM - 21:30PM" },
-  { day: "Sunday", hours: "Closed" },
 ]
 
 export const menu: MenuItem[] = [

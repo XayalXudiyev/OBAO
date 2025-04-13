@@ -2,11 +2,11 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import type { FormData } from "@/constans"
+import type { FormData } from "@/constans/types"
 import axios from "axios"
+import { useTranslations } from "next-intl"
 import type { SubmitHandler } from "react-hook-form"
 import { useForm } from "react-hook-form"
-
 const CateringForm = () => {
   const {
     register,
@@ -14,7 +14,7 @@ const CateringForm = () => {
     formState: { errors },
     reset,
   } = useForm<FormData>()
-
+  const t = useTranslations("catering")
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     try {
       const response = await axios.post("/api/sheets", {
@@ -41,12 +41,12 @@ const CateringForm = () => {
               htmlFor="firstName"
               className="mb-2 text-sm font-medium text-white"
             >
-              * First name
+              {t("FirstName")}
             </label>
             <Input
               id="firstName"
               {...register("firstName", { required: "First name is required" })}
-              placeholder="Name"
+              placeholder={t("EnterFirstName")}
               className="text-[#4A4A4A] bg-transparent border-[#966F3B] rounded-none outline-none ring-0 focus-visible:ring-0 focus:border-[#966F3B]"
             />
             {errors.firstName && (
@@ -59,12 +59,12 @@ const CateringForm = () => {
               htmlFor="lastName"
               className="mb-2 text-sm font-medium text-white"
             >
-              * Last name
+              {t("LastName")}
             </label>
             <Input
               id="lastName"
               {...register("lastName", { required: "Last name is required" })}
-              placeholder="Last name"
+              placeholder={t("EnterLastName")}
               className="text-[#4A4A4A] bg-transparent border-[#966F3B] rounded-none outline-none ring-0 focus-visible:ring-0 focus:border-[#966F3B]"
             />
             {errors.lastName && (
@@ -77,13 +77,13 @@ const CateringForm = () => {
               htmlFor="email"
               className="mb-2 text-sm font-medium text-white"
             >
-              * Email
+              {t("Email")}
             </label>
             <Input
               id="email"
               type="email"
               {...register("email", { required: "Email is required" })}
-              placeholder="Email"
+              placeholder={t("EnterEmail")}
               className="text-[#4A4A4A] bg-transparent border-[#966F3B] rounded-none outline-none ring-0 focus-visible:ring-0 focus:border-[#966F3B]"
             />
             {errors.email && (
@@ -96,14 +96,14 @@ const CateringForm = () => {
               htmlFor="phone"
               className="mb-2 text-sm font-medium text-white"
             >
-              * Phone number
+              {t("PhoneNumber")}
             </label>
             <Input
               id="phone"
               {...register("phone", {
                 required: "Phone number is required",
               })}
-              placeholder="Phone number"
+              placeholder={t("PhoneNumber")}
               className="text-[#4A4A4A] bg-transparent border-[#966F3B] rounded-none outline-none ring-0 focus-visible:ring-0 focus:border-[#966F3B]"
             />
             {errors.phone && (
@@ -117,12 +117,12 @@ const CateringForm = () => {
             htmlFor="message"
             className="mb-2 text-sm font-medium text-white"
           >
-            Your message
+            {t("YourMessage")}
           </label>
           <Textarea
             id="message"
             {...register("message")}
-            placeholder="Type your message here..."
+            placeholder={t("TypeYourMessage")}
             className="text-[#4A4A4A] bg-transparent border-[#966F3B] rounded-none outline-none ring-0 focus-visible:ring-0 focus:border-[#966F3B]"
           />
         </div>
@@ -133,7 +133,7 @@ const CateringForm = () => {
             size="sm"
             className="bg-[#D2B48C] px-5 text-black rounded-none hover:bg-[#D2B48C]/80 my-5"
           >
-            Get in touch
+            {t("GetInTouch")}
           </Button>
         </div>
       </form>
