@@ -206,7 +206,7 @@ export const menu: MenuItem[] = [
 
   {
     title: "URAMAKI 8 PCS",
-    image: "/menu/MAKI.webp",
+    image: "/menu/URAMAKI6.webp",
     items: [
       {
         id: 1,

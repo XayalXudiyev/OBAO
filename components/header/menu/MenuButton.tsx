@@ -34,14 +34,14 @@ const MenuButton = () => {
           >
             <div className="flex flex-col items-center justify-center min-h-screen text-white">
               <div className="w-full min-h-screen bg-[#1C1C1C] opacity-90 flex flex-col items-center justify-center">
-                <h2 className="text-base text-center tracking-widest mb-20">
+                <h2 className="text-base text-center tracking-[0.11em] mb-20">
                   {t("Navigation")}
                 </h2>
                 {routes.map((route) => (
                   <Link
                     href={route.href}
                     key={route.title}
-                    className="text-white text-3xl uppercase font-avenirMedium min-h-16 tracking-tight hover:text-[#FB4444] transition-all duration-300"
+                    className="text-white text-3xl uppercase font-avenirMedium min-h-16 tracking-tight hover:text-[#DBC3A3] transition-all duration-300"
                     onClick={() => setIsOpen(false)}
                   >
                     {route.title}

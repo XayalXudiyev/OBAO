@@ -4,8 +4,11 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
+import { ChevronRight } from "lucide-react"
 import Image from "next/image"
 
 interface CarouselComponentProps {
@@ -65,6 +68,17 @@ const CarouselComponent = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
+
+          <div className="absolute bg-yellow-500 w-0 -bottom-7 right-20">
+            <CarouselNext
+              className="bg-transparent border-none pr-5 text-[#FB4444] hover:bg-transparent hover:text-[#FB4444] size-10"
+              size={"lg"}
+            />
+            <CarouselPrevious
+              className="bg-transparent border-none text-[#FB4444] hover:bg-transparent hover:text-[#FB4444] size-10"
+              size={"lg"}
+            />
+          </div>
         </Carousel>
       </div>
     </>
