@@ -103,7 +103,7 @@ const RestaurantsSection = () => {
           initial={
             isMobile || isTablet
               ? { y: 250, opacity: 0 }
-              : { x: 300, opacity: 0 }
+              : { x: -300, opacity: 0 }
           }
           whileInView={
             isMobile || isTablet ? { y: 0, opacity: 1 } : { x: 0, opacity: 1 }
