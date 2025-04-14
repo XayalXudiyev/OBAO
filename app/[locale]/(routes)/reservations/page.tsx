@@ -14,13 +14,13 @@ const ReservationsPage = () => {
         alt="hero"
         width={1000}
         height={1000}
-        className="absolute w-[110px] -bottom-14 left-0"
+        className="absolute w-1/4 lg:w-[110px] -bottom-80 lg:-bottom-14 left-0"
       />
-      <span className="absolute top-[6.5rem] left-[72px] opacity-80 text-white text-base font-avenirMedium4">
+      <span className="absolute top-[6.5rem] left-5 lg:left-[72px] opacity-80 text-white text-base font-avenirMedium4">
         {t("Reservations")}
       </span>
-      <div className="w-full px-[72px]  flex mt-32 gap-20">
-        <div className=" text-xl  text-start font-avenirRoman3 ">
+      <div className="w-full px-5 lg:px-[72px]  flex flex-col lg:flex-row mt-96 lg:mt-32 gap-20">
+        <div className=" text-xl  text-justify lg:text-start font-avenirRoman3 ">
           <h1 className="text-[40px] font-avenirMedium4 mt-14">
             {t("BookA")} <span className="text-[#FB4444]">{t("Table")}</span>
           </h1>

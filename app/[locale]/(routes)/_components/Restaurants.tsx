@@ -27,15 +27,15 @@ const RestaurantsSection = () => {
   return (
     <div
       id="restaurants"
-      className="  w-full mx-auto relative flex flex-col justify-center items-center px-[72px]"
+      className="  w-full mx-auto relative flex flex-col justify-center items-center lg:px-[72px]"
     >
-      <h1 className="text-[#FB4444] text-4xl font-bold font-avenirMedium4 text-center">
+      <h1 className="text-[#FB4444] text-4xl mt-5 lg:mt-0 lg:text-3xl font-bold font-avenirMedium4 text-center">
         {t("Restaurants")}
       </h1>
 
       {/* Sint-Schuman */}
 
-      <div className="flex w-full  my-12">
+      <div className="lg:flex w-full my-5 lg:my-12">
         <motion.div
           initial={
             isMobile || isTablet
@@ -47,19 +47,19 @@ const RestaurantsSection = () => {
           }
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="w-3/5  h-auto"
+          className="lg:w-3/5  h-auto"
         >
           <Image
             src="/restaurants/schuman.webp"
             alt="restaurant"
             width={719}
             height={465}
-            className=" pr-[4rem] h-auto"
+            className=" lg:pr-[4rem] h-auto"
           />
         </motion.div>
 
         <motion.div
-          className=" h-full text-center text-white w-2/5 "
+          className=" h-full text-center mt-5 lg:mt-0 text-white lg:w-2/5 "
           initial={
             isMobile || isTablet
               ? { y: 250, opacity: 0 }
@@ -97,13 +97,13 @@ const RestaurantsSection = () => {
 
       {/* Sint-Pieters-Leeuw */}
 
-      <div className="flex w-full  mt-12 mb-20">
+      <div className="flex lg:flex-row flex-col-reverse w-full my-5 lg:my-12">
         <motion.div
-          className=" h-full text-center text-white w-2/5 "
+          className=" h-full text-center mt-5 lg:mt-0 text-white lg:w-2/5 "
           initial={
             isMobile || isTablet
               ? { y: 250, opacity: 0 }
-              : { x: -300, opacity: 0 }
+              : { x: 300, opacity: 0 }
           }
           whileInView={
             isMobile || isTablet ? { y: 0, opacity: 1 } : { x: 0, opacity: 1 }
@@ -134,7 +134,7 @@ const RestaurantsSection = () => {
           </div>
         </motion.div>
         <motion.div
-          className="w-full md:w-2/3 h-auto"
+          className="w-full lg:w-2/3 h-auto"
           initial={
             isMobile || isTablet
               ? { y: 250, opacity: 0 }
@@ -151,7 +151,7 @@ const RestaurantsSection = () => {
             alt="restaurant"
             width={500}
             height={500}
-            className="w-full h-auto pl-20"
+            className="w-full h-auto lg:pl-20"
           />
         </motion.div>
       </div>

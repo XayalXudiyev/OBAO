@@ -12,23 +12,25 @@ const CateringPage = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 640px)" })
   const isTablet = useMediaQuery({ query: "(max-width: 1024px)" })
   const t = useTranslations("catering")
+
+  
   return (
     <div className="h-full bg-white relative">
       <Image
         src="/catering/cateringCover.webp"
         alt="Catering"
-        className="w-full h-screen object-center mt-20"
+        className="w-full h-[28rem] lg:h-screen object-cover "
         width={10000}
         height={10000}
       />
       <span className="absolute top-[1.5rem] left-[72px] opacity-80 text-white text-base font-avenirMedium4">
         {t("Catering")}
       </span>
-      <div className="flex flex-col items-center px-5 py-10 space-y-5 text-center md:py-16 md:px-0">
+      <div className="flex flex-col items-center lg:px-5 lg:py-10 space-y-5 text-center md:py-16 md:px-0">
         {" "}
       </div>
 
-      <div className="w-full bg-[#D2B48C] py-16  flex lg:pr-[72px] ">
+      <div className="w-full bg-[#D2B48C] py-16  flex flex-col lg:flex-row lg:pr-[72px]  ">
         <motion.div
           initial={
             isMobile || isTablet
@@ -40,7 +42,7 @@ const CateringPage = () => {
           }
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="w-full flex flex-col justify-center space-y-2 bg-white  pr-12 pl-[72px] will-change-[transform,opacity]"
+          className="w-full flex flex-col justify-center space-y-2 bg-white  pr-12 pl-5 lg:pl-[72px] will-change-[transform,opacity]"
         >
           <div className="flex flex-col justify-center h-full space-y-3  text-center  py-8  md:bg-white md:text-start   ">
             <p className="text-base font-proximanova4 mt-4 lg:mt-0">
@@ -85,7 +87,7 @@ const CateringPage = () => {
         {" "}
       </div>
 
-      <div className="w-full bg-[#D2B48C] py-16  flex lg:pr-[72px] ">
+      <div className="w-full bg-[#D2B48C] py-16  flex pr-[72px] ">
         <motion.div
           initial={
             isMobile || isTablet
