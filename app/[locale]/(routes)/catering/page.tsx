@@ -13,7 +13,7 @@ const CateringPage = () => {
   const isTablet = useMediaQuery({ query: "(max-width: 1024px)" })
   const t = useTranslations("catering")
 
-  
+
   return (
     <div className="h-full bg-white relative">
       <Image
@@ -42,7 +42,7 @@ const CateringPage = () => {
           }
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="w-full flex flex-col justify-center space-y-2 bg-white  pr-12 pl-5 lg:pl-[72px] will-change-[transform,opacity]"
+          className="w-full flex flex-col justify-center space-y-2 bg-white pr-5 lg:pr-12 pl-5 lg:pl-[72px] will-change-[transform,opacity]"
         >
           <div className="flex flex-col justify-center h-full space-y-3  text-center  py-8  md:bg-white md:text-start   ">
             <p className="text-base font-proximanova4 mt-4 lg:mt-0">
@@ -76,18 +76,18 @@ const CateringPage = () => {
           <Image
             src="/catering/cateringRoutes.webp"
             alt="Catering"
-            className="w-[700px] h-full "
+            className="w-full lg:w-[700px] h-full "
             width={10000}
             height={10000}
           />
         </motion.div>
       </div>
 
-      <div className="flex flex-col items-center px-5 py-10 space-y-5 text-center md:py-14 md:px-0">
+      <div className="hidden lg:flex flex-col items-center px-5 py-10 space-y-5 text-center md:py-14 md:px-0">
         {" "}
       </div>
 
-      <div className="w-full bg-[#D2B48C] py-16  flex pr-[72px] ">
+      <div className="w-full bg-[#D2B48C] lg:py-16  flex flex-col-reverse lg:flex-row  lg:pr-[72px] ">
         <motion.div
           initial={
             isMobile || isTablet
@@ -103,7 +103,7 @@ const CateringPage = () => {
           <Image
             src="/catering/cateringSustainable.webp"
             alt="Catering"
-            className="w-[700px] h-full "
+            className="w-full lg:w-[700px] h-full "
             width={10000}
             height={10000}
           />
@@ -120,7 +120,7 @@ const CateringPage = () => {
           }
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="w-full flex flex-col justify-center  bg-white  pr-12 pl-[72px] will-change-[transform,opacity]"
+          className="w-full flex flex-col justify-center  bg-white   px-5 lg:px-[72px] will-change-[transform,opacity]"
         >
           <div className="flex flex-col justify-center h-full space-y-10  text-center  py-8  md:bg-white md:text-start   ">
             <p className="text-base font-proximanova4 mt-4 lg:mt-0">
@@ -148,7 +148,7 @@ const CateringPage = () => {
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="w-full flex flex-col justify-center items-center bg-white py-10 will-change-[transform,opacity] px-[72px]"
+        className="w-full flex flex-col justify-center items-center bg-white py-10 will-change-[transform,opacity] lg:px-[72px]"
       >
         <p className="my-4 text-lg text-center font-avenirRoman3">
           {t("CulinaryPerfection")}
@@ -170,10 +170,10 @@ const CateringPage = () => {
                 width={10000}
                 height={10000}
               />
-              <h3 className="text-xl  font-avenirHeavy5 pt-3 pb-1">
+              <h3 className="text-2xl lg:text-xl   font-avenirHeavy5 pt-3 pb-1">
                 {meal.title}
               </h3>
-              <p className="px-5  md:px-1 text-base md:text-sm font-avenir1">
+              <p className="px-5  md:px-1 text-xl md:text-sm font-avenir1">
                 {meal.description}
               </p>
             </div>
@@ -181,15 +181,15 @@ const CateringPage = () => {
         </div>
       </motion.div>
 
-      <div className="bg-[#1C1C1C] flex flex-col md:flex-row  px-[130px]  gap-10 pt-20">
-        <div className="md:w-1/2 ">
+      <div className="bg-[#1C1C1C] flex flex-col lg:flex-row  px-5 lg:px-[130px]  gap-10 pt-20">
+        <div className="w-full lg:w-1/2 ">
           <p className="text-4xl text-center text-white md:text-start font-avenirHeavy5 mb-7">
             {t("GetIn")}{" "}
             <span className="text-[#FB4444] font-avenirHeavy5">
               {t("Touch")}{" "}
             </span>
           </p>
-          <div className="text-base font-avenirBook2 text-white space-y-3">
+          <div className="text-base font-avenirBook2 text-justify lg:text-start text-white space-y-3">
             <p>{t("GetInTouchText1")}</p>
             <p>{t("GetInTouchText2")}</p>
             <p>
@@ -206,7 +206,7 @@ const CateringPage = () => {
           </div>
         </div>
 
-        <div className="md:w-1/2 mb-16">
+        <div className="w-full lg:w-1/2 mb-5 lg:mb-16">
           <CateringForm />
         </div>
       </div>
