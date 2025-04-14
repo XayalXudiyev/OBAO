@@ -9,6 +9,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
 import React, { useState } from "react"
+import { useMediaQuery } from "react-responsive"
 
 const OurServices = () => {
   const t = useTranslations("home")
@@ -43,22 +44,24 @@ const OurServices = () => {
     },
   ]
   const [selectedImage, setSelectedImage] = useState(services[0].image)
-
+  const isMobile = useMediaQuery({ query: "(max-width: 640px)" })
+  const isTablet = useMediaQuery({ query: "(max-width: 1024px)" })
   return (
-    <div className="pb-10 pt-24 select-none">
+    <div className="pb-10 pt-10 lg:pt-24 select-none">
       <h1 className="text-[#FB4444] text-3xl md:text-4xl font-bold font-avenirMedium4 text-center mb-8">
         {t("OurServices")}
       </h1>
 
-      <div className="flex flex-col md:flex-row justify-center items-center gap-6 px-[72px]">
-        <div className="w-full md:w-1/2 h-[500px] relative">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-6 px-0 lg:px-[72px]">
+        <div className="w-full md:w-1/2 h-[400px] lg:h-[500px] relative">
           <AnimatePresence>
             <motion.div
-              key={selectedImage}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+                          key={selectedImage}
+
+              initial={isMobile || isTablet ? { y: 200, opacity: 0 } : { x: -500, opacity: 0 }}
+              whileInView={isMobile || isTablet ? { y: 0, opacity: 1 } : { x: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="absolute inset-0"
             >
               <Image
@@ -66,14 +69,20 @@ const OurServices = () => {
                 alt="Service"
                 width={500}
                 height={500}
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full h-full object-cover lg:rounded-lg"
               />
             </motion.div>
           </AnimatePresence>
         </div>
 
         {/* Accordion */}
-        <div className="w-full md:w-1/2">
+        <motion.div
+          initial={isMobile || isTablet ? { y: 200, opacity: 0 } : { x: 500, opacity: 0 }}
+          whileInView={isMobile || isTablet ? { y: 0, opacity: 1 } : { x: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="w-full md:w-1/2 px-5 lg:px-0"
+        >
           <Accordion type="single" collapsible className="w-full">
             {services.map((service) => (
               <AccordionItem
@@ -101,7 +110,7 @@ const OurServices = () => {
               </AccordionItem>
             ))}
           </Accordion>
-        </div>
+        </motion.div>
       </div>
     </div>
   )

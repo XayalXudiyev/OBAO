@@ -1,69 +1,37 @@
 "use client"
 
-import { motion, useAnimation } from "framer-motion"
+import { motion } from "framer-motion"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
-import React, { useEffect } from "react"
-import { useInView } from "react-intersection-observer"
 
 const AboutUsComponent = () => {
   const t = useTranslations("home")
-  const controlsLeft = useAnimation()
-  const controlsRight = useAnimation()
-  const controlsTop = useAnimation()
-
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.6,
-    rootMargin: "-100px 0px",
-  })
-
-  useEffect(() => {
-    if (inView) {
-      controlsLeft.start({
-        x: 0,
-        opacity: 1,
-        transition: { duration: 1, delay: 0.3 },
-      })
-      controlsRight.start({
-        x: 0,
-        opacity: 1,
-        transition: { duration: 1, delay: 0.4 },
-      })
-      controlsTop.start({
-        y: 0,
-        opacity: 1,
-        transition: { duration: 1, delay: 0.2 },
-      })
-    }
-  }, [inView, controlsLeft, controlsRight, controlsTop])
 
   return (
     <div
-      ref={ref}
-      id="about-us"
-      className="bg-[#D2B48C] h-[25.7rem] mx-auto relative flex justify-center items-center text-[#1c1c1c]"
+      id="#about-us"
+      className="bg-[#D2B48C] lg:h-[25.7rem] py-5 lg:py-0 mx-auto relative flex justify-center items-center text-[#1c1c1c]"
     >
       <motion.div
-        initial={{ y: 100, opacity: 0 }}
-        animate={controlsTop}
+        initial={{ y: 200, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
         className="flex justify-center"
       >
-        <div className="head w-4/5 space-y-10 text-center">
+        <div className="px-5 lg:px-0 lg:w-4/5 space-y-3 lg:space-y-10 text-center">
           <div className="text-3xl font-bold md:text-4xl font-avenirMedium4">
             {t("AboutUs")}
           </div>
-          <p className="text-xl leading-7 md:text-2xl font-avenirRoman3">
+          <p className="text-xl text-justify lg:text-center leading-7 md:text-2xl font-avenirRoman3">
             {t("AboutUsText")}
           </p>
         </div>
       </motion.div>
+
+
       <div>
-        <motion.div
-          initial={{ x: 100, opacity: 0 }}
-          animate={controlsRight}
-          className="right w-full md:w-1/2"
-        >
+        <div className="absolute top-6 md:top-10 right-2 sm:w-18 md:w-20 md:right-0 xl:w-24">
           <Image
             src="/miniPhotos/aboutRight.svg"
             alt="about us"
@@ -71,13 +39,9 @@ const AboutUsComponent = () => {
             height={72}
             className="absolute top-6 md:top-10 right-2 sm:w-18 md:w-20 md:right-10 xl:w-24"
           />
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ x: -100, opacity: 0 }}
-          animate={controlsLeft}
-          className="right w-full md:w-1/2"
-        >
+        <div className="absolute bottom-6 left-2 sm:w-18 md:bottom-12 md:w-20 md:left-0">
           <Image
             src="/miniPhotos/aboutLeft.svg"
             alt="about us"
@@ -85,7 +49,7 @@ const AboutUsComponent = () => {
             height={72}
             className="absolute bottom-6 left-2 sm:w-18 md:bottom-12 md:w-20 md:left-10"
           />
-        </motion.div>
+        </div>
       </div>
     </div>
   )

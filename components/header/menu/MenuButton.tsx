@@ -1,19 +1,20 @@
 "use client"
 import type { RouteProps } from "@/constans/types"
 import { AnimatePresence, motion } from "framer-motion"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 import Image from "next/image"
 import Link from "next/link"
 import React, { useState } from "react"
 const MenuButton = () => {
   const t = useTranslations("navigation")
   const [isOpen, setIsOpen] = useState(false)
+  const locale = useLocale()
   const routes: RouteProps[] = [
     { id: 0, href: "/", title: t("Home") },
-    { id: 1, href: "/menu", title: t("Menu") },
-    { id: 2, href: "/#about-us", title: t("AboutUs") },
-    { id: 3, href: "/#restaurants", title: t("Restaurants") },
-    { id: 4, href: "/catering", title: t("Catering") },
+    { id: 1, href: `/${locale}/menu`, title: t("Menu") },
+    { id: 2, href: `/${locale}/#about-us`, title: t("AboutUs") },
+    { id: 3, href: `/${locale}/#restaurants`, title: t("Restaurants") },
+    { id: 4, href: `/${locale}/catering`, title: t("Catering") },
   ]
   return (
     <div

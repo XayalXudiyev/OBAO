@@ -24,7 +24,6 @@ export const routing = defineRouting({
       nl: "/catering",
       fr: "/traiteur",
     },
-
   },
   defaultLocale: "en",
 })
