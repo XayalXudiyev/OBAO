@@ -29,7 +29,6 @@ const AboutUsComponent = () => {
         </div>
       </motion.div>
 
-
       <div>
         <div className="absolute top-6 md:top-10 right-2 sm:w-18 md:w-20 md:right-0 xl:w-24">
           <Image

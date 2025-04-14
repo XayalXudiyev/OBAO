@@ -126,7 +126,7 @@ const FoodMenuPage = () => {
                                   <div key={idx} className="mb-5 ">
                                     <div className="flex text-xl justify-between">
                                       <h3 className="flex items-center font-avenirBook2  ">
-                                        <span className="text-red-500  ml-4 mr-2">
+                                        <span className="text-[#FB4444]  ml-4 mr-2">
                                           •
                                         </span>
                                         {foodItem.name}
@@ -179,7 +179,7 @@ const FoodMenuPage = () => {
                                   <div key={idx} className="mb-5 ">
                                     <div className="flex text-xl justify-between">
                                       <h3 className="flex items-center font-avenirBook2  ">
-                                        <span className="text-red-500  ml-4 mr-2">
+                                        <span className="text-[#FB4444]  ml-4 mr-2">
                                           •
                                         </span>
                                         {foodItem.name}
@@ -196,8 +196,8 @@ const FoodMenuPage = () => {
                           ))}
                         </CarouselContent>
                         <div>
-                          <CarouselPrevious className="bg-transparent border-none text-red-500 hover:bg-transparent hover:text-red-500 hover:border-none [&_svg]:w-16 [&_svg]:h-16 " />
-                          <CarouselNext className="absolute -right-16 bg-transparent border-none text-red-500 hover:bg-transparent hover:text-red-500 hover:border-none [&_svg]:w-16 [&_svg]:h-16" />
+                          <CarouselPrevious className="bg-transparent border-none text-[#BE935A] hover:bg-transparent hover:text-[#BE935A] hover:border-none [&_svg]:w-16 [&_svg]:h-16 " />
+                          <CarouselNext className="absolute -right-16 bg-transparent border-none text-[#BE935A] hover:bg-transparent hover:text-[#BE935A] hover:border-none [&_svg]:w-16 [&_svg]:h-16" />
                         </div>
                       </Carousel>
                     </motion.div>

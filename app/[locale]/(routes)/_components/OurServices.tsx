@@ -56,10 +56,17 @@ const OurServices = () => {
         <div className="w-full md:w-1/2 h-[400px] lg:h-[500px] relative">
           <AnimatePresence>
             <motion.div
-                          key={selectedImage}
-
-              initial={isMobile || isTablet ? { y: 200, opacity: 0 } : { x: -500, opacity: 0 }}
-              whileInView={isMobile || isTablet ? { y: 0, opacity: 1 } : { x: 0, opacity: 1 }}
+              key={selectedImage}
+              initial={
+                isMobile || isTablet
+                  ? { y: 200, opacity: 0 }
+                  : { x: -500, opacity: 0 }
+              }
+              whileInView={
+                isMobile || isTablet
+                  ? { y: 0, opacity: 1 }
+                  : { x: 0, opacity: 1 }
+              }
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="absolute inset-0"
@@ -69,7 +76,7 @@ const OurServices = () => {
                 alt="Service"
                 width={500}
                 height={500}
-                className="w-full h-full object-cover lg:rounded-lg"
+                className="w-full h-full object-cover "
               />
             </motion.div>
           </AnimatePresence>
@@ -77,8 +84,14 @@ const OurServices = () => {
 
         {/* Accordion */}
         <motion.div
-          initial={isMobile || isTablet ? { y: 200, opacity: 0 } : { x: 500, opacity: 0 }}
-          whileInView={isMobile || isTablet ? { y: 0, opacity: 1 } : { x: 0, opacity: 1 }}
+          initial={
+            isMobile || isTablet
+              ? { y: 200, opacity: 0 }
+              : { x: 500, opacity: 0 }
+          }
+          whileInView={
+            isMobile || isTablet ? { y: 0, opacity: 1 } : { x: 0, opacity: 1 }
+          }
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="w-full md:w-1/2 px-5 lg:px-0"
@@ -91,7 +104,7 @@ const OurServices = () => {
                 className="border-b border-gray-300"
               >
                 <AccordionTrigger
-                  className="flex items-center justify-start gap-5 py-7 text-white hover:no-underline"
+                  className="flex items-center justify-start gap-5 py-7  hover:text-[#DBC3A3] text-white hover:no-underline"
                   onClick={() => setSelectedImage(service.image)}
                 >
                   <Image
@@ -100,7 +113,7 @@ const OurServices = () => {
                     width={35}
                     height={35}
                   />
-                  <span className="text-2xl font-medium pl-1">
+                  <span className="text-2xl  font-medium pl-1">
                     {service.title}
                   </span>
                 </AccordionTrigger>

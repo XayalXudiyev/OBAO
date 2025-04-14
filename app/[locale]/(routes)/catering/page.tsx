@@ -13,17 +13,16 @@ const CateringPage = () => {
   const isTablet = useMediaQuery({ query: "(max-width: 1024px)" })
   const t = useTranslations("catering")
 
-
   return (
     <div className="h-full bg-white relative">
       <Image
         src="/catering/cateringCover.webp"
         alt="Catering"
-        className="w-full h-[28rem] lg:h-screen object-cover "
+        className="w-full h-[28rem] lg:h-screen object-cover select-none"
         width={10000}
         height={10000}
       />
-      <span className="absolute top-[1.5rem] left-[72px] opacity-80 text-white text-base font-avenirMedium4">
+      <span className="absolute top-[1.5rem] left-[72px] opacity-80 text-white text-base font-avenirBook2">
         {t("Catering")}
       </span>
       <div className="flex flex-col items-center lg:px-5 lg:py-10 space-y-5 text-center md:py-16 md:px-0">

@@ -70,9 +70,11 @@ const DiscoverFlavors = () => {
             className=" absolute right-0 bottom-0 h-10 w-10 "
           />
         </div>
-        <h3 className=" font-semibold text-[42px] pt-32 px-60">
+        <h3 className=" font-avenirRoman3 text-[42px] pt-32 px-60">
           {t("DiscoverOur")}{" "}
-          <span className=" text-[#FB4444]">{t("Flavors")}</span>
+          <span className=" text-[#FB4444] font-avenirRoman3">
+            {t("Flavors")}
+          </span>
         </h3>
       </motion.div>
 
@@ -82,7 +84,7 @@ const DiscoverFlavors = () => {
         animate={{ y: -90, opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <p className=" w-[764px] text-[20px] text-center font-semibold font-avenirHeavy5 tracking-[0.15%] leading-6">
+        <p className=" w-[764px] text-[20px] text-center font-avenirBook2 tracking-[0.15%] leading-6">
           {" "}
           {t("FlavorsText")}
         </p>
