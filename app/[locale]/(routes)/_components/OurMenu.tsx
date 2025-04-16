@@ -7,7 +7,7 @@ import React from "react"
 const OurMenuComponent = () => {
   const t = useTranslations("home")
   return (
-    <div className="lg:h-[25.7rem] py-10 lg:py-0 w-full mx-auto relative flex flex-col justify-center items-center">
+    <div className=" py-10 lg:pb-0 w-full mx-auto relative pt-20 flex flex-col justify-center items-center">
       <div>
         <Image
           src="/miniPhotos/ourmenuleftimg.svg"
@@ -24,11 +24,11 @@ const OurMenuComponent = () => {
           className="absolute bottom-5 right-0"
         />
       </div>
-      <div className="text-center w-4/5 space-y-10  md:mt-24">
-        <h1 className="text-[#FB4444] text-4xl lg:text-3xl font-bold font-avenirMedium4 text-center">
+      <div className="text-center w-4/5   ">
+        <h1 className="text-[#FB4444] text-3xl md:text-4xl font-bold font-avenirMedium4 text-center ">
           {t("OurMenu")}
         </h1>
-        <p className="text-white text-xl md:text-2xl leading-7 font-avenirRoman3">
+        <p className="text-white text-xl md:text-2xl my-8 leading-7 font-avenirRoman3">
           {t("OurMenuText")}
         </p>
         <div className="flex gap-4 justify-center gap-x-8">

@@ -80,10 +80,15 @@
     "EnterFirstName": "Enter first name",
     "LastName": "Last name",
     "EnterLastName": "Enter last name",
-    "PhoneNumber": "*Phone number",
+    "PhoneNumber": "Phone number",
     "YourMessage": "Your message",
     "TypeYourMessage": "Type your message here...",
-    "GetInTouch": "Get in touch"
+    "GetInTouch": "Contact us",
+    "FirstNameRequired": "First name is required",
+    "LastNameRequired": "Last name is required",
+    "EmailRequired": "Email is required",
+    "PhoneNumberRequired": "Phone number is required",
+    "MessageRequired": "Message is required"
   },
   "reservations": {
     "Reservations": "Reservations",
@@ -109,6 +114,7 @@
     "Menu": "MENU",
     "AboutUs": "ABOUT US",
     "Restaurants": "RESTAURANTS",
-    "Catering": "CATERING"
+    "Catering": "CATERING",
+    "ContactUs": "CONTACT US"
   }
 }

@@ -27,15 +27,15 @@ const RestaurantsSection = () => {
   return (
     <div
       id="restaurants"
-      className="  w-full mx-auto relative flex flex-col justify-center items-center lg:px-[72px]"
+      className="  w-full mx-auto relative flex flex-col justify-center items-center pt-24 lg:px-[72px]"
     >
-      <h1 className="text-[#FB4444] text-4xl mt-5 lg:mt-0 lg:text-3xl font-bold font-avenirMedium4 text-center">
+      <h1 className="text-[#FB4444] text-3xl md:text-4xl font-bold font-avenirMedium4 text-center ">
         {t("Restaurants")}
       </h1>
 
       {/* Sint-Schuman */}
 
-      <div className="lg:flex w-full my-5 lg:my-12">
+      <div className="lg:flex  my-5 lg:my-12">
         <motion.div
           initial={
             isMobile || isTablet
@@ -97,7 +97,7 @@ const RestaurantsSection = () => {
 
       {/* Sint-Pieters-Leeuw */}
 
-      <div className="flex lg:flex-row flex-col-reverse w-full my-5 lg:my-12">
+      <div className="lg:flex  my-5 lg:my-12">
         <motion.div
           className=" h-full text-center mt-5 lg:mt-0 text-white lg:w-2/5 "
           initial={

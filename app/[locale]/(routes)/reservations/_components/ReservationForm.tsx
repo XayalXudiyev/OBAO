@@ -113,7 +113,7 @@ const ReservationForm = () => {
     }
   }
   return (
-    <div className=" border-2  border-[#D2B48C]  mb-10 lg:mb-0  lg:py-14  p-8 lg:px-14">
+    <div className=" border  border-[#D2B48C]  mb-10 lg:mb-0  lg:py-14  p-8 lg:px-14">
       <h3 className="text-3xl lg:text-2xl font-bold  text-center font-avenirHeavy5">
         {t("FindATable")}
       </h3>
@@ -132,7 +132,7 @@ const ReservationForm = () => {
                     <Button
                       type="button"
                       variant="ghost"
-                      className="p-0 text-2xl transition-all duration-300 hover:bg-transparent hover:"
+                      className="p-0 text-2xl transition-all  duration-300 hover:bg-transparent hover:text-white"
                       size="lg"
                       onClick={adultIncrement}
                     >
@@ -141,7 +141,7 @@ const ReservationForm = () => {
                     <Button
                       type="button"
                       variant="ghost"
-                      className="p-0 text-2xl transition-all duration-300 hover:bg-transparent hover:"
+                      className="p-0 text-2xl transition-all duration-300 hover:bg-transparent hover:text-white"
                       size="lg"
                       onClick={adultDecrement}
                     >
@@ -162,7 +162,7 @@ const ReservationForm = () => {
                     <Button
                       type="button"
                       variant="ghost"
-                      className="p-0 text-2xl transition-all duration-300 hover:bg-transparent"
+                      className="p-0 text-2xl transition-all duration-300 hover:bg-transparent hover:text-white"
                       size="lg"
                       onClick={childIncrement}
                     >
@@ -172,52 +172,13 @@ const ReservationForm = () => {
                     <Button
                       type="button"
                       variant="ghost"
-                      className="p-0 text-2xl transition-all duration-300 hover:bg-transparent"
+                      className="p-0 text-2xl transition-all duration-300 hover:bg-transparent hover:text-white"
                       size="lg"
                       onClick={childDecrement}
                     >
                       -
                     </Button>
                   </div>
-                </div>
-                <Separator />
-              </div>
-
-              {/* time */}
-              <div className="flex flex-col gap-1">
-                <div className="flex items-center justify-between gap-2">
-                  <Controller
-                    name="time"
-                    control={control}
-                    render={({ field }) => (
-                      <Select
-                        onValueChange={(value) => {
-                          setSelectedTime(value)
-                          field.onChange(value)
-                        }}
-                      >
-                        <SelectTrigger className="flex justify-between items-center bg-transparent border-none outline-none ring-0 focus:ring-0 focus:ring-offset-0 gap-x-2 text-[15px] w-full p-0 ">
-                          <span>{selectedTime || t("SelectTime")}</span>
-                        </SelectTrigger>
-                        <SelectContent className=" h-56 overflow-y-auto border border-[#D2B48C] rounded-none shadow-md w-full">
-                          <SelectGroup>
-                            <SelectItem value="7 PM">
-                              <div className="flex justify-between w-64">
-                                <span>7 PM </span>
-                                <span>Available</span>
-                              </div>
-                            </SelectItem>
-                            <SelectItem value="7:30 AM" disabled>
-                              <div className="flex justify-between w-64">
-                                <span>7:30 AM </span>
-                                <span>{t("NotAvailable")}</span>
-                              </div>
-                            </SelectItem>
-                          </SelectGroup>
-                        </SelectContent>
-                      </Select>
-                    )}
-                  />
                 </div>
                 <Separator />
               </div>
@@ -260,6 +221,45 @@ const ReservationForm = () => {
                       />
                     </PopoverContent>
                   </Popover>
+                </div>
+                <Separator />
+              </div>
+
+              {/* time */}
+              <div className="flex flex-col gap-1">
+                <div className="flex items-center justify-between gap-2">
+                  <Controller
+                    name="time"
+                    control={control}
+                    render={({ field }) => (
+                      <Select
+                        onValueChange={(value) => {
+                          setSelectedTime(value)
+                          field.onChange(value)
+                        }}
+                      >
+                        <SelectTrigger className="flex justify-between items-center bg-transparent border-none outline-none ring-0 focus:ring-0 focus:ring-offset-0 gap-x-2 text-[15px] w-full p-0 ">
+                          <span>{selectedTime || t("SelectTime")}</span>
+                        </SelectTrigger>
+                        <SelectContent className=" h-56 overflow-y-auto border border-[#D2B48C] rounded-none shadow-md w-full">
+                          <SelectGroup>
+                            <SelectItem value="7 PM">
+                              <div className="flex justify-between w-64">
+                                <span>7 PM </span>
+                                <span>Available</span>
+                              </div>
+                            </SelectItem>
+                            <SelectItem value="7:30 AM" disabled>
+                              <div className="flex justify-between w-64">
+                                <span>7:30 AM </span>
+                                <span>{t("NotAvailable")}</span>
+                              </div>
+                            </SelectItem>
+                          </SelectGroup>
+                        </SelectContent>
+                      </Select>
+                    )}
+                  />
                 </div>
                 <Separator />
               </div>

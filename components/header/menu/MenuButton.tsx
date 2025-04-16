@@ -12,9 +12,10 @@ const MenuButton = () => {
   const routes: RouteProps[] = [
     { id: 0, href: "/", title: t("Home") },
     { id: 1, href: `/${locale}/menu`, title: t("Menu") },
-    { id: 2, href: `/${locale}/#about-us`, title: t("AboutUs") },
+    { id: 2, href: `/${locale}/#aboutUs`, title: t("AboutUs") },
     { id: 3, href: `/${locale}/#restaurants`, title: t("Restaurants") },
     { id: 4, href: `/${locale}/catering`, title: t("Catering") },
+    { id: 5, href: `/${locale}/#contact-us`, title: t("ContactUs") },
   ]
   return (
     <div
