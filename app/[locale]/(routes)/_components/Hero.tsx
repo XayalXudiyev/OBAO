@@ -14,10 +14,10 @@ const HeroComponent = () => {
         alt="hero"
         width={10000}
         height={10000}
-        className="w-full h-[28rem] lg:h-screen object-cover select-none"
+        className="w-full lg:h-screen object-cover select-none"
       />
 
-      <span className="absolute top-4 pl-[72px]  opacity-80 text-white text-sm sm:text-base font-avenirBook2">
+      <span className="absolute top-4 lg:pl-[72px] pl-5 opacity-80 text-white text-sm sm:text-base font-avenirBook2">
         {t("Home")}
       </span>
 
@@ -25,7 +25,7 @@ const HeroComponent = () => {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="absolute top-20 left-6 sm:top-[4.1rem] sm:left-[72px] flex flex-col gap-4"
+        className="absolute top-16 lg:top-20 lg:pl-[72px] pl-5 flex flex-col gap-4"
       >
         <span className="text-white lg:text-3xl text-4xl  font-avenirMedium4 leading-tight sm:leading-[3rem]">
           {t("AsianFusionFlavors")}
@@ -40,7 +40,7 @@ const HeroComponent = () => {
         alt="hero right"
         width={47}
         height={47}
-        className="absolute top-20 sm:top-[5rem] -right-0"
+        className="absolute lg:block hidden top-20 sm:top-[5rem] -right-0"
       />
 
       <Image
@@ -48,7 +48,7 @@ const HeroComponent = () => {
         alt="hero left"
         width={51}
         height={51}
-        className="absolute bottom-12 -left-0"
+        className="absolute bottom-12 lg:block hidden -left-0"
       />
     </div>
   )

@@ -25,8 +25,14 @@ const CateringPage = () => {
       <span className="absolute top-[1.5rem] left-[72px] opacity-80 text-white text-base font-avenirBook2">
         {t("Catering")}
       </span>
-      <div className="flex flex-col items-center lg:px-5 lg:py-10 space-y-5 text-center md:py-16 md:px-0">
-        {" "}
+      <div className="lg:flex flex-col items-center  hidden space-y-5 text-center w-full  md:px-0">
+        <Image
+          src="/miniPhotos/ourmenuleftimg.svg"
+          alt="catering"
+          width={70}
+          height={70}
+          className="mr-auto mb-1"
+        />
       </div>
 
       <div className="w-full bg-[#D2B48C] py-16  flex flex-col lg:flex-row lg:pr-[72px]  ">
@@ -51,7 +57,7 @@ const CateringPage = () => {
               {t("Our")} <span className="text-[#FB4444]">{t("Routes")} </span>
             </p>
 
-            <div className="flex flex-col space-y-4 w-full text-justify lg:text-start 2xl:pr-32 text-sm font-avenirBook2">
+            <div className="flex flex-col space-y-4 w-full text-justify lg:text-start 2xl:pr-60 text-sm font-avenirBook2">
               <p>{t("OurRoutesText1")}</p>
               <p>{t("OurRoutesText2")}</p>
               <p>{t("OurRoutesText3")}</p>
@@ -82,8 +88,14 @@ const CateringPage = () => {
         </motion.div>
       </div>
 
-      <div className="hidden lg:flex flex-col items-center px-5 py-10 space-y-5 text-center md:py-14 md:px-0">
-        {" "}
+      <div className="lg:flex flex-col items-center  hidden space-y-5 text-center w-full  md:px-0">
+        <Image
+          src="/miniPhotos/catering2.svg"
+          alt="catering"
+          width={75}
+          height={75}
+          className="ml-auto mb-"
+        />
       </div>
 
       <div className="w-full bg-[#D2B48C] lg:py-16  flex flex-col-reverse lg:flex-row  lg:pr-[72px] ">
@@ -130,7 +142,7 @@ const CateringPage = () => {
               <span className="text-[#FB4444]">{t("Practices")} </span>
             </p>
 
-            <div className="flex flex-col space-y-4  w-full text-justify lg:text-start 2xl:pr-32 text-sm font-avenirBook2">
+            <div className="flex flex-col space-y-4  w-full text-justify lg:text-start 2xl:pr-60 text-sm font-avenirBook2">
               <p>{t("SustainableText1")}</p>
               <p>{t("SustainableText2")}</p>
               <p>{t("SustainableText3")}</p>
@@ -143,16 +155,25 @@ const CateringPage = () => {
       {/* What do we cater */}
 
       <motion.div
-        initial={{ y: 250, opacity: 0 }}
+        initial={{ y: 300, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="w-full flex flex-col justify-center items-center bg-white py-10 mb-10 will-change-[transform,opacity] lg:px-[72px]"
+        className="w-full flex flex-col justify-center relative items-center bg-white py-10 mb-10 will-change-[transform,opacity] lg:px-[72px]"
       >
+        <div className="flex flex-col items-center space-y-5 text-center w-full  md:px-0">
+          <Image
+            src="/miniPhotos/catering3.svg"
+            alt="catering"
+            width={70}
+            height={70}
+            className="mr-auto mb-1 absolute top-14 left-0"
+          />
+        </div>
         <p className="my-4 text-lg text-center font-avenirRoman3">
           {t("CulinaryPerfection")}
         </p>
-        <h2 className="text-4xl font-avenirMedium4 text-center mb-5">
+        <h2 className="text-4xl font-avenirMedium4 text-center">
           {t("WhatDoWe")} <span className="text-[#FB4444]">{t("Cater")}</span>
         </h2>
 

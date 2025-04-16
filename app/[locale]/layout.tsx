@@ -10,9 +10,15 @@ interface RootLayoutProps {
   children: React.ReactNode
 }
 
+export const metadata = {
+  title: "O'BAO",
+  description: "O'BAO",
+}
+
 interface Locale {
   locale?: string | undefined
 }
+
 // Avenir Fonts
 const avenir = localFont({
   src: "./fonts/AvenirLTStd.otf",

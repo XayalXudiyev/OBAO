@@ -47,7 +47,7 @@ const OurServices = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 640px)" })
   const isTablet = useMediaQuery({ query: "(max-width: 1024px)" })
   return (
-    <div className="pb-10 pt-10 lg:pt-24 select-none">
+    <div className="pb-10 pt-20 lg:pt-24 select-none">
       <h1 className="text-[#FB4444] text-3xl md:text-4xl font-bold font-avenirMedium4 text-center mb-8">
         {t("OurServices")}
       </h1>

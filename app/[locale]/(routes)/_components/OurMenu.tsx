@@ -7,8 +7,8 @@ import React from "react"
 const OurMenuComponent = () => {
   const t = useTranslations("home")
   return (
-    <div className=" py-10 lg:pb-0 w-full mx-auto relative pt-20 flex flex-col justify-center items-center">
-      <div>
+    <div className=" py-10 lg:pb-0 w-full mx-auto relative lg:pt-20 flex flex-col justify-center items-center">
+      <div className="lg:block hidden">
         <Image
           src="/miniPhotos/ourmenuleftimg.svg"
           alt="hero"
