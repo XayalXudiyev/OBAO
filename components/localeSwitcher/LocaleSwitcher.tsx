@@ -36,7 +36,7 @@ export default function LocaleSwitcher() {
   return (
     <Select onValueChange={onSelectChange} defaultValue={locale}>
       <SelectTrigger className="bg-transparent group border-none outline-none ring-0 focus:ring-offset-0 focus:ring-0 focus:outline-none gap-x-1 md:text-base w-fit [&>svg]:hover:text-[#D2B48C] [&>svg]:opacity-100 [&>svg]:data-[state=open]:rotate-180">
-        <span className="text-xl text-primary md:text-white font-proximanova5 md:text-base md:font-proximanova3 group-hover:text-[#D2B48C]">
+        <span className="text-xl text-[#D2B48C] font-proximanova5 md:text-base md:font-proximanova3 group-hover:text-[#D2B48C]">
           {localeLabels[locale]}
         </span>
       </SelectTrigger>

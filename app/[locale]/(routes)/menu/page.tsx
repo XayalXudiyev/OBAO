@@ -1,12 +1,6 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { categories, menu } from "@/constans"
-import { cn } from "@/lib/utils"
-import { motion } from "framer-motion"
-import React, { useState } from "react"
-import { useMediaQuery } from "react-responsive"
-import DiscoverFlavors from "./_components/DiscoverFlavors"
 import {
   Carousel,
   CarouselContent,
@@ -14,8 +8,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import { categories, menu } from "@/constans"
+import { cn } from "@/lib/utils"
+import { motion } from "framer-motion"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
+import React, { useState } from "react"
+import { useMediaQuery } from "react-responsive"
+import DiscoverFlavors from "./_components/DiscoverFlavors"
 
 const FoodMenuPage = () => {
   const t = useTranslations("foodMenu")
@@ -25,7 +25,7 @@ const FoodMenuPage = () => {
 
   const categoryToMenuMap: { [key: string]: string } = {
     Entrees: "POTAGE",
-    Sushi: "MAKI 6 PCS", 
+    Sushi: "MAKI 6 PCS",
     Sashimi: "SASHIMI",
     "Salades Japonaises": "SALADES JAPONAISE",
     Donburi: "DONBURI BOL A BASE DE RIZ",
@@ -36,7 +36,9 @@ const FoodMenuPage = () => {
     const category = categories.find((cat) => cat.id === id)
     if (category) {
       const menuTitle = categoryToMenuMap[category.title]
-      const section = document.getElementById(menuTitle.replace(/\s+/g, "-").toLowerCase())
+      const section = document.getElementById(
+        menuTitle.replace(/\s+/g, "-").toLowerCase(),
+      )
       if (section) {
         section.scrollIntoView({ behavior: "smooth", block: "start" })
       }
@@ -66,7 +68,7 @@ const FoodMenuPage = () => {
               onClick={() => handleClick(category.id)}
               className={cn(
                 "rounded-none md:text-lg bg-[#FB4444] hover:bg-[#FB4444] my-3 font-avenirHeavy5 max-h-9",
-                clicked === category.id ? "bg-[#FB4444]" : "bg-transparent"
+                clicked === category.id ? "bg-[#FB4444]" : "bg-transparent",
               )}
             >
               {category.title}
@@ -98,14 +100,14 @@ const FoodMenuPage = () => {
           {menu.map((item, index) => {
             const itemChunks = chunkArray(item.items, 4)
             const isOdd = (index + 1) % 2 !== 0
-            
+
             const sectionId = item.title.replace(/\s+/g, "-").toLowerCase()
 
             return (
               <div
                 className="flex w-full justify-center items-center  px-[72px] select-none"
                 key={index}
-                id={sectionId} 
+                id={sectionId}
               >
                 {!isOdd ? (
                   <div className="flex gap-10 mt-[90px]">
@@ -160,7 +162,9 @@ const FoodMenuPage = () => {
                                   <div key={idx} className="mb-5">
                                     <div className="flex text-xl justify-between">
                                       <h3 className="flex items-center font-avenirBook2">
-                                        <span className="text-[#FB4444] ml-4 mr-2">•</span>
+                                        <span className="text-[#FB4444] ml-4 mr-2">
+                                          •
+                                        </span>
                                         {foodItem.name}
                                       </h3>
                                       <p>€ {foodItem.price}</p>
@@ -211,7 +215,9 @@ const FoodMenuPage = () => {
                                   <div key={idx} className="mb-5">
                                     <div className="flex text-xl justify-between">
                                       <h3 className="flex items-center font-avenirBook2">
-                                        <span className="text-[#FB4444] ml-4 mr-2">•</span>
+                                        <span className="text-[#FB4444] ml-4 mr-2">
+                                          •
+                                        </span>
                                         {foodItem.name}
                                       </h3>
                                       <p>€ {foodItem.price}</p>
