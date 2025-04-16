@@ -17,23 +17,23 @@ interface FoodItem {
 export const categories: Category[] = [
   {
     id: 1,
-    title: "Big plates",
-  },
-  {
-    id: 2,
     title: "Entrees",
   },
   {
+    id: 2,
+    title: "Sushi",
+  },
+  {
     id: 3,
-    title: "Desserts",
+    title: "Sashimi",
   },
   {
     id: 4,
-    title: "Drinks",
+    title: "Salades Japonaises",
   },
   {
     id: 5,
-    title: "Non gluten",
+    title: "Donburi",
   },
 ]
 
