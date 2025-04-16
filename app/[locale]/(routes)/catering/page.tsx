@@ -43,15 +43,15 @@ const CateringPage = () => {
           viewport={{ once: true }}
           className="w-full flex flex-col justify-center space-y-2 bg-white pr-5 lg:pr-12 pl-5 lg:pl-[72px] will-change-[transform,opacity]"
         >
-          <div className="flex flex-col justify-center h-full space-y-3  text-center  py-8  md:bg-white md:text-start   ">
+          <div className="flex flex-col justify-center h-full   text-center  py-8  md:bg-white md:text-start   ">
             <p className="text-base font-proximanova4 mt-4 lg:mt-0">
               {t("TraditionMeetsFlavor")}
             </p>
-            <p className="text-3xl text-center md:text-start">
+            <p className="text-3xl text-center md:text-start font-avenirRoman3 mb-6 mt-4">
               {t("Our")} <span className="text-[#FB4444]">{t("Routes")} </span>
             </p>
 
-            <div className="flex flex-col space-y-4 w-full text-justify lg:text-start text-sm font-avenirBook2">
+            <div className="flex flex-col space-y-4 w-full text-justify lg:text-start 2xl:pr-32 text-sm font-avenirBook2">
               <p>{t("OurRoutesText1")}</p>
               <p>{t("OurRoutesText2")}</p>
               <p>{t("OurRoutesText3")}</p>
@@ -121,16 +121,16 @@ const CateringPage = () => {
           viewport={{ once: true }}
           className="w-full flex flex-col justify-center  bg-white   px-5 lg:px-[72px] will-change-[transform,opacity]"
         >
-          <div className="flex flex-col justify-center h-full space-y-10  text-center  py-8  md:bg-white md:text-start   ">
+          <div className="flex flex-col justify-center h-full   text-center  py-8  md:bg-white md:text-start   ">
             <p className="text-base font-proximanova4 mt-4 lg:mt-0">
               {t("GreenThinkingBetterDining")}
             </p>
-            <p className="text-3xl text-center md:text-start">
+            <p className="text-3xl text-center font-avenirRoman3 md:text-start my-6">
               {t("Sustainable")}{" "}
               <span className="text-[#FB4444]">{t("Practices")} </span>
             </p>
 
-            <div className="flex flex-col space-y-4  w-full text-justify lg:text-start text-sm font-avenirBook2">
+            <div className="flex flex-col space-y-4  w-full text-justify lg:text-start 2xl:pr-32 text-sm font-avenirBook2">
               <p>{t("SustainableText1")}</p>
               <p>{t("SustainableText2")}</p>
               <p>{t("SustainableText3")}</p>
@@ -147,7 +147,7 @@ const CateringPage = () => {
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="w-full flex flex-col justify-center items-center bg-white py-10 will-change-[transform,opacity] lg:px-[72px]"
+        className="w-full flex flex-col justify-center items-center bg-white py-10 mb-10 will-change-[transform,opacity] lg:px-[72px]"
       >
         <p className="my-4 text-lg text-center font-avenirRoman3">
           {t("CulinaryPerfection")}

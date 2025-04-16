@@ -52,7 +52,7 @@ const OurServices = () => {
         {t("OurServices")}
       </h1>
 
-      <div className="flex flex-col md:flex-row justify-center items-center gap-6 px-0 lg:px-[72px]">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-6  px-0 lg:px-[72px]">
         <div className="w-full md:w-1/2 h-[400px] lg:h-[500px] relative">
           <AnimatePresence>
             <motion.div

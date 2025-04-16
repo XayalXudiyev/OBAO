@@ -80,10 +80,15 @@
     "EnterFirstName": "Voer voornaam in",
     "LastName": "Achternaam",
     "EnterLastName": "Voer achternaam in",
-    "PhoneNumber": "*Telefoonnummer",
+    "PhoneNumber": "Telefoonnummer",
     "YourMessage": "Jouw bericht",
     "TypeYourMessage": "Typ hier jouw bericht...",
-    "GetInTouch": "Neem contact op"
+    "GetInTouch": "Contacteer ons",
+    "FirstNameRequired": "Voornaam is vereist",
+    "LastNameRequired": "Achternaam is vereist",
+    "EmailRequired": "E-mail is vereist",
+    "PhoneNumberRequired": "Telefoonnummer is vereist",
+    "MessageRequired": "Bericht is vereist"
   },
   "reservations": {
     "Reservations": "Reserveringen",
@@ -109,6 +114,7 @@
     "Menu": "MENU",
     "AboutUs": "OVER ONS",
     "Restaurants": "RESTAURANTS",
-    "Catering": "CATERING"
+    "Catering": "CATERING",
+    "ContactUs": "CONTACT US"
   }
 }

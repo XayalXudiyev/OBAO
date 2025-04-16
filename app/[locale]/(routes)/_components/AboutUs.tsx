@@ -9,8 +9,8 @@ const AboutUsComponent = () => {
 
   return (
     <div
-      id="#about-us"
-      className="bg-[#D2B48C] lg:h-[25.7rem] py-5 lg:py-0 mx-auto relative flex justify-center items-center text-[#1c1c1c]"
+      id="aboutUs"
+      className="bg-[#D2B48C]  py-5 lg:py-20 lg:mt-0 mx-auto relative flex justify-center items-center text-[#1c1c1c]"
     >
       <motion.div
         initial={{ y: 200, opacity: 0 }}

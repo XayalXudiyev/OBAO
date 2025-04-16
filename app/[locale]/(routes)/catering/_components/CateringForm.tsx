@@ -41,13 +41,15 @@ const CateringForm = () => {
               htmlFor="firstName"
               className="mb-2 text-sm font-medium text-white"
             >
-              {t("FirstName")}
+              *{t("FirstName")}
             </label>
             <Input
               id="firstName"
-              {...register("firstName", { required: "First name is required" })}
+              {...register("firstName", {
+                required: t("FirstNameRequired"),
+              })}
               placeholder={t("EnterFirstName")}
-              className="text-[#4A4A4A] bg-transparent border-[#966F3B] rounded-none outline-none ring-0 focus-visible:ring-0 focus:border-[#966F3B]"
+              className="text-[#4A4A4A] bg-transparent border-[#966F3B] rounded-none outline-none ring-0 focus-visible:ring-0  focus:border-[#966F3B]"
             />
             {errors.firstName && (
               <p className="text-sm text-red-500">{errors.firstName.message}</p>
@@ -63,7 +65,7 @@ const CateringForm = () => {
             </label>
             <Input
               id="lastName"
-              {...register("lastName", { required: "Last name is required" })}
+              {...register("lastName")}
               placeholder={t("EnterLastName")}
               className="text-[#4A4A4A] bg-transparent border-[#966F3B] rounded-none outline-none ring-0 focus-visible:ring-0 focus:border-[#966F3B]"
             />
@@ -77,12 +79,14 @@ const CateringForm = () => {
               htmlFor="email"
               className="mb-2 text-sm font-medium text-white"
             >
-              {t("Email")}
+              *{t("Email")}
             </label>
             <Input
               id="email"
               type="email"
-              {...register("email", { required: "Email is required" })}
+              {...register("email", {
+                required: t("EmailRequired"),
+              })}
               placeholder={t("EnterEmail")}
               className="text-[#4A4A4A] bg-transparent border-[#966F3B] rounded-none outline-none ring-0 focus-visible:ring-0 focus:border-[#966F3B]"
             />
@@ -96,12 +100,12 @@ const CateringForm = () => {
               htmlFor="phone"
               className="mb-2 text-sm font-medium text-white"
             >
-              {t("PhoneNumber")}
+              *{t("PhoneNumber")}
             </label>
             <Input
               id="phone"
               {...register("phone", {
-                required: "Phone number is required",
+                required: t("PhoneNumberRequired"),
               })}
               placeholder={t("PhoneNumber")}
               className="text-[#4A4A4A] bg-transparent border-[#966F3B] rounded-none outline-none ring-0 focus-visible:ring-0 focus:border-[#966F3B]"
@@ -121,7 +125,9 @@ const CateringForm = () => {
           </label>
           <Textarea
             id="message"
-            {...register("message")}
+            {...register("message", {
+              required: t("MessageRequired"),
+            })}
             placeholder={t("TypeYourMessage")}
             className="text-[#4A4A4A] bg-transparent border-[#966F3B] rounded-none outline-none ring-0 focus-visible:ring-0 focus:border-[#966F3B]"
           />
