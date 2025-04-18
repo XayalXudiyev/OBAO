@@ -49,7 +49,7 @@ const CateringForm = () => {
                 required: t("FirstNameRequired"),
               })}
               placeholder={t("EnterFirstName")}
-              className="text-[#4A4A4A] bg-transparent border-[#966F3B] rounded-none outline-none ring-0 focus-visible:ring-0  focus:border-[#966F3B]"
+              className="text-white bg-transparent border-[#966F3B] rounded-none outline-none ring-0 focus-visible:ring-0  focus:border-[#966F3B]"
             />
             {errors.firstName && (
               <p className="text-sm text-red-500">{errors.firstName.message}</p>
@@ -67,7 +67,7 @@ const CateringForm = () => {
               id="lastName"
               {...register("lastName")}
               placeholder={t("EnterLastName")}
-              className="text-[#4A4A4A] bg-transparent border-[#966F3B] rounded-none outline-none ring-0 focus-visible:ring-0 focus:border-[#966F3B]"
+              className="text-white bg-transparent border-[#966F3B] rounded-none outline-none ring-0 focus-visible:ring-0 focus:border-[#966F3B]"
             />
             {errors.lastName && (
               <p className="text-sm text-red-500">{errors.lastName.message}</p>
@@ -88,7 +88,7 @@ const CateringForm = () => {
                 required: t("EmailRequired"),
               })}
               placeholder={t("EnterEmail")}
-              className="text-[#4A4A4A] bg-transparent border-[#966F3B] rounded-none outline-none ring-0 focus-visible:ring-0 focus:border-[#966F3B]"
+              className="text-white bg-transparent border-[#966F3B] rounded-none outline-none ring-0 focus-visible:ring-0 focus:border-[#966F3B]"
             />
             {errors.email && (
               <p className="text-sm text-red-500">{errors.email.message}</p>
@@ -108,7 +108,7 @@ const CateringForm = () => {
                 required: t("PhoneNumberRequired"),
               })}
               placeholder={t("PhoneNumber")}
-              className="text-[#4A4A4A] bg-transparent border-[#966F3B] rounded-none outline-none ring-0 focus-visible:ring-0 focus:border-[#966F3B]"
+              className="text-white bg-transparent border-[#966F3B] rounded-none outline-none ring-0 focus-visible:ring-0 focus:border-[#966F3B]"
             />
             {errors.phone && (
               <p className="text-sm text-red-500">{errors.phone.message}</p>
@@ -129,7 +129,7 @@ const CateringForm = () => {
               required: t("MessageRequired"),
             })}
             placeholder={t("TypeYourMessage")}
-            className="text-[#4A4A4A] bg-transparent border-[#966F3B] rounded-none outline-none ring-0 focus-visible:ring-0 focus:border-[#966F3B]"
+            className="text-white bg-transparent border-[#966F3B] rounded-none outline-none ring-0 focus-visible:ring-0 focus:border-[#966F3B]"
           />
         </div>
 
