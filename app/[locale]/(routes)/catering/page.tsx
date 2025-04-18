@@ -22,7 +22,7 @@ const CateringPage = () => {
         width={10000}
         height={10000}
       />
-      <span className="absolute top-[1.5rem] left-[72px] opacity-80 text-white text-base font-avenirBook2">
+      <span className="absolute lg:top-[1.5rem] top-24 lg:left-[72px] left-[20px] opacity-80 text-white lg:text-base text-sm font-avenirBook2">
         {t("Catering")}
       </span>
       <div className="lg:flex flex-col items-center  hidden space-y-5 text-center w-full  md:px-0">
@@ -161,7 +161,7 @@ const CateringPage = () => {
         viewport={{ once: true }}
         className="w-full flex flex-col justify-center relative items-center bg-white py-10 mb-10 will-change-[transform,opacity] lg:px-[72px]"
       >
-        <div className="flex flex-col items-center space-y-5 text-center w-full  md:px-0">
+        <div className="lg:flex  hidden flex-col items-center space-y-5 text-center w-full  md:px-0">
           <Image
             src="/miniPhotos/catering3.svg"
             alt="catering"

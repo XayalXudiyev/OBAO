@@ -56,7 +56,7 @@ const FoodMenuPage = () => {
   return (
     <div className="relative flex bg-[#1C1C1C]">
       <div className="absolute top-0 left-0 w-full h-full bg-[url('/cropped.png')] bg-center bg-[length:120%_auto] bg-repeat-y opacity-10 z-10" />
-      <span className="absolute top-[6.5rem] left-[72px] opacity-80 text-white text-base font-avenirMedium4">
+      <span className="absolute lg:top-[6.5rem] top-24 lg:left-[72px] left-[23px] opacity-80 text-white lg:text-base text-sm font-avenirMedium4">
         {t("Menu")}
       </span>
       <div className="z-20 text-white flex flex-col justify-center items-center w-full relative">
@@ -67,7 +67,7 @@ const FoodMenuPage = () => {
               key={category.id}
               onClick={() => handleClick(category.id)}
               className={cn(
-                "rounded-none md:text-lg bg-[#FB4444] hover:bg-[#FB4444] my-3 font-avenirHeavy5 max-h-9",
+                "rounded-none md:text-lg bg-[#FB4444] hover:bg-[#FB4444] my-3  font-avenirHeavy5 max-h-9",
                 clicked === category.id ? "bg-[#FB4444]" : "bg-transparent",
               )}
             >
@@ -76,11 +76,11 @@ const FoodMenuPage = () => {
           ))}
         </div>
 
-        <div className="flex gap-4 justify-center gap-x-8 mt-12">
+        <div className="flex gap-4 justify-center  lg:mt-12 mt-8">
           <Button
             size="sm"
             variant="outline"
-            className="bg-transparent px-7 lg:px-4  text-lg md:text-sm border-[1px] border-[#D2B48C] text-[#D2B48C] rounded-none hover:bg-[#D2B48C] hover:text-black"
+            className="bg-transparent px-5 lg:px-4  lg:text-lg text-sm  border-[1px] border-[#D2B48C] text-[#D2B48C] rounded-none hover:bg-[#D2B48C] hover:text-black"
             onClick={() =>
               window.open(
                 "https://static1.squarespace.com/static/673227ba8e0761016b822fac/t/67a389f7b7a72a4a09312840/1738770940253/Schuman_A4_menu_print_3mm_bleed.pdf",
@@ -93,7 +93,7 @@ const FoodMenuPage = () => {
         </div>
 
         <div className="w-full mb-20">
-          <h2 className="text-3xl md:text-4xl font-bold font-avenirMedium4 text-center mt-5 md:mt-16 md:-mb-10 ">
+          <h2 className="text-4xl font-bold font-avenirMedium4 text-center mt-10 -mb-5 lg:mt-16 lg:-mb-10 ">
             {t("OurOfferings")}
           </h2>
 
@@ -105,14 +105,14 @@ const FoodMenuPage = () => {
 
             return (
               <div
-                className="flex w-full justify-center items-center  px-[72px] select-none"
+                className="flex w-full justify-center items-center  lg:px-[72px] px-0 select-none"
                 key={index}
                 id={sectionId}
               >
                 {!isOdd ? (
-                  <div className="flex gap-10 mt-[90px]">
+                  <div className="flex flex-col lg:flex-row gap-10 lg:mt-[90px] mt-10">
                     <motion.div
-                      className="w-1/2 flex"
+                      className="lg:w-1/2 flex"
                       initial={
                         isMobile || isTablet
                           ? { y: 250, opacity: 0 }
@@ -135,7 +135,7 @@ const FoodMenuPage = () => {
                       />
                     </motion.div>
                     <motion.div
-                      className="w-6/12 pl-5"
+                      className="w-full lg:w-1/2 lg:pr-5 pr-14 lg:pl-0 pl-10"
                       initial={
                         isMobile || isTablet
                           ? { y: 250, opacity: 0 }
@@ -160,7 +160,7 @@ const FoodMenuPage = () => {
                               <div className="flex flex-col">
                                 {chunk.map((foodItem: any, idx: number) => (
                                   <div key={idx} className="mb-5">
-                                    <div className="flex text-xl justify-between">
+                                    <div className="flex lg:text-xl text-base justify-between">
                                       <h3 className="flex items-center font-avenirBook2">
                                         <span className="text-[#FB4444] ml-4 mr-2">
                                           •
@@ -179,16 +179,16 @@ const FoodMenuPage = () => {
                           ))}
                         </CarouselContent>
                         <div>
-                          <CarouselPrevious className="bg-transparent border-none text-[#BE935A] hover:bg-transparent hover:text-[#BE935A] hover:border-none [&_svg]:w-16 [&_svg]:h-16" />
-                          <CarouselNext className="absolute -right-16 bg-transparent border-none text-[#BE935A] hover:bg-transparent hover:text-[#BE935A] hover:border-none [&_svg]:w-16 [&_svg]:h-16" />
-                        </div>
+                        <CarouselPrevious className="-left-8 lg:-left-[47px] bg-transparent border-none text-[#BE935A] hover:bg-transparent hover:text-[#BE935A] hover:border-none lg:[&_svg]:w-16 lg:[&_svg]:h-16 [&_svg]:w-10 [&_svg]:h-10" />
+                          <CarouselNext className="absolute lg:-right-16 -right-12 bg-transparent border-none text-[#BE935A] hover:bg-transparent hover:text-[#BE935A] hover:border-none lg:[&_svg]:w-16 lg:[&_svg]:h-16 [&_svg]:w-10 [&_svg]:h-10" />
+                           </div>
                       </Carousel>
                     </motion.div>
                   </div>
                 ) : (
-                  <div className="flex gap-10 mt-[90px]">
+                  <div className="flex flex-col-reverse lg:flex-row gap-10 lg:mt-[90px] mt-10">
                     <motion.div
-                      className="w-6/12 pr-5"
+                      className="w-full lg:w-1/2 lg:pr-5 pr-14 lg:pl-0 pl-10"
                       initial={
                         isMobile || isTablet
                           ? { y: 250, opacity: 0 }
@@ -204,7 +204,7 @@ const FoodMenuPage = () => {
                     >
                       <Carousel className="w-full h-full relative">
                         <div className="bg-[#FB4444] top-2.5 md:h-6 w-16 absolute -left-[72px]" />
-                        <h2 className="text-[34px] font-avenirBook2 ml-3 mb-4">
+                        <h2 className="lg:text-[34px] text-2xl  font-avenirBook2 ml-3 lg:mb-4 mb-1">
                           {item.title}
                         </h2>
                         <CarouselContent>
@@ -213,7 +213,7 @@ const FoodMenuPage = () => {
                               <div className="flex flex-col">
                                 {chunk.map((foodItem: any, idx: number) => (
                                   <div key={idx} className="mb-5">
-                                    <div className="flex text-xl justify-between">
+                                    <div className="flex lg:text-xl text-base justify-between">
                                       <h3 className="flex items-center font-avenirBook2">
                                         <span className="text-[#FB4444] ml-4 mr-2">
                                           •
@@ -222,7 +222,7 @@ const FoodMenuPage = () => {
                                       </h3>
                                       <p>€ {foodItem.price}</p>
                                     </div>
-                                    <p className="text-gray-500 ml-3.5 text-base font-avenir1">
+                                    <p className="text-gray-500 ml-3.5 lg:text-base text-sm font-avenir1">
                                       {foodItem.description || foodItem.content}
                                     </p>
                                   </div>
@@ -232,13 +232,13 @@ const FoodMenuPage = () => {
                           ))}
                         </CarouselContent>
                         <div>
-                          <CarouselPrevious className="bg-transparent border-none text-[#BE935A] hover:bg-transparent hover:text-[#BE935A] hover:border-none [&_svg]:w-16 [&_svg]:h-16" />
-                          <CarouselNext className="absolute -right-16 bg-transparent border-none text-[#BE935A] hover:bg-transparent hover:text-[#BE935A] hover:border-none [&_svg]:w-16 [&_svg]:h-16" />
+                          <CarouselPrevious className="-left-8 lg:-left-16 bg-transparent border-none text-[#BE935A] hover:bg-transparent hover:text-[#BE935A] hover:border-none lg:[&_svg]:w-16 lg:[&_svg]:h-16 [&_svg]:w-10 [&_svg]:h-10" />
+                          <CarouselNext className="absolute lg:-right-16 -right-12 bg-transparent border-none text-[#BE935A] hover:bg-transparent hover:text-[#BE935A] hover:border-none lg:[&_svg]:w-16 lg:[&_svg]:h-16 [&_svg]:w-10 [&_svg]:h-10" />
                         </div>
                       </Carousel>
                     </motion.div>
                     <motion.div
-                      className="w-1/2 flex"
+                      className="w-full lg:w-1/2 flex"
                       initial={
                         isMobile || isTablet
                           ? { y: 250, opacity: 0 }
