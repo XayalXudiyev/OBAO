@@ -54,6 +54,7 @@ const CarouselComponent = () => {
               delay: 3000,
             }),
           ]}
+          differentArrow
         >
           <CarouselContent className="w-full  ml-[1px] lg:ml-2">
             {carouselImages.map((image) => (
@@ -69,13 +70,14 @@ const CarouselComponent = () => {
             ))}
           </CarouselContent>
 
-          <div className="absolute bg-yellow-500 w-0 -bottom-7 right-20">
+          <div className="absolute bg-yellow-500 w-[20px] gap-7 -bottom-7 right-20">
             <CarouselNext
-              className="bg-transparent border-none pr-5 text-[#FB4444] hover:bg-transparent hover:text-[#FB4444] size-10"
+              className="bg-transparent border-none pr-5 text-[#FB4444] hover:bg-transparent hover:text-[#FB4444] size-1"
               size={"lg"}
+
             />
             <CarouselPrevious
-              className="bg-transparent border-none text-[#FB4444] hover:bg-transparent hover:text-[#FB4444] size-10"
+              className="bg-transparent border-none text-[#FB4444] hover:bg-transparent hover:text-[#FB4444] size-1"
               size={"lg"}
             />
           </div>
