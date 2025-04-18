@@ -1,4 +1,5 @@
 "use client"
+import LocaleSwitcher from "@/components/localeSwitcher/LocaleSwitcher"
 import type { RouteProps } from "@/constans/types"
 import { AnimatePresence, motion } from "framer-motion"
 import { useLocale, useTranslations } from "next-intl"
@@ -92,7 +93,11 @@ const MenuButton = () => {
                   >
                     {route.title}
                   </Link>
+
                 ))}
+                <div className="block !text-white md:hidden">
+                  <LocaleSwitcher />
+                </div>
               </div>
               <motion.div
                 initial={{ y: 100, opacity: 0 }}

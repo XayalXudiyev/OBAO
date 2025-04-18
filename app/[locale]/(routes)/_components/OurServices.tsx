@@ -104,7 +104,7 @@ const OurServices = () => {
                 className="border-b border-gray-300"
               >
                 <AccordionTrigger
-                  className="flex items-center justify-start gap-5 py-7  hover:text-[#DBC3A3] text-white hover:no-underline"
+                  className="flex items-center text-start justify-start gap-5 py-7 text-white hover:no-underline"
                   onClick={() => setSelectedImage(service.image)}
                 >
                   <Image

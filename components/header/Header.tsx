@@ -10,7 +10,9 @@ const Header = () => {
       <div className="flex items-center justify-between h-[92px]  px-5 sm:px-10 md:px-[72px] mx-auto ">
         <Logo />
         <div className="flex items-center  md:gap-4 lg:gap-6 text-white  ">
-          <LocaleSwitcher />
+          <div className="hidden md:block">
+            <LocaleSwitcher />
+          </div>
           <ReservationButton />
           <MenuButton />
         </div>

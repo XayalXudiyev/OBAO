@@ -10,16 +10,16 @@ import CateringForm from "../catering/_components/CateringForm"
 const Home = () => {
   const t = useTranslations("catering")
   return (
-    <div className="w-full text-white mt-[90px]">
+    <div className="w-full text-white mt-[94px] lg:mt-[90px]">
       <HeroComponent />
       <AboutUsComponent />
       <CarouselComponent />
       <OurServices />
       <OurMenuComponent />
       <RestaurantsSection />
-      <Separator className="bg-[#634927] w-full mb-0 lg:mb-10" />
+      <Separator id="contact-us" className="bg-[#634927] w-full mb-0 lg:mb-10" />
       <div
-        id="contact-us"
+
         className="bg-[#1C1C1C] flex flex-col lg:flex-row  px-5 lg:px-[130px]  gap-10 pt-20"
       >
         <div className="w-full lg:w-1/2 ">
