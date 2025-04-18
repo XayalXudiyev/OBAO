@@ -149,7 +149,7 @@ const FoodMenuPage = () => {
                       transition={{ duration: 0.8 }}
                       viewport={{ once: true }}
                     >
-                      <Carousel className="w-full h-full relative">
+                      <Carousel className="w-full h-full relative" differentArrow={false}>
                         <h2 className="text-[34px] font-avenirBook2 ml-3 mb-4">
                           {item.title}
                         </h2>
@@ -202,7 +202,7 @@ const FoodMenuPage = () => {
                       transition={{ duration: 0.8 }}
                       viewport={{ once: true }}
                     >
-                      <Carousel className="w-full h-full relative">
+                      <Carousel className="w-full h-full relative" differentArrow={false}>
                         <div className="bg-[#FB4444] top-2.5 md:h-6 w-16 absolute -left-[72px]" />
                         <h2 className="lg:text-[34px] text-2xl  font-avenirBook2 ml-3 lg:mb-4 mb-1">
                           {item.title}

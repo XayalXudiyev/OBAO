@@ -3,7 +3,7 @@
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight, MoveLeft, MoveRight } from "lucide-react"
 
 import * as React from "react"
 
@@ -20,6 +20,7 @@ type CarouselProps = {
   plugins?: CarouselPlugin
   orientation?: "horizontal" | "vertical"
   setApi?: (api: CarouselApi) => void
+  differentArrow?: boolean
 }
 
 type CarouselContextProps = {
@@ -29,6 +30,8 @@ type CarouselContextProps = {
   scrollNext: () => void
   canScrollPrev: boolean
   canScrollNext: boolean
+  orientation: "horizontal" | "vertical"
+  differentArrow?: boolean
 } & CarouselProps
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null)
@@ -55,6 +58,7 @@ const Carousel = React.forwardRef<
       plugins,
       className,
       children,
+      differentArrow = true,
       ...props
     },
     ref,
@@ -70,10 +74,7 @@ const Carousel = React.forwardRef<
     const [canScrollNext, setCanScrollNext] = React.useState(false)
 
     const onSelect = React.useCallback((api: CarouselApi) => {
-      if (!api) {
-        return
-      }
-
+      if (!api) return
       setCanScrollPrev(api.canScrollPrev())
       setCanScrollNext(api.canScrollNext())
     }, [])
@@ -100,22 +101,15 @@ const Carousel = React.forwardRef<
     )
 
     React.useEffect(() => {
-      if (!api || !setApi) {
-        return
-      }
-
+      if (!api || !setApi) return
       setApi(api)
     }, [api, setApi])
 
     React.useEffect(() => {
-      if (!api) {
-        return
-      }
-
+      if (!api) return
       onSelect(api)
       api.on("reInit", onSelect)
       api.on("select", onSelect)
-
       return () => {
         api?.off("select", onSelect)
       }
@@ -125,14 +119,16 @@ const Carousel = React.forwardRef<
       <CarouselContext.Provider
         value={{
           carouselRef,
-          api: api,
+          api,
           opts,
-          orientation:
-            orientation || (opts?.axis === "y" ? "vertical" : "horizontal"),
+          plugins,
+          setApi,
+          orientation,
           scrollPrev,
           scrollNext,
           canScrollPrev,
           canScrollNext,
+          differentArrow,
         }}
       >
         <div
@@ -199,7 +195,8 @@ const CarouselPrevious = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>
 >(({ className, variant = "outline", size = "icon", ...props }, ref) => {
-  const { orientation, scrollPrev, canScrollPrev } = useCarousel()
+  const { orientation, scrollPrev, canScrollPrev, differentArrow } =
+    useCarousel()
 
   return (
     <Button
@@ -207,7 +204,7 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute  h-auto w-auto rounded-full",
+        "absolute h-auto w-auto rounded-full",
         orientation === "horizontal"
           ? "-left-12 top-1/2 -translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -217,7 +214,7 @@ const CarouselPrevious = React.forwardRef<
       onClick={scrollPrev}
       {...props}
     >
-      <ChevronLeft className="h-4 w-4" />
+      {differentArrow ? <MoveLeft className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
       <span className="sr-only">Previous slide</span>
     </Button>
   )
@@ -228,7 +225,8 @@ const CarouselNext = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>
 >(({ className, variant = "outline", size = "icon", ...props }, ref) => {
-  const { orientation, scrollNext, canScrollNext } = useCarousel()
+  const { orientation, scrollNext, canScrollNext, differentArrow } =
+    useCarousel()
 
   return (
     <Button
@@ -246,7 +244,7 @@ const CarouselNext = React.forwardRef<
       onClick={scrollNext}
       {...props}
     >
-      <ChevronRight className="h-4 w-4" />
+      {differentArrow ? <MoveRight className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
       <span className="sr-only">Next slide</span>
     </Button>
   )
