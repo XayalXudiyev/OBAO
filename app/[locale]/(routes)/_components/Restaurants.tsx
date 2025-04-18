@@ -97,7 +97,7 @@ const RestaurantsSection = () => {
 
       {/* Sint-Pieters-Leeuw */}
 
-      <div className="lg:flex  my-5 lg:my-12">
+      <div className="flex flex-col-reverse lg:flex-row mt-5 mb-10 lg:my-12">
         <motion.div
           className=" h-full text-center mt-5 lg:mt-0 text-white lg:w-2/5 "
           initial={
