@@ -15,7 +15,14 @@
     "Workshops": "Workshops",
     "WorkshopsText": "Onze gerenommeerde chef Yoko, een Japanse expert in matcha-ceremonies en het maken van sushi, biedt boeiende workshops die deze traditionele kunsten verkennen. Deelnemers leren de fijne kneepjes van het rollen van sushi en de culturele betekenis van matcha-bereiding. Deze workshops bieden een hands-on kans om jezelf onder te dompelen in Japanse culinaire tradities.",
     "OurMenu": "Ons Menu",
-    "OurMenuText": "Ontdek de authentieke smaken van Japans en Chinees geïnspireerde fusiongerechten. Klik hieronder om ons menu te bekijken en jouw nieuwe favoriete gerecht te vinden!",
+
+    "OurMenuTextDiscover": "Ontdek de",
+    "OurMenuTextFlavors": " smaken van Japanse en Chinees geïnspireerde fusiongerechten. Klik hieronder om ons menu te bekijken en jouw nieuwe favoriete gerecht te vinden!",
+    "OurMenuAuthentic": "authentiek",
+    "OurMenuTraditional": "traditioneel",
+    "OurMenuExquisite": "exquise",
+    "OurMenuDelightful": "lekker",
+    
     "ViewOurMenu": "Bekijk Ons Menu",
     "Address": "ADRES",
     "OpeningHours": "OPENINGSUREN",

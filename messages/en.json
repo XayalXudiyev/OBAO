@@ -15,7 +15,14 @@
     "Workshops": "Workshops",
     "WorkshopsText": "Our esteemed Chef Yoko, a Japanese expert in Matcha ceremonies and sushi-making, offers engaging workshops that delve into these traditional arts. Participants will learn the intricacies of sushi rolling and the cultural significance of Matcha preparation. These workshops provide a hands-on opportunity to immerse yourself in Japanese culinary traditions.​",
     "OurMenu": "Our Menu",
-    "OurMenuText": "Discover the authentic flavors of Japanese and Chinese-inspired fusion cuisine. Click below to explore our menu and find your next favorite dish!",
+
+    "OurMenuTextDiscover": "Discover the",
+    "OurMenuTextFlavors": " flavors of Japanese and Chinese-inspired fusion cuisine. Click below to explore our menu and find your next favorite dish!",
+    "OurMenuAuthentic": "authentic",
+    "OurMenuTraditional": "traditional",
+    "OurMenuExquisite": "exquisite",
+    "OurMenuDelightful": "delightful",
+   
     "ViewOurMenu": "View Our Menu",
     "Address": "ADDRESS",
     "OpeningHours": "OPENING HOURS",
