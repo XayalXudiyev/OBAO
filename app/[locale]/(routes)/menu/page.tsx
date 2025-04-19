@@ -98,7 +98,7 @@ const FoodMenuPage = () => {
           </h2>
 
           {menu.map((item, index) => {
-            const itemChunks = chunkArray(item.items, 4)
+            const itemChunks = chunkArray(item.items, 3)
             const isOdd = (index + 1) % 2 !== 0
 
             const sectionId = item.title.replace(/\s+/g, "-").toLowerCase()
@@ -109,7 +109,83 @@ const FoodMenuPage = () => {
                 key={index}
                 id={sectionId}
               >
-                {!isOdd ? (
+                {isOdd ? (
+                  <div className="flex flex-col-reverse lg:flex-row gap-10 lg:mt-[90px] mt-10">
+                  <motion.div
+                    className="w-full lg:w-1/2 lg:pr-5 pr-14 lg:pl-0 pl-10"
+                    initial={
+                      isMobile || isTablet
+                        ? { y: 250, opacity: 0 }
+                        : { x: -300, opacity: 0 }
+                    }
+                    whileInView={
+                      isMobile || isTablet
+                        ? { y: 0, opacity: 1 }
+                        : { x: 0, opacity: 1 }
+                    }
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                  >
+                    <Carousel className=" w-[340px] lg:w-[500px] h-full relative" differentArrow={false}>
+                      <div className="bg-[#FB4444] top-2.5 md:h-6 w-16 absolute -left-[72px]" />
+                      <h2 className="lg:text-[34px] text-2xl  font-avenirBook2 ml-3 lg:mb-4 mb-1">
+                        {item.title}
+                      </h2>
+                      <CarouselContent>
+                        {itemChunks.map((chunk, chunkIndex) => (
+                          <CarouselItem key={chunkIndex}>
+                            <div className="flex flex-col">
+                              {chunk.map((foodItem: any, idx: number) => (
+                                <div key={idx} className="mb-5">
+                                  <div className="flex lg:text-xl text-base justify-between">
+                                    <h3 className="flex items-center font-avenirBook2">
+                                      <span className="text-[#FB4444] ml-4 mr-2">
+                                        •
+                                      </span>
+                                      {foodItem.name}
+                                    </h3>
+                                    <p>€ {foodItem.price}</p>
+                                  </div>
+                                  <p className="text-gray-500 ml-3.5 lg:text-base text-sm font-avenir1">
+                                    {foodItem.description || foodItem.content}
+                                  </p>
+                                </div>
+                              ))}
+                            </div>
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                      <div>
+                        <CarouselPrevious className="-left-8 lg:-left-16 bg-transparent border-none text-[#BE935A] hover:bg-transparent hover:text-[#BE935A] hover:border-none lg:[&_svg]:w-16 lg:[&_svg]:h-16 [&_svg]:w-10 [&_svg]:h-10" />
+                        <CarouselNext className="absolute lg:-right-16 -right-12 bg-transparent border-none text-[#BE935A] hover:bg-transparent hover:text-[#BE935A] hover:border-none lg:[&_svg]:w-16 lg:[&_svg]:h-16 [&_svg]:w-10 [&_svg]:h-10" />
+                      </div>
+                    </Carousel>
+                  </motion.div>
+                  <motion.div
+                    className="w-full lg:w-1/2 flex"
+                    initial={
+                      isMobile || isTablet
+                        ? { y: 250, opacity: 0 }
+                        : { x: 300, opacity: 0 }
+                    }
+                    whileInView={
+                      isMobile || isTablet
+                        ? { y: 0, opacity: 1 }
+                        : { x: 0, opacity: 1 }
+                    }
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                  >
+                    <Image
+                      src={item.image}
+                      alt="menu"
+                      width={10000}
+                      height={10000}
+                      className="object-cover"
+                    />
+                  </motion.div>
+                </div>
+                ) : (
                   <div className="flex flex-col lg:flex-row gap-10 lg:mt-[90px] mt-10">
                     <motion.div
                       className="lg:w-1/2 flex"
@@ -149,7 +225,7 @@ const FoodMenuPage = () => {
                       transition={{ duration: 0.8 }}
                       viewport={{ once: true }}
                     >
-                      <Carousel className="w-full h-full relative" differentArrow={false}>
+                      <Carousel className=" w-[340px] lg:w-[500px] h-full relative" differentArrow={false}>
                         <h2 className="text-[34px] font-avenirBook2 ml-3 mb-4">
                           {item.title}
                         </h2>
@@ -183,82 +259,6 @@ const FoodMenuPage = () => {
                           <CarouselNext className="absolute lg:-right-16 -right-12 bg-transparent border-none text-[#BE935A] hover:bg-transparent hover:text-[#BE935A] hover:border-none lg:[&_svg]:w-16 lg:[&_svg]:h-16 [&_svg]:w-10 [&_svg]:h-10" />
                            </div>
                       </Carousel>
-                    </motion.div>
-                  </div>
-                ) : (
-                  <div className="flex flex-col-reverse lg:flex-row gap-10 lg:mt-[90px] mt-10">
-                    <motion.div
-                      className="w-full lg:w-1/2 lg:pr-5 pr-14 lg:pl-0 pl-10"
-                      initial={
-                        isMobile || isTablet
-                          ? { y: 250, opacity: 0 }
-                          : { x: -300, opacity: 0 }
-                      }
-                      whileInView={
-                        isMobile || isTablet
-                          ? { y: 0, opacity: 1 }
-                          : { x: 0, opacity: 1 }
-                      }
-                      transition={{ duration: 0.8 }}
-                      viewport={{ once: true }}
-                    >
-                      <Carousel className="w-full h-full relative" differentArrow={false}>
-                        <div className="bg-[#FB4444] top-2.5 md:h-6 w-16 absolute -left-[72px]" />
-                        <h2 className="lg:text-[34px] text-2xl  font-avenirBook2 ml-3 lg:mb-4 mb-1">
-                          {item.title}
-                        </h2>
-                        <CarouselContent>
-                          {itemChunks.map((chunk, chunkIndex) => (
-                            <CarouselItem key={chunkIndex}>
-                              <div className="flex flex-col">
-                                {chunk.map((foodItem: any, idx: number) => (
-                                  <div key={idx} className="mb-5">
-                                    <div className="flex lg:text-xl text-base justify-between">
-                                      <h3 className="flex items-center font-avenirBook2">
-                                        <span className="text-[#FB4444] ml-4 mr-2">
-                                          •
-                                        </span>
-                                        {foodItem.name}
-                                      </h3>
-                                      <p>€ {foodItem.price}</p>
-                                    </div>
-                                    <p className="text-gray-500 ml-3.5 lg:text-base text-sm font-avenir1">
-                                      {foodItem.description || foodItem.content}
-                                    </p>
-                                  </div>
-                                ))}
-                              </div>
-                            </CarouselItem>
-                          ))}
-                        </CarouselContent>
-                        <div>
-                          <CarouselPrevious className="-left-8 lg:-left-16 bg-transparent border-none text-[#BE935A] hover:bg-transparent hover:text-[#BE935A] hover:border-none lg:[&_svg]:w-16 lg:[&_svg]:h-16 [&_svg]:w-10 [&_svg]:h-10" />
-                          <CarouselNext className="absolute lg:-right-16 -right-12 bg-transparent border-none text-[#BE935A] hover:bg-transparent hover:text-[#BE935A] hover:border-none lg:[&_svg]:w-16 lg:[&_svg]:h-16 [&_svg]:w-10 [&_svg]:h-10" />
-                        </div>
-                      </Carousel>
-                    </motion.div>
-                    <motion.div
-                      className="w-full lg:w-1/2 flex"
-                      initial={
-                        isMobile || isTablet
-                          ? { y: 250, opacity: 0 }
-                          : { x: 300, opacity: 0 }
-                      }
-                      whileInView={
-                        isMobile || isTablet
-                          ? { y: 0, opacity: 1 }
-                          : { x: 0, opacity: 1 }
-                      }
-                      transition={{ duration: 0.8 }}
-                      viewport={{ once: true }}
-                    >
-                      <Image
-                        src={item.image}
-                        alt="menu"
-                        width={10000}
-                        height={10000}
-                        className="object-cover"
-                      />
                     </motion.div>
                   </div>
                 )}
