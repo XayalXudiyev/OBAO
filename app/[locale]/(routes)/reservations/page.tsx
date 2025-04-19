@@ -25,7 +25,9 @@ const ReservationsPage = () => {
           <h1 className="text-[40px] font-avenirMedium4 mt-14">
             {t("BookA")} <span className="text-[#FB4444]">{t("Table")}</span>
           </h1>
-          <p className="lg:my-10 my-5 leading-8 text-xl">{t("BookATableText1")}</p>
+          <p className="lg:my-10 my-5 leading-8 text-xl">
+            {t("BookATableText1")}
+          </p>
           <p className="leading-8 text-xl">{t("BookATableText2")}</p>
         </div>
 

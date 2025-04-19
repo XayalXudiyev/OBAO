@@ -26,6 +26,7 @@ import { useState } from "react"
 import { Controller, FormProvider, useForm } from "react-hook-form"
 import type { SubmitHandler } from "react-hook-form"
 import ContactForm from "./ContactForm"
+import { getTimeOptionsByDate } from "@/lib/utils"
 
 const ReservationForm = () => {
   const t = useTranslations("reservations")
@@ -77,6 +78,7 @@ const ReservationForm = () => {
       return newValue
     })
   }
+
 
   const onSubmit: SubmitHandler<ReservationFormData> = async (data) => {
     try {
@@ -243,18 +245,20 @@ const ReservationForm = () => {
                         </SelectTrigger>
                         <SelectContent className=" h-56 overflow-y-auto border border-[#D2B48C] rounded-none shadow-md w-full">
                           <SelectGroup>
-                            <SelectItem value="7 PM">
-                              <div className="flex justify-between w-64">
-                                <span>7 PM </span>
-                                <span>Available</span>
+                            {date &&
+                              getTimeOptionsByDate(date).map((time) => (
+                                <SelectItem key={time} value={time}>
+                                  <div className="flex justify-between w-64">
+                                    <span>{time}</span>
+                                    <span>{t("Available")}</span>
+                                  </div>
+                                </SelectItem>
+                              ))}
+                            {!date && (
+                              <div className="px-4 py-2 text-gray-400">
+                                Please select date first
                               </div>
-                            </SelectItem>
-                            <SelectItem value="7:30 AM" disabled>
-                              <div className="flex justify-between w-64">
-                                <span>7:30 AM </span>
-                                <span>{t("NotAvailable")}</span>
-                              </div>
-                            </SelectItem>
+                            )}
                           </SelectGroup>
                         </SelectContent>
                       </Select>

@@ -214,7 +214,11 @@ const CarouselPrevious = React.forwardRef<
       onClick={scrollPrev}
       {...props}
     >
-      {differentArrow ? <MoveLeft className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
+      {differentArrow ? (
+        <MoveLeft className="h-4 w-4" />
+      ) : (
+        <ChevronLeft className="h-4 w-4" />
+      )}
       <span className="sr-only">Previous slide</span>
     </Button>
   )
@@ -244,7 +248,11 @@ const CarouselNext = React.forwardRef<
       onClick={scrollNext}
       {...props}
     >
-      {differentArrow ? <MoveRight className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
+      {differentArrow ? (
+        <MoveRight className="h-4 w-4" />
+      ) : (
+        <ChevronRight className="h-4 w-4" />
+      )}
       <span className="sr-only">Next slide</span>
     </Button>
   )

@@ -61,7 +61,7 @@ export async function POST(req: Request) {
     })
 
     return NextResponse.json({
-      // data: response.data,
+      data: response.data,
       message: "Form submitted successfully",
     })
   } catch (error) {
@@ -72,4 +72,3 @@ export async function POST(req: Request) {
     )
   }
 }
-

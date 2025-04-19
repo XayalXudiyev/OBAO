@@ -12,7 +12,6 @@ const AboutUsComponent = () => {
       id="aboutUs"
       className="bg-[#D2B48C]  py-[84px] lg:py-[90px] lg:mt-0 mx-auto relative flex justify-center items-center text-[#1c1c1c]"
     >
-     
       <motion.div
         initial={{ y: 200, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}

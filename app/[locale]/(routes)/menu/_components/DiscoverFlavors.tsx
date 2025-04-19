@@ -84,9 +84,8 @@ const DiscoverFlavors = () => {
         animate={{ y: -90, opacity: 1 }}
         transition={{ duration: 1 }}
       >
-
-
-        {t("FlavorsText")}      </motion.div>
+        {t("FlavorsText")}{" "}
+      </motion.div>
     </div>
   )
 }

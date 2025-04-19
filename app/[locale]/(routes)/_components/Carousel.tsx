@@ -74,7 +74,6 @@ const CarouselComponent = () => {
             <CarouselNext
               className="bg-transparent border-none pr-5 text-[#FB4444] hover:bg-transparent hover:text-[#FB4444] size-1"
               size={"lg"}
-
             />
             <CarouselPrevious
               className="bg-transparent border-none text-[#FB4444] hover:bg-transparent hover:text-[#FB4444] size-1"

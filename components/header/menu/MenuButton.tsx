@@ -93,7 +93,6 @@ const MenuButton = () => {
                   >
                     {route.title}
                   </Link>
-
                 ))}
                 <div className="block !text-white md:hidden">
                   <LocaleSwitcher />

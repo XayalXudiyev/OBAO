@@ -17,11 +17,11 @@ const Home = () => {
       <OurServices />
       <OurMenuComponent />
       <RestaurantsSection />
-      <Separator id="contact-us" className="bg-[#634927] w-full mb-0 lg:mb-10" />
-      <div
-
-        className="bg-[#1C1C1C] flex flex-col lg:flex-row  px-5 lg:px-[130px]  gap-10 pt-20"
-      >
+      <Separator
+        id="contact-us"
+        className="bg-[#634927] w-full mb-0 lg:mb-10"
+      />
+      <div className="bg-[#1C1C1C] flex flex-col lg:flex-row  px-5 lg:px-[130px]  gap-10 pt-20">
         <div className="w-full lg:w-1/2 ">
           <p className="text-4xl text-center text-white md:text-start font-avenirHeavy5 mb-7">
             {t("GetIn")}{" "}

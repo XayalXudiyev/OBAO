@@ -1,9 +1,9 @@
 "use client"
 import { Button } from "@/components/ui/button"
+import { AnimatePresence, motion } from "framer-motion"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
 import React, { useEffect, useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
 
 const OurMenuComponent = () => {
   const [currentIndex, setCurrentIndex] = useState(0)

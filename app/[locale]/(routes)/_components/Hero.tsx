@@ -22,7 +22,6 @@ const HeroComponent = () => {
       </span>
 
       <motion.div
-      
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -35,7 +34,7 @@ const HeroComponent = () => {
           {t("AsianFusionFlavorsText")}
         </span>
       </motion.div>
- 
+
       <Image
         src="/miniPhotos/heroRight.svg"
         alt="hero right"
