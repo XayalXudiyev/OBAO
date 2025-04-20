@@ -97,7 +97,8 @@
     "LastNameRequired": "Le nom de famille est requis",
     "EmailRequired": "L'email est requis",
     "PhoneNumberRequired": "Le numéro de téléphone est requis",
-    "MessageRequired": "Le message est requis"
+    "MessageRequired": "Le message est requis",
+    "Success": "Merci pour votre demande. Nous vous contacterons dans les 24 heures"
   },
   "reservations": {
     "Reservations": "Réservations",

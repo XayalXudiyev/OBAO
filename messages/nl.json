@@ -96,7 +96,8 @@
     "LastNameRequired": "Achternaam is vereist",
     "EmailRequired": "E-mail is vereist",
     "PhoneNumberRequired": "Telefoonnummer is vereist",
-    "MessageRequired": "Bericht is vereist"
+    "MessageRequired": "Bericht is vereist",
+    "Success": "Bedankt voor uw aanvraag. We nemen zo snel mogelijk contact met u op."
   },
   "reservations": {
     "Reservations": "Reserveringen",

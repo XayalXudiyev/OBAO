@@ -18,6 +18,7 @@ import {
 import { Separator } from "@/components/ui/separator"
 import type { ReservationFormData } from "@/constans/types"
 import { useToast } from "@/hooks/use-toast"
+import { getTimeOptionsByDate } from "@/lib/utils"
 import { format } from "date-fns"
 import { Calendar as CalendarIcon } from "lucide-react"
 import { useTranslations } from "next-intl"
@@ -26,7 +27,6 @@ import { useState } from "react"
 import { Controller, FormProvider, useForm } from "react-hook-form"
 import type { SubmitHandler } from "react-hook-form"
 import ContactForm from "./ContactForm"
-import { getTimeOptionsByDate } from "@/lib/utils"
 
 const ReservationForm = () => {
   const t = useTranslations("reservations")
@@ -78,7 +78,6 @@ const ReservationForm = () => {
       return newValue
     })
   }
-
 
   const onSubmit: SubmitHandler<ReservationFormData> = async (data) => {
     try {

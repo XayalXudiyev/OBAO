@@ -1,12 +1,16 @@
 "use client"
+import SubmitModal from "@/components/common/SubmitModal"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import type { FormData } from "@/constans/types"
 import axios from "axios"
+import { Loader2 } from "lucide-react"
 import { useTranslations } from "next-intl"
+import { useState } from "react"
 import type { SubmitHandler } from "react-hook-form"
 import { useForm } from "react-hook-form"
+
 const CateringForm = () => {
   const {
     register,
@@ -15,27 +19,46 @@ const CateringForm = () => {
     reset,
   } = useForm<FormData>()
   const t = useTranslations("catering")
+  const [isLoading, setIsLoading] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
+
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     try {
-      const response = await axios.post("/api/sheets", {
-        ...data,
-        sheetName: "Messages",
+      setIsLoading(true)
+      const response = await fetch("/api/contact", {
+        cache: "force-cache",
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       })
 
-      const result = response.data
-
-      alert(result.data.tableRange)
-
-      reset()
+      setIsLoading(false)
+      const result = await response.json()
+      if (result.success) {
+        setIsModalOpen(true)
+        setIsSuccess(true)
+      } else {
+        alert("An error occurred while sending the message.")
+      }
     } catch (error) {
-      console.error("Error submitting form:", error)
+      setIsLoading(false)
+      console.error("Request error:", error)
     }
+  }
+
+  const handleModalClose = () => {
+    setIsModalOpen(false)
+    setIsSuccess(false)
+    reset()
   }
 
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="grid grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8">
           <div className="flex flex-col">
             <label
               htmlFor="firstName"
@@ -137,12 +160,22 @@ const CateringForm = () => {
           <Button
             type="submit"
             size="sm"
-            className="bg-[#D2B48C] px-5 text-black rounded-none hover:bg-[#D2B48C]/80 my-5"
+            className="bg-[#D2B48C] px-5 text-black rounded-none lg:w-auto w-full hover:bg-[#D2B48C]/80 my-5"
           >
-            {t("GetInTouch")}
+            {isLoading ? (
+              <Loader2 className="animate-spin h-10 w-10" />
+            ) : (
+              t("GetInTouch")
+            )}
           </Button>
         </div>
       </form>
+      <SubmitModal
+        isOpen={isModalOpen}
+        onClose={handleModalClose}
+        t={t}
+        isSuccess={isSuccess}
+      />
     </div>
   )
 }

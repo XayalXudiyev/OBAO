@@ -96,7 +96,8 @@
     "LastNameRequired": "Last name is required",
     "EmailRequired": "Email is required",
     "PhoneNumberRequired": "Phone number is required",
-    "MessageRequired": "Message is required"
+    "MessageRequired": "Message is required",
+    "Success": "Thanks for your request. We will be back within 24 hours"
   },
   "reservations": {
     "Reservations": "Reservations",

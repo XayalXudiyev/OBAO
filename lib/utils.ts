@@ -8,7 +8,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-
 export const getTimeOptionsByDate = (date: Date | string) => {
   const day = getDay(new Date(date))
   if (day >= 1 && day <= 5) {
