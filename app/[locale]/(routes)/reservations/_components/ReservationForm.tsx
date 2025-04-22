@@ -17,13 +17,13 @@ import {
 } from "@/components/ui/select"
 import { Separator } from "@/components/ui/separator"
 import type { ReservationFormData } from "@/constans/types"
-import { useToast } from "@/hooks/use-toast"
+import { toast, useToast } from "@/hooks/use-toast"
 import { getTimeOptionsByDate } from "@/lib/utils"
-import { format } from "date-fns"
+import { format, parse } from "date-fns"
 import { Calendar as CalendarIcon } from "lucide-react"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Controller, FormProvider, useForm } from "react-hook-form"
 import type { SubmitHandler } from "react-hook-form"
 import ContactForm from "./ContactForm"
@@ -36,13 +36,13 @@ const ReservationForm = () => {
   const [childCount, setChildCount] = useState<number>(0)
 
   const [addReservation] = useAddReservationMutation()
+  const [reservations, setReservations] = useState([])
   const { toast } = useToast()
 
   const { control, handleSubmit, setValue } = useForm<ReservationFormData>({
     defaultValues: {
       adults: adultCount,
-      child: childCount,
-      date: date ? format(date, "yyyy-MM-dd") : "",
+      child: childCount, date: date ? format(new Date(date), "yyyy-MM-dd") : "",
       time: selectedTime,
     },
   })
@@ -78,10 +78,30 @@ const ReservationForm = () => {
       return newValue
     })
   }
+  useEffect(() => {
+    fetch("/api/sheets")
+      .then((res) => res.json())
+      .then((data) => setReservations(data))
+
+  }, [])
+
+
+  useEffect(() => {
+    if (date) {
+      setValue("date", format(date, "yyyy-MM-dd"))
+    }
+  }, [date, setValue])
+
+  // [7]-dates  [8]-times
+  const dates = reservations?.data?.map((row) => row[7])
+  const times = reservations?.data?.map((row) => row[8])
+  
+
+
 
   const onSubmit: SubmitHandler<ReservationFormData> = async (data) => {
     try {
-      addReservation({
+      await addReservation({
         ...data,
         sheetName: "Reservations",
       })
@@ -98,6 +118,7 @@ const ReservationForm = () => {
               <span className="text-black">{t("ReservationSuccess")}</span>
             </div>
             <button
+              type="button"
               onClick={() => toast.dismiss()}
               className="text-black font-bold mr-3 ml-32 pl-5"
             >
@@ -212,7 +233,7 @@ const ReservationForm = () => {
                             "absolute right-1 text-[#BE935A] opacity-100",
                         }}
                         mode="single"
-                        selected={date}
+                        selected={date ? new Date(date) : undefined}
                         onSelect={(date) => {
                           setDate(date)
                           setValue("date", format(date, "yyyy-MM-dd"))
@@ -240,24 +261,35 @@ const ReservationForm = () => {
                         }}
                       >
                         <SelectTrigger className="flex justify-between items-center bg-transparent border-none outline-none ring-0 focus:ring-0 focus:ring-offset-0 gap-x-2 text-[15px] w-full p-0 ">
-                          <span>{selectedTime || t("SelectTime")}</span>
+                          <span>{t("SelectTime")}</span>
                         </SelectTrigger>
                         <SelectContent className=" h-56 overflow-y-auto border border-[#D2B48C] rounded-none shadow-md w-full">
                           <SelectGroup>
+                            {/* date and time not in the same chose */}
                             {date &&
-                              getTimeOptionsByDate(date).map((time) => (
-                                <SelectItem key={time} value={time}>
-                                  <div className="flex justify-between w-64">
-                                    <span>{time}</span>
-                                    <span>{t("Available")}</span>
-                                  </div>
-                                </SelectItem>
-                              ))}
-                            {!date && (
-                              <div className="px-4 py-2 text-gray-400">
-                                Please select date first
-                              </div>
-                            )}
+  getTimeOptionsByDate(date).map((time) => {
+    const formattedSelectedDate = format(new Date(date), "yyyy-MM-dd")
+
+    const isReserved = reservations?.data?.some((row) => {
+      const rawDate = row[7] // məsələn: "4/24/2025"
+      const parsedRowDate = format(
+        parse(rawDate, "M/d/yyyy", new Date()),
+        "yyyy-MM-dd"
+      )
+
+      return parsedRowDate === formattedSelectedDate && row[8] === time
+    })
+
+    return (
+      <SelectItem key={time} value={time} disabled={isReserved}>
+        <div className="flex justify-between w-64">
+          <span>{time}</span>
+          <span>{isReserved ? t("NotAvailable") : t("Available")}</span>
+        </div>
+      </SelectItem>
+    )
+  })}
+
                           </SelectGroup>
                         </SelectContent>
                       </Select>

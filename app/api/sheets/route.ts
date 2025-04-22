@@ -72,3 +72,38 @@ export async function POST(req: Request) {
     )
   }
 }
+
+
+export async function GET() {
+  try {
+    const auth = new google.auth.GoogleAuth({
+      credentials: {
+        client_email: process.env.GOOGLE_CLIENT_EMAIL,
+        private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
+      },
+      scopes: [
+        "https://www.googleapis.com/auth/drive",
+        "https://www.googleapis.com/auth/spreadsheets.readonly",
+      ],
+    })
+
+    const sheets = google.sheets({ auth, version: "v4" })
+    const range = "Reservations!A2:I100"
+
+    const response = await sheets.spreadsheets.values.get({
+      spreadsheetId: process.env.GOOGLE_SHEET_ID,
+      range,
+    })
+
+    return NextResponse.json({
+      data: response.data.values,
+      message: "Data fetched successfully",
+    })
+  } catch (error) {
+    console.error("Error fetching data:", error)
+    return NextResponse.json(
+      { message: "Internal server error" },
+      { status: 500 },
+    )
+  }
+}
