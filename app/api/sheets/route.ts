@@ -65,9 +65,13 @@ export async function POST(req: Request) {
       message: "Form submitted successfully",
     })
   } catch (error) {
-    console.error("Error submitting form:", error)
+    if (error instanceof Error) {
+      console.error("Google Sheets Error:", error.message, error.stack)
+    }
+    
     return NextResponse.json(
       { message: "Internal server error" },
+      
       { status: 500 },
     )
   }

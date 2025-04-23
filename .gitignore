@@ -28,8 +28,9 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
-.env*.local
-
+.env*
+.env
+.env.local
 # vercel
 .vercel
 
@@ -38,3 +39,4 @@ yarn-error.log*
 next-env.d.tsxxx
 
 secret.json
+

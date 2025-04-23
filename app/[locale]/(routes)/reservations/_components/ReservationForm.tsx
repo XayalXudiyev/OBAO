@@ -78,6 +78,7 @@ const ReservationForm = () => {
       return newValue
     })
   }
+
   useEffect(() => {
     fetch("/api/sheets")
       .then((res) => res.json())
@@ -85,19 +86,11 @@ const ReservationForm = () => {
 
   }, [])
 
-
   useEffect(() => {
     if (date) {
       setValue("date", format(date, "yyyy-MM-dd"))
     }
   }, [date, setValue])
-
-  // [7]-dates  [8]-times
-  const dates = reservations?.data?.map((row) => row[7])
-  const times = reservations?.data?.map((row) => row[8])
-  
-
-
 
   const onSubmit: SubmitHandler<ReservationFormData> = async (data) => {
     try {
@@ -108,7 +101,7 @@ const ReservationForm = () => {
       toast({
         description: (
           <div className="flex items-center justify-between rounded-none bg-[#DBC3A3] pr-[2px] ">
-            <div className="flex items-center ml-3 gap-2  py-2">
+            <div className="flex items-center ml-3 gap-2  py-2">bn9
               <Image
                 src="/icons/success.svg"
                 alt="check"
@@ -267,28 +260,28 @@ const ReservationForm = () => {
                           <SelectGroup>
                             {/* date and time not in the same chose */}
                             {date &&
-  getTimeOptionsByDate(date).map((time) => {
-    const formattedSelectedDate = format(new Date(date), "yyyy-MM-dd")
+                              getTimeOptionsByDate(date).map((time) => {
+                                const formattedSelectedDate = format(new Date(date), "yyyy-MM-dd")
 
-    const isReserved = reservations?.data?.some((row) => {
-      const rawDate = row[7] // məsələn: "4/24/2025"
-      const parsedRowDate = format(
-        parse(rawDate, "M/d/yyyy", new Date()),
-        "yyyy-MM-dd"
-      )
+                                const isReserved = reservations?.data?.some((row) => {
+                                  const rawDate = row[7] // məsələn: "4/24/2025"
+                                  const parsedRowDate = format(
+                                    parse(rawDate, "M/d/yyyy", new Date()),
+                                    "yyyy-MM-dd"
+                                  )
 
-      return parsedRowDate === formattedSelectedDate && row[8] === time
-    })
+                                  return parsedRowDate === formattedSelectedDate && row[8] === time
+                                })
 
-    return (
-      <SelectItem key={time} value={time} disabled={isReserved}>
-        <div className="flex justify-between w-64">
-          <span>{time}</span>
-          <span>{isReserved ? t("NotAvailable") : t("Available")}</span>
-        </div>
-      </SelectItem>
-    )
-  })}
+                                return (
+                                  <SelectItem key={time} value={time} disabled={isReserved}>
+                                    <div className="flex justify-between w-64">
+                                      <span>{time}</span>
+                                      <span>{isReserved ? t("NotAvailable") : t("Available")}</span>
+                                    </div>
+                                  </SelectItem>
+                                )
+                              })}
 
                           </SelectGroup>
                         </SelectContent>
