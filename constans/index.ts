@@ -45,7 +45,7 @@ export const menu: MenuItem[] = [
       {
         id: 1,
         name: "Miso soup",
-        price: "17",
+        price: "5",
         content: "",
       },
       {

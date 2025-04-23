@@ -15,14 +15,12 @@
     "Workshops": "Workshops",
     "WorkshopsText": "Our esteemed Chef Yoko, a Japanese expert in Matcha ceremonies and sushi-making, offers engaging workshops that delve into these traditional arts. Participants will learn the intricacies of sushi rolling and the cultural significance of Matcha preparation. These workshops provide a hands-on opportunity to immerse yourself in Japanese culinary traditions.​",
     "OurMenu": "Our Menu",
-
     "OurMenuTextDiscover": "Discover the",
     "OurMenuTextFlavors": " flavors of Japanese and Chinese-inspired fusion cuisine. Click below to explore our menu and find your next favorite dish!",
     "OurMenuAuthentic": "authentic",
     "OurMenuTraditional": "traditional",
     "OurMenuExquisite": "exquisite",
     "OurMenuDelightful": "delightful",
-
     "ViewOurMenu": "View Our Menu",
     "Address": "ADDRESS",
     "OpeningHours": "OPENING HOURS",
@@ -115,7 +113,31 @@
     "Available": "Available",
     "NotAvailable": "Not available",
     "SelectDate": "Select date",
-    "ReservationSuccess": "Your reservation is successful."
+    "ReservationSuccess": "Your reservation is successful.",
+    "SuccessMessage": "Thank you for reservation. We are happy to welcome you at O’BAO.",
+    "ConfirmationMessage": "You will receive a confirmation of your reservation by email.",
+    "YourContactDetails": "Your contact details",
+    
+    "FirstName": "First name",
+    "EnterFirstName": "Enter first name",
+    "LastName": "Last name",
+    "EnterLastName": "Enter last name",
+    "Email": "Email",
+    "EnterEmail": "Enter email",
+    "PhoneNumber": "Phone number",
+    "EnterPhoneNumber": "Enter phone number",
+    "YourMessage": "Your message",
+    "DoYouHaveAnyRemarks": "Do you have any remarks?",
+
+    "FirstNameRequired": "First name is required",
+    "LastNameRequired": "Last name is required",
+    "EmailRequired": "Email is required",
+    "PhoneNumberRequired": "Phone number is required",
+    "MessageRequired": "Message is required",
+
+    "YourReservationIsFor": "Your reservation is for ",
+    "People": "people",
+    "At": "at"
   },
   "navigation": {
     "Navigation": "NAVIGATION",

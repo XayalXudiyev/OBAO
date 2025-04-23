@@ -32,53 +32,60 @@ const ContactForm = () => {
         <DialogContent className="bg-[#D2B48C]  border-none p-6 w-[500px] max-w-full">
           <DialogHeader className="text-center">
             <DialogTitle className="mb-4 text-lg font-avenirRoman3">
-              Your reservation is for 2 people, <br /> today at 12 PM
+              {t("YourReservationIsFor")} 2 {t("People")}, <br /> 12.12.2025 {t("At")} 12 PM
             </DialogTitle>
             <DialogDescription className="text-sm text-black/80">
-              You will receive a confirmation of your reservation by email.
+              {t("ConfirmationMessage")}
             </DialogDescription>
           </DialogHeader>
 
-          <form className="p-4 border border-black">
-            <h2 className="mb-1 text-lg font-semibold">Your contact details</h2>
-            <div className="grid grid-cols-2 gap-4">
-              <FormInput
-                id="firstName"
-                label="*First name"
-                placeholder="First name"
-                validation={{ required: "First name is required" }}
-              />
-              <FormInput
-                id="lastName"
-                label="*Last name"
-                placeholder="Last name"
-                validation={{ required: "Last name is required" }}
-              />
-              <FormInput
-                id="email"
-                label="*Email"
-                type="email"
-                placeholder="Email"
-                validation={{ required: "Email is required" }}
-              />
-              <FormInput
-                id="phone"
-                label="*Phone number"
-                placeholder="Phone number"
-                validation={{ required: "Phone number is required" }}
-              />
-            </div>
-            <div className="flex flex-col mt-4">
-              <label htmlFor="message" className="text-sm font-medium">
-                Your message
-              </label>
-              <FormTextarea
-                id="message"
-                placeholder="Do you have any remarks?"
-              />
+          <form className=" ">
+            <h2 className="mb-1 text-lg font-semibold">{t("YourContactDetails")}</h2>
+            <div className=" border border-black p-4 mb-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+                <FormInput
+                  id="firstName"
+                  label={t("FirstName")}
+                  placeholder={t("EnterFirstName")}
+                  validation={{ required: t("FirstNameRequired") }}
+                  
+                />
+                <FormInput
+                  id="lastName"
+                  label={t("LastName")}
+                  placeholder={t("EnterLastName")}
+                  validation={{ required: t("LastNameRequired") }}
+                  
+                />
+                <FormInput
+                  id="email"
+                  label={t("Email")}
+                  type="email"
+                  placeholder={t("EnterEmail")}
+                  validation={{ required: t("EmailRequired") }}
+                  
+                />
+                <FormInput
+                  id="phone"
+                  label={t("PhoneNumber")}
+                  placeholder={t("EnterPhoneNumber")}
+                  validation={{ required: t("PhoneNumberRequired") }}
+                  
+                />
+              </div>
+              <div className="flex flex-col mt-4">
+                <label htmlFor="message" className="text-sm font-medium">
+                  {t("YourMessage")}
+                </label>
+                <FormTextarea
+                  id="message"
+                  placeholder={t("DoYouHaveAnyRemarks")}
+                />
+              </div>
             </div>
             <div>
-              <div className="bg-[#1C1C1C] flex justify-center  relative text-center  py-3">
+              <div className="bg-[#1C1C1C] flex justify-center  relative text-center  py-3 ">
                 <div className="absolute top-0 left-0 w-full h-full bg-[url('/cropped.png')] bg-center bg-[length:120%_auto]  bg-repeat-y opacity-10 z-10">
                   {" "}
                 </div>
@@ -91,7 +98,7 @@ const ContactForm = () => {
               </div>
 
               <p className="my-4 text-sm text-center">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                {t("SuccessMessage")}
               </p>
               <Separator className="bg-[#1c1c1c]" />
             </div>
@@ -131,6 +138,7 @@ const FormInput = ({
         placeholder={placeholder}
         className="text-[#4A4A4A] bg-transparent border-[#1C1C1C] rounded-none outline-none ring-0 focus-visible:ring-0 focus:border-[#1c1c1c] focus-visible:ring-offset-0"
       />
+
     </div>
   )
 }

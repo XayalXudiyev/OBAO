@@ -18,7 +18,7 @@ export async function POST(req: Request) {
 
     const mailOptions = {
       from: process.env.SMTP_USER,
-      to: [process.env.RECEIVER_EMAIL1, process.env.RECEIVER_EMAIL2],
+      to: [process.env.RECEIVER_EMAIL],
       subject: "New Contact Form Message",
       text: `
         Name: ${firstName} ${lastName} 

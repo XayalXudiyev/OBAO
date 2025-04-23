@@ -101,7 +101,7 @@ const ReservationForm = () => {
       toast({
         description: (
           <div className="flex items-center justify-between rounded-none bg-[#DBC3A3] pr-[2px] ">
-            <div className="flex items-center ml-3 gap-2  py-2">bn9
+            <div className="flex items-center ml-3 gap-2  py-2">
               <Image
                 src="/icons/success.svg"
                 alt="check"
@@ -113,7 +113,7 @@ const ReservationForm = () => {
             <button
               type="button"
               onClick={() => toast.dismiss()}
-              className="text-black font-bold mr-3 ml-32 pl-5"
+              className="text-black font-bold mr-3 text-sm lg:text-lg lg:ml-32 ml-5 lg:pl-5"
             >
               ✕
             </button>
@@ -121,12 +121,14 @@ const ReservationForm = () => {
         ),
         className:
           "fixed bottom-4 left-1/2 transform -translate-x-1/2 w-auto max-w-md border p-0 rounded-none m-0 border-[#A68A5E] shadow-md",
-        duration: 3000,
+        duration: 30000,
       })
     } catch (error) {
       console.error("Error submitting form:", error)
     }
   }
+
+
   return (
     <div className=" border  border-[#D2B48C]  mb-10 lg:mb-0  lg:py-14  p-8 lg:px-14">
       <h3 className="text-3xl lg:text-2xl font-bold  text-center font-avenirHeavy5">
@@ -254,11 +256,10 @@ const ReservationForm = () => {
                         }}
                       >
                         <SelectTrigger className="flex justify-between items-center bg-transparent border-none outline-none ring-0 focus:ring-0 focus:ring-offset-0 gap-x-2 text-[15px] w-full p-0 ">
-                          <span>{t("SelectTime")}</span>
+                          <span>{selectedTime || t("SelectTime")}</span>
                         </SelectTrigger>
                         <SelectContent className=" h-56 overflow-y-auto border border-[#D2B48C] rounded-none shadow-md w-full">
                           <SelectGroup>
-                            {/* date and time not in the same chose */}
                             {date &&
                               getTimeOptionsByDate(date).map((time) => {
                                 const formattedSelectedDate = format(new Date(date), "yyyy-MM-dd")
