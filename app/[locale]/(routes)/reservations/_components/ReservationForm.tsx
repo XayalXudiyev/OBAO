@@ -17,8 +17,10 @@ import {
 } from "@/components/ui/select"
 import { Separator } from "@/components/ui/separator"
 import type { ReservationFormData } from "@/constans/types"
-import { toast, useToast } from "@/hooks/use-toast"
+import { useToast } from "@/hooks/use-toast"
+import { reservationSchema } from "@/lib/schema"
 import { getTimeOptionsByDate } from "@/lib/utils"
+import { zodResolver } from "@hookform/resolvers/zod"
 import { format, parse } from "date-fns"
 import { Calendar as CalendarIcon } from "lucide-react"
 import { useTranslations } from "next-intl"
@@ -34,23 +36,32 @@ const ReservationForm = () => {
   const [selectedTime, setSelectedTime] = useState<string>("")
   const [adultCount, setAdultCount] = useState<number>(0)
   const [childCount, setChildCount] = useState<number>(0)
+  const [isOpen, setIsOpen] = useState(false)
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false)
 
   const [addReservation] = useAddReservationMutation()
   const [reservations, setReservations] = useState([])
   const { toast } = useToast()
 
-  const { control, handleSubmit, setValue } = useForm<ReservationFormData>({
+  const methods = useForm<ReservationFormData>({
+    resolver: zodResolver(reservationSchema),
     defaultValues: {
-      adults: adultCount,
-      child: childCount, date: date ? format(new Date(date), "yyyy-MM-dd") : "",
-      time: selectedTime,
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      message: "",
+      date: "",
+      time: "",
+      adults: 1,
+      child: 0,
     },
   })
 
   const adultIncrement = () => {
     setAdultCount((prev) => {
       const newValue = prev + 1
-      setValue("adults", newValue)
+      methods.setValue("adults", newValue)
       return newValue
     })
   }
@@ -58,7 +69,7 @@ const ReservationForm = () => {
   const adultDecrement = () => {
     setAdultCount((prev) => {
       const newValue = Math.max(prev - 1, 0)
-      setValue("adults", newValue)
+      methods.setValue("adults", newValue)
       return newValue
     })
   }
@@ -66,7 +77,7 @@ const ReservationForm = () => {
   const childIncrement = () => {
     setChildCount((prev) => {
       const newValue = prev + 1
-      setValue("child", newValue)
+      methods.setValue("child", newValue)
       return newValue
     })
   }
@@ -74,7 +85,7 @@ const ReservationForm = () => {
   const childDecrement = () => {
     setChildCount((prev) => {
       const newValue = Math.max(prev - 1, 0)
-      setValue("child", newValue)
+      methods.setValue("child", newValue)
       return newValue
     })
   }
@@ -83,14 +94,13 @@ const ReservationForm = () => {
     fetch("/api/sheets")
       .then((res) => res.json())
       .then((data) => setReservations(data))
-
   }, [])
 
   useEffect(() => {
     if (date) {
-      setValue("date", format(date, "yyyy-MM-dd"))
+      methods.setValue("date", format(date, "yyyy-MM-dd"))
     }
-  }, [date, setValue])
+  }, [date])
 
   const onSubmit: SubmitHandler<ReservationFormData> = async (data) => {
     try {
@@ -98,10 +108,11 @@ const ReservationForm = () => {
         ...data,
         sheetName: "Reservations",
       })
+
       toast({
         description: (
-          <div className="flex items-center justify-between rounded-none bg-[#DBC3A3] pr-[2px] ">
-            <div className="flex items-center ml-3 gap-2  py-2">
+          <div className="flex items-center justify-between rounded-none w-[300px] lg:w-auto bg-[#DBC3A3] ml-3 lg:ml-0 lg:pr-[2px] ">
+            <div className="flex items-center ml-3 gap-2 py-2">
               <Image
                 src="/icons/success.svg"
                 alt="check"
@@ -113,7 +124,7 @@ const ReservationForm = () => {
             <button
               type="button"
               onClick={() => toast.dismiss()}
-              className="text-black font-bold mr-3 text-sm lg:text-lg lg:ml-32 ml-5 lg:pl-5"
+              className="text-black font-bold mr-3 text-sm lg:text-lg lg:ml-24 ml-5 lg:pl-5"
             >
               ✕
             </button>
@@ -121,13 +132,19 @@ const ReservationForm = () => {
         ),
         className:
           "fixed bottom-4 left-1/2 transform -translate-x-1/2 w-auto max-w-md border p-0 rounded-none m-0 border-[#A68A5E] shadow-md",
-        duration: 30000,
+        duration: 3000,
       })
+
+      methods.reset()
+      setAdultCount(0)
+      setChildCount(0)
+      setDate("")
+      setSelectedTime("")
+      setIsOpen(false)
     } catch (error) {
       console.error("Error submitting form:", error)
     }
   }
-
 
   return (
     <div className=" border  border-[#D2B48C]  mb-10 lg:mb-0  lg:py-14  p-8 lg:px-14">
@@ -136,10 +153,11 @@ const ReservationForm = () => {
       </h3>
 
       <div className="flex flex-col gap-4 lg:min-w-[350px]">
-        <FormProvider {...{ control, handleSubmit, setValue }}>
-          <form onSubmit={handleSubmit(onSubmit)}>
+        <FormProvider {...methods}>
+          <form onSubmit={methods.handleSubmit(onSubmit)} className="space-y-4">
             <div className="flex flex-col space-y-7   my-6  w-full">
               {/* adult */}
+
               <div className="flex flex-col gap-1">
                 <div className="flex items-center justify-between gap-2">
                   <span>
@@ -203,11 +221,11 @@ const ReservationForm = () => {
               {/* date */}
               <div className="flex flex-col gap-1">
                 <div className="flex flex-col items-start space-y-2">
-                  <Popover>
+                  <Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
                     <PopoverTrigger asChild>
                       <Button
                         variant={"outline"}
-                        className="flex justify-between w-full p-0 text-base text-white bg-transparent border-none hover:bg-transparent hover:text-white"
+                        className="flex justify-between w-full p-0 text-[15px] text-white bg-transparent border-none hover:bg-transparent hover:text-white"
                       >
                         <span>
                           {date ? format(date, "d MMM yyy") : t("SelectDate")}
@@ -217,9 +235,8 @@ const ReservationForm = () => {
                         </span>
                       </Button>
                     </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0 rounded-none">
+                    <PopoverContent className="w-[350px] p-0 rounded-none">
                       <Calendar
-                        className="p-6  "
                         classNames={{
                           caption:
                             "flex justify-start pt-1 relative items-center",
@@ -230,8 +247,12 @@ const ReservationForm = () => {
                         mode="single"
                         selected={date ? new Date(date) : undefined}
                         onSelect={(date) => {
-                          setDate(date)
-                          setValue("date", format(date, "yyyy-MM-dd"))
+                          if (date) {
+                            const formatted = format(date, "yyyy-MM-dd")
+                            setDate(formatted)
+                            methods.setValue("date", formatted)
+                            setIsPopoverOpen(false) // ✅ burada bağlanır
+                          }
                         }}
                         initialFocus
                         fromDate={new Date()}
@@ -247,7 +268,7 @@ const ReservationForm = () => {
                 <div className="flex items-center justify-between gap-2">
                   <Controller
                     name="time"
-                    control={control}
+                    control={methods.control}
                     render={({ field }) => (
                       <Select
                         onValueChange={(value) => {
@@ -262,28 +283,44 @@ const ReservationForm = () => {
                           <SelectGroup>
                             {date &&
                               getTimeOptionsByDate(date).map((time) => {
-                                const formattedSelectedDate = format(new Date(date), "yyyy-MM-dd")
+                                const formattedSelectedDate = format(
+                                  new Date(date),
+                                  "yyyy-MM-dd",
+                                )
 
-                                const isReserved = reservations?.data?.some((row) => {
-                                  const rawDate = row[7] // məsələn: "4/24/2025"
-                                  const parsedRowDate = format(
-                                    parse(rawDate, "M/d/yyyy", new Date()),
-                                    "yyyy-MM-dd"
-                                  )
+                                const isReserved = reservations?.data?.some(
+                                  (row) => {
+                                    const rawDate = row[7]
+                                    const parsedRowDate = format(
+                                      parse(rawDate, "M/d/yyyy", new Date()),
+                                      "yyyy-MM-dd",
+                                    )
 
-                                  return parsedRowDate === formattedSelectedDate && row[8] === time
-                                })
+                                    return (
+                                      parsedRowDate === formattedSelectedDate &&
+                                      row[8] === time
+                                    )
+                                  },
+                                )
 
                                 return (
-                                  <SelectItem key={time} value={time} disabled={isReserved}>
-                                    <div className="flex justify-between w-64">
+                                  <SelectItem
+                                    key={time}
+                                    value={time}
+                                    disabled={isReserved}
+                                    className="focus:bg-[#ECE0CF] focus:cursor-pointer disabled:bg-[#FBF8F4]"
+                                  >
+                                    <div className="flex justify-between w-80 -pl-1 pr-1 ">
                                       <span>{time}</span>
-                                      <span>{isReserved ? t("NotAvailable") : t("Available")}</span>
+                                      <span>
+                                        {isReserved
+                                          ? t("NotAvailable")
+                                          : t("Available")}
+                                      </span>
                                     </div>
                                   </SelectItem>
                                 )
                               })}
-
                           </SelectGroup>
                         </SelectContent>
                       </Select>
@@ -293,7 +330,13 @@ const ReservationForm = () => {
                 <Separator />
               </div>
             </div>
-            <ContactForm />
+            <ContactForm
+              isOpen={isOpen}
+              setIsOpen={setIsOpen}
+              guests={adultCount + childCount}
+              date={date}
+              time={selectedTime}
+            />
           </form>
         </FormProvider>
       </div>

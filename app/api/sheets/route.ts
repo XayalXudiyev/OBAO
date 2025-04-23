@@ -68,15 +68,14 @@ export async function POST(req: Request) {
     if (error instanceof Error) {
       console.error("Google Sheets Error:", error.message, error.stack)
     }
-    
+
     return NextResponse.json(
       { message: "Internal server error" },
-      
+
       { status: 500 },
     )
   }
 }
-
 
 export async function GET() {
   try {

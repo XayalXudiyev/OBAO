@@ -20,7 +20,7 @@ const OurMenuComponent = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % animates.length)
-    }, 2500) // Her 2.5 saniyede bir değişsin
+    }, 2500)
 
     return () => clearInterval(interval)
   }, [])

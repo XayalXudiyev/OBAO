@@ -19,7 +19,6 @@ interface Locale {
   locale?: string | undefined
 }
 
-// Avenir Fonts
 const avenir = localFont({
   src: "./fonts/AvenirLTStd.otf",
   variable: "--font-avenir",

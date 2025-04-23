@@ -7,19 +7,32 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import type { FormData } from "@/constans/types"
 import { useTranslations } from "next-intl"
 import React from "react"
-import { useFormContext } from "react-hook-form"
 import { Separator } from "../../../../../components/ui/separator"
+import FormInput from "./FormInput"
+import FormTextarea from "./FormTextarea"
 
-const ContactForm = () => {
+type ContactFormProps = {
+  isOpen: boolean
+  setIsOpen: (value: boolean) => void
+  guests: number
+  date: string
+  time: string
+}
+
+const ContactForm = ({
+  isOpen,
+  setIsOpen,
+  guests,
+  date,
+  time,
+}: ContactFormProps) => {
   const t = useTranslations("reservations")
+
   return (
     <div className="flex justify-center w-full">
-      <Dialog>
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild>
           <Button
             size="lg"
@@ -32,7 +45,8 @@ const ContactForm = () => {
         <DialogContent className="bg-[#D2B48C]  border-none p-6 w-[500px] max-w-full">
           <DialogHeader className="text-center">
             <DialogTitle className="mb-4 text-lg font-avenirRoman3">
-              {t("YourReservationIsFor")} 2 {t("People")}, <br /> 12.12.2025 {t("At")} 12 PM
+              {t("YourReservationIsFor")} {guests} {t("People")}, <br /> {date}{" "}
+              {t("At")} {time}
             </DialogTitle>
             <DialogDescription className="text-sm text-black/80">
               {t("ConfirmationMessage")}
@@ -40,23 +54,23 @@ const ContactForm = () => {
           </DialogHeader>
 
           <form className=" ">
-            <h2 className="mb-1 text-lg font-semibold">{t("YourContactDetails")}</h2>
+            <h2 className="mb-1 text-lg font-semibold">
+              {t("YourContactDetails")}
+            </h2>
             <div className=" border border-black p-4 mb-4">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-
                 <FormInput
                   id="firstName"
                   label={t("FirstName")}
                   placeholder={t("EnterFirstName")}
-                  validation={{ required: t("FirstNameRequired") }}
-                  
+                  type="text"
                 />
                 <FormInput
                   id="lastName"
                   label={t("LastName")}
                   placeholder={t("EnterLastName")}
                   validation={{ required: t("LastNameRequired") }}
-                  
+                  type="text"
                 />
                 <FormInput
                   id="email"
@@ -64,14 +78,14 @@ const ContactForm = () => {
                   type="email"
                   placeholder={t("EnterEmail")}
                   validation={{ required: t("EmailRequired") }}
-                  
+                  type="email"
                 />
                 <FormInput
                   id="phone"
                   label={t("PhoneNumber")}
                   placeholder={t("EnterPhoneNumber")}
                   validation={{ required: t("PhoneNumberRequired") }}
-                  
+                  type="tel"
                 />
               </div>
               <div className="flex flex-col mt-4">
@@ -97,9 +111,7 @@ const ContactForm = () => {
                 </Button>
               </div>
 
-              <p className="my-4 text-sm text-center">
-                {t("SuccessMessage")}
-              </p>
+              <p className="my-4 text-sm text-center">{t("SuccessMessage")}</p>
               <Separator className="bg-[#1c1c1c]" />
             </div>
           </form>
@@ -110,54 +122,3 @@ const ContactForm = () => {
 }
 
 export default ContactForm
-
-const FormInput = ({
-  id,
-  label,
-  placeholder,
-  validation,
-  type = "text",
-}: {
-  id: keyof FormData
-  label: string
-  placeholder?: string
-  validation?: object
-  type?: string
-}) => {
-  const { register } = useFormContext<FormData>().control
-
-  return (
-    <div className="flex flex-col">
-      <label htmlFor={id} className="text-sm font-medium">
-        {label}
-      </label>
-      <Input
-        id={id}
-        type={type}
-        {...register(id, validation)}
-        placeholder={placeholder}
-        className="text-[#4A4A4A] bg-transparent border-[#1C1C1C] rounded-none outline-none ring-0 focus-visible:ring-0 focus:border-[#1c1c1c] focus-visible:ring-offset-0"
-      />
-
-    </div>
-  )
-}
-
-const FormTextarea = ({
-  id,
-  placeholder,
-}: {
-  id: keyof FormData
-  placeholder?: string
-}) => {
-  const { register } = useFormContext<FormData>().control
-
-  return (
-    <Textarea
-      id={id}
-      {...register(id)}
-      placeholder={placeholder}
-      className="text-[#4A4A4A] bg-transparent border-[#1C1C1C] rounded-none outline-none ring-0 focus-visible:ring-0 focus:border-[#1c1c1c] focus-visible:ring-offset-0"
-    />
-  )
-}

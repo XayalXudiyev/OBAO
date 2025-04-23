@@ -31,7 +31,7 @@ const ReservationsPage = () => {
           <p className="leading-8 text-xl">{t("BookATableText2")}</p>
         </div>
 
-        <div className="w-full z-20">
+        <div className="w-full  z-20">
           <ReservationForm />
         </div>
       </div>

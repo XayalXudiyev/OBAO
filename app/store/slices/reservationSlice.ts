@@ -3,13 +3,11 @@ import { createSlice } from "@reduxjs/toolkit"
 import type { PayloadAction } from "@reduxjs/toolkit"
 import { reservationsApi } from "../api/reservationsApi"
 
-// Initial State Type Definition
 interface InitialStateStateType extends ReservationFormData {
   error: null | string
   status: "idle" | "loading" | "succeeded" | "failed"
 }
 
-// Initial State
 const initialState: InitialStateStateType[] = [
   {
     firstName: "",
@@ -26,7 +24,6 @@ const initialState: InitialStateStateType[] = [
   },
 ]
 
-// Reservation Slice
 export const ReservationSlice = createSlice({
   name: "reservation_slice",
   initialState,
