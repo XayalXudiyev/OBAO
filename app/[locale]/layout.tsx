@@ -6,6 +6,8 @@ import { NextIntlClientProvider } from "next-intl"
 import { getMessages } from "next-intl/server"
 import ClientProvider from "./ClientProvider"
 import NotFound from "./not-found"
+import { GoogleTagManager } from "@next/third-parties/google"
+
 interface RootLayoutProps {
   children: React.ReactNode
 }
@@ -82,6 +84,7 @@ export default async function RootLayout({
       >
         <ClientProvider>
           <NextIntlClientProvider messages={messages}>
+          <GoogleTagManager gtmId="GTM-NQK7S32Q" />
             {children}
             <Toaster />
           </NextIntlClientProvider>
