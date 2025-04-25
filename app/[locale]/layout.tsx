@@ -2,11 +2,11 @@ import localFont from "next/font/local"
 import "./globals.css"
 import { Toaster } from "@/components/ui/toaster"
 import { routing } from "@/i18n/routing"
+import { GoogleTagManager } from "@next/third-parties/google"
 import { NextIntlClientProvider } from "next-intl"
 import { getMessages } from "next-intl/server"
 import ClientProvider from "./ClientProvider"
 import NotFound from "./not-found"
-import { GoogleTagManager } from "@next/third-parties/google"
 
 interface RootLayoutProps {
   children: React.ReactNode
@@ -84,7 +84,7 @@ export default async function RootLayout({
       >
         <ClientProvider>
           <NextIntlClientProvider messages={messages}>
-          <GoogleTagManager gtmId="GTM-NQK7S32Q" />
+            <GoogleTagManager gtmId="GTM-NQK7S32Q" />
             {children}
             <Toaster />
           </NextIntlClientProvider>

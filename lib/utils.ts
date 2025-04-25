@@ -9,10 +9,10 @@ export function cn(...inputs: ClassValue[]) {
 
 export const getTimeOptionsByDate = (date: Date | string) => {
   const day = getDay(new Date(date))
-  if (day >= 1 && day <= 4) {
+  if (day >= 1 && day <= 5) {
     return weekdayTimes
     // biome-ignore lint/style/noUselessElse: <explanation>
-  } else if (day === 5) {
+  } else if (day === 6) {
     return saturdayTimes
   }
   return sundayTimes

@@ -251,7 +251,7 @@ const ReservationForm = () => {
                             const formatted = format(date, "yyyy-MM-dd")
                             setDate(formatted)
                             methods.setValue("date", formatted)
-                            setIsPopoverOpen(false) // ✅ burada bağlanır
+                            setIsPopoverOpen(false) 
                           }
                         }}
                         initialFocus
@@ -288,6 +288,8 @@ const ReservationForm = () => {
                                   "yyyy-MM-dd",
                                 )
 
+                                const isSunday = new Date(date).getDay() === 0
+
                                 const isReserved = reservations?.data?.some(
                                   (row) => {
                                     const rawDate = row[7]
@@ -303,17 +305,19 @@ const ReservationForm = () => {
                                   },
                                 )
 
+                                const disabled = isReserved || isSunday
+
                                 return (
                                   <SelectItem
                                     key={time}
                                     value={time}
-                                    disabled={isReserved}
+                                    disabled={disabled}
                                     className="focus:bg-[#ECE0CF] focus:cursor-pointer disabled:bg-[#FBF8F4]"
                                   >
-                                    <div className="flex justify-between w-80 -pl-1 pr-1 ">
+                                    <div className="flex justify-between w-80 -pl-1 pr-1">
                                       <span>{time}</span>
                                       <span>
-                                        {isReserved
+                                        {disabled
                                           ? t("NotAvailable")
                                           : t("Available")}
                                       </span>
