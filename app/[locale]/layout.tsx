@@ -8,83 +8,44 @@ import { getMessages } from "next-intl/server"
 import ClientProvider from "./ClientProvider"
 import NotFound from "./not-found"
 
-interface RootLayoutProps {
-  children: React.ReactNode
-}
+const fonts = [
+  localFont({ src: "./fonts/AvenirLTStd.otf", variable: "--font-avenir", weight: "100 900" }),
+  localFont({ src: "./fonts/AvenirLTStdBlack.otf", variable: "--font-avenir-black", weight: "100 900" }),
+  localFont({ src: "./fonts/AvenirLTStdBook.otf", variable: "--font-avenir-book", weight: "100 900" }),
+  localFont({ src: "./fonts/AvenirLTStdHeavy.otf", variable: "--font-avenir-heavy", weight: "100 900" }),
+  localFont({ src: "./fonts/AvenirLTStdMedium.otf", variable: "--font-avenir-medium", weight: "100 900" }),
+  localFont({ src: "./fonts/AvenirLTStdRoman.otf", variable: "--font-avenir-roman", weight: "100 900" }),
+]
 
 export const metadata = {
   title: "O'BAO",
   description: "O'BAO",
 }
 
-interface Locale {
-  locale?: string | undefined
-}
-
-const avenir = localFont({
-  src: "./fonts/AvenirLTStd.otf",
-  variable: "--font-avenir",
-  weight: "100 900",
-})
-
-const avenirBlack = localFont({
-  src: "./fonts/AvenirLTStdBlack.otf",
-  variable: "--font-avenir-black",
-  weight: "100 900",
-})
-
-const avenirBook = localFont({
-  src: "./fonts/AvenirLTStdBook.otf",
-  variable: "--font-avenir-book",
-  weight: "100 900",
-})
-
-const avenirHeavy = localFont({
-  src: "./fonts/AvenirLTStdHeavy.otf",
-  variable: "--font-avenir-heavy",
-  weight: "100 900",
-})
-
-const avenirMedium = localFont({
-  src: "./fonts/AvenirLTStdMedium.otf",
-  variable: "--font-avenir-medium",
-  weight: "100 900",
-})
-
-const avenirRoman = localFont({
-  src: "./fonts/AvenirLTStdRoman.otf",
-  variable: "--font-avenir-roman",
-  weight: "100 900",
-})
-
 export default async function RootLayout({
   children,
   params,
-}: Readonly<{
+}: {
   children: React.ReactNode
   params: Promise<{ locale: string }>
-}>) {
+}) {
   const { locale } = await params
   const messages = await getMessages()
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID
 
-  if (!routing.locales.includes(locale as any)) {
+  if (!routing.locales.includes(locale)) {
     NotFound()
   }
+
+  const fontClasses = fonts.map((f) => f.variable).join(" ")
+
   return (
     <html lang={locale}>
-      <body
-        className={`
-        ${avenir.variable} 
-        ${avenirMedium.variable} 
-        ${avenirRoman.variable} 
-        ${avenirBook.variable} 
-        ${avenirHeavy.variable} 
-        ${avenirBlack.variable} 
-        antialiased`}
-      >
+      <head />
+      <body className={`${fontClasses} antialiased`}>
+        {gtmId && <GoogleTagManager gtmId={gtmId} />}
         <ClientProvider>
           <NextIntlClientProvider messages={messages}>
-            <GoogleTagManager gtmId="GTM-NQK7S32Q" />
             {children}
             <Toaster />
           </NextIntlClientProvider>
