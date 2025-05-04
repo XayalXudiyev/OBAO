@@ -89,8 +89,19 @@ const RestaurantsSection = () => {
 
           <div className="">
             <h3 className="text-lg mb-1">{t("Contact")}</h3>
-            <p className="text-sm mb-1">events@obao-catering.be</p>
-            <p className="text-sm">{t("ContactNumber")}: 0470 46 75 57</p>
+            <p className="text-sm mb-1">
+              <a
+                href="mailto:events@obao-catering.be"
+              >
+                events@obao-catering.be
+              </a>
+            </p>
+            <p className="text-sm">
+              {t("ContactNumber")}:
+              <a href="tel:+32470467557" className="underline ml-1">
+                0470 46 75 57
+              </a>
+            </p>
           </div>
         </motion.div>
       </div>
@@ -129,8 +140,15 @@ const RestaurantsSection = () => {
 
           <div className="">
             <h3 className="text-lg mb-1">{t("Contact")}</h3>
-            <p className="text-sm mb-1">events@obao-catering.be</p>
-            <p className="text-sm">{t("ContactNumber")}: 0494 53 90 41</p>
+            <p className="text-sm mb-1">
+              <a href="mailto:events@obao-catering.be">events@obao-catering.be</a>
+            </p>
+            <p className="text-sm">
+              {t("ContactNumber")}:
+              <a href="tel:+32494539041" className="underline ml-1">
+                0494 53 90 41
+              </a>
+            </p>
           </div>
         </motion.div>
         <motion.div
